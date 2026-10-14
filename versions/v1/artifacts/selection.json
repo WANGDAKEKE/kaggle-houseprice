@@ -1,0 +1,16 @@
+{
+  "name": "blend_linear25_tree75",
+  "weights": {
+    "elasticnet_features": 0.25,
+    "catboost_features_d5": 0.75
+  },
+  "selection_cv_log_rmse": 0.12185895440903398,
+  "best_candidate_cv_log_rmse": 0.12184935748021222,
+  "simplicity_tolerance": 0.0003,
+  "selection_rule": "within 0.0003 of best development OOF: fewest components, then lowest RMSE",
+  "development_rows": 1168,
+  "holdout_rows": 292,
+  "seed": 42,
+  "target": "natural log(SalePrice)",
+  "holdout_policy": "one-time check; no retuning on holdout"
+}

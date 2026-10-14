@@ -1,0 +1,38 @@
+Cached ridge_baseline
+Cached random_forest_baseline
+Cached ridge_features_a10
+Cached ridge_features_a30
+Cached ridge_features_a100
+Cached lasso_features_a0003
+Cached lasso_features_a0006
+Cached elasticnet_features
+Cached gbr_huber
+Cached catboost_raw_d5
+Cached catboost_features_d4
+Cached catboost_features_d5
+Cached xgboost_features
+Cached lightgbm_features
+                 model  oof_log_rmse  fold_std   seconds
+  blend_three_families      0.121849  0.015424  0.000000
+ blend_linear25_tree75      0.121859  0.013541  0.000000
+ blend_linear50_tree50      0.122137  0.015881  0.000000
+  catboost_features_d5      0.124273  0.011391 42.972206
+ blend_linear75_tree25      0.125088  0.018356  0.000000
+  catboost_features_d4      0.126385  0.012499 32.049246
+      xgboost_features      0.126973  0.009890  3.972281
+       catboost_raw_d5      0.128143  0.012227 38.789583
+     lightgbm_features      0.129698  0.008836  4.905838
+             gbr_huber      0.130376  0.012842 28.066017
+   elasticnet_features      0.130533  0.020930  2.867216
+  lasso_features_a0006      0.130883  0.022561  0.758739
+  lasso_features_a0003      0.131391  0.024529  4.691561
+    ridge_features_a10      0.132174  0.017551  0.232030
+    ridge_features_a30      0.133792  0.019887  0.207711
+   ridge_features_a100      0.136695  0.022397  0.200178
+        ridge_baseline      0.145434  0.027622  0.108753
+random_forest_baseline      0.145530  0.012202  4.253612
+Selected: {"name": "blend_linear25_tree75", "weights": {"elasticnet_features": 0.25, "catboost_features_d5": 0.75}, "selection_cv_log_rmse": 0.12185895440903398, "best_candidate_cv_log_rmse": 0.12184935748021222, "simplicity_tolerance": 0.0003, "selection_rule": "within 0.0003 of best development OOF: fewest components, then lowest RMSE", "development_rows": 1168, "holdout_rows": 292, "seed": 42, "target": "natural log(SalePrice)", "holdout_policy": "one-time check; no retuning on holdout"}
+Untouched holdout: {"selected_log_rmse": 0.10629732506394987, "baseline_log_rmse": 0.12667682853790363, "n": 292, "selected_model": "blend_linear25_tree75", "individual_selected_models": {"elasticnet_features": 0.1052050426315019, "catboost_features_d5": 0.11157193550460151}}
+Refit all training rows: elasticnet_features
+Refit all training rows: catboost_features_d5
+Submission validated: {"rows": 1459, "columns": ["Id", "SalePrice"], "min_price": 44839.3390613766, "max_price": 495533.2983706387, "median_price": 156317.5345136443, "finite_positive": true, "id_order_matches_official_test": true, "submitted_to_kaggle": false}

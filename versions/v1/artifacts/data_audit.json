@@ -1,0 +1,39 @@
+{
+  "train_shape": [
+    1460,
+    81
+  ],
+  "test_shape": [
+    1459,
+    80
+  ],
+  "feature_count": 79,
+  "training_rows_removed": 0,
+  "target": {
+    "count": 1460.0,
+    "mean": 180921.19589041095,
+    "std": 79442.50288288662,
+    "min": 34900.0,
+    "25%": 129975.0,
+    "50%": 163000.0,
+    "75%": 214000.0,
+    "max": 755000.0
+  },
+  "large_low_price_diagnostic_only": [
+    {
+      "Id": 524,
+      "GrLivArea": 4676,
+      "SalePrice": 184750
+    },
+    {
+      "Id": 1299,
+      "GrLivArea": 5642,
+      "SalePrice": 160000
+    }
+  ],
+  "duplicate_train_ids": 0,
+  "duplicate_test_ids": 0,
+  "future_garage_year_ids": [],
+  "masvnrtype_missing": 8,
+  "masvnrtype_none_count": 864
+}

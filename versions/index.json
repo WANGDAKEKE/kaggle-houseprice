@@ -1,0 +1,17 @@
+{
+  "repository": "https://github.com/WANGDAKEKE/kaggle-houseprice",
+  "versions": [
+    {
+      "version": "v1",
+      "git_tag": "v1.0.0",
+      "status": "submitted_by_user",
+      "public_log_rmse": 0.11969,
+      "score_source": "user_report",
+      "development_cv_log_rmse": 0.12185895440903398,
+      "holdout_log_rmse": 0.10629732506394987,
+      "submission_file": "versions/v1/submission.csv",
+      "sha256": "210223272bc07d8c7d483aadc47a9831faa248ca9c5c633699d12ebea9b3e3db",
+      "date": "2026-10-15"
+    }
+  ]
+}

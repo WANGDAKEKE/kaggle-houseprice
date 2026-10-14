@@ -1,0 +1,9 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "submission_sha256": "210223272bc07d8c7d483aadc47a9831faa248ca9c5c633699d12ebea9b3e3db",
+  "candidate_count": 18,
+  "split_audit": "passed",
+  "model_reload_reproduction": "passed",
+  "dependency_check": "passed"
+}

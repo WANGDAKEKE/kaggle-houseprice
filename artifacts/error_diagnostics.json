@@ -1,0 +1,6 @@
+{
+  "all_development_log_rmse": 0.12185895440903396,
+  "excluding_two_large_low_price_homes_diagnostic_only": 0.11456017251495969,
+  "excluded_count_for_diagnostic": 2,
+  "note": "Diagnostic only; all official rows were retained in training and primary evaluation."
+}

@@ -1,0 +1,13 @@
+{
+  "rows": 1459,
+  "columns": [
+    "Id",
+    "SalePrice"
+  ],
+  "min_price": 44839.3390613766,
+  "max_price": 495533.2983706387,
+  "median_price": 156317.5345136443,
+  "finite_positive": true,
+  "id_order_matches_official_test": true,
+  "submitted_to_kaggle": false
+}

@@ -1,0 +1,10 @@
+{
+  "selected_log_rmse": 0.10629732506394987,
+  "baseline_log_rmse": 0.12667682853790363,
+  "n": 292,
+  "selected_model": "blend_linear25_tree75",
+  "individual_selected_models": {
+    "elasticnet_features": 0.1052050426315019,
+    "catboost_features_d5": 0.11157193550460151
+  }
+}

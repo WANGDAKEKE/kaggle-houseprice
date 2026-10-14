@@ -1,0 +1,42 @@
+Cached ridge_baseline
+Cached random_forest_baseline
+Cached ridge_features_a10
+Cached ridge_features_a30
+Cached ridge_features_a100
+Cached lasso_features_a0003
+Cached lasso_features_a0006
+Cached elasticnet_features
+Cached gbr_huber
+Cached catboost_raw_d5
+Cached catboost_features_d4
+Cached catboost_features_d5
+xgboost_features fold 1/5: 0.14152
+xgboost_features fold 2/5: 0.12166
+xgboost_features fold 3/5: 0.13497
+xgboost_features fold 4/5: 0.11665
+xgboost_features fold 5/5: 0.11806
+lightgbm_features fold 1/5: 0.14542
+lightgbm_features fold 2/5: 0.12539
+lightgbm_features fold 3/5: 0.13188
+lightgbm_features fold 4/5: 0.12051
+lightgbm_features fold 5/5: 0.12372
+                 model  oof_log_rmse  fold_std   seconds
+  blend_three_families      0.121849  0.015424  0.000000
+ blend_linear25_tree75      0.121859  0.013541  0.000000
+ blend_linear50_tree50      0.122137  0.015881  0.000000
+  catboost_features_d5      0.124273  0.011391 42.972206
+ blend_linear75_tree25      0.125088  0.018356  0.000000
+  catboost_features_d4      0.126385  0.012499 32.049246
+      xgboost_features      0.126973  0.009890  3.972281
+       catboost_raw_d5      0.128143  0.012227 38.789583
+     lightgbm_features      0.129698  0.008836  4.905838
+             gbr_huber      0.130376  0.012842 28.066017
+   elasticnet_features      0.130533  0.020930  2.867216
+  lasso_features_a0006      0.130883  0.022561  0.758739
+  lasso_features_a0003      0.131391  0.024529  4.691561
+    ridge_features_a10      0.132174  0.017551  0.232030
+    ridge_features_a30      0.133792  0.019887  0.207711
+   ridge_features_a100      0.136695  0.022397  0.200178
+        ridge_baseline      0.145434  0.027622  0.108753
+random_forest_baseline      0.145530  0.012202  4.253612
+Selected: {"name": "blend_three_families", "weights": {"elasticnet_features": 0.4, "catboost_features_d5": 0.4, "gbr_huber": 0.2}, "selection_cv_log_rmse": 0.12184935748021222, "development_rows": 1168, "holdout_rows": 292, "seed": 42, "target": "natural log(SalePrice)", "holdout_policy": "one-time check; no retuning on holdout"}

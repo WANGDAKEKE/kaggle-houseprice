@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>House Prices 实验报告</title><style>
+body{font:16px/1.7 -apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif;color:#233347;background:#f5f7fb;margin:0}
+main{max-width:1050px;margin:36px auto;padding:32px 40px;background:white;border-radius:18px}
+h1{line-height:1.25} h2{margin-top:32px} p{max-width:940px} .muted{color:#64748b}
+.cards{display:flex;gap:18px;flex-wrap:wrap} .card{background:#eef5f8;padding:18px 24px;border-radius:12px;flex:1;min-width:180px}
+.number{font-size:30px;font-weight:700;color:#146b5b} img{max-width:100%;height:auto}
+table{border-collapse:collapse;font-size:14px;width:100%}th,td{border-bottom:1px solid #e2e8f0;padding:8px 12px;text-align:left}
+th{background:#f1f5f9}code{background:#f1f5f9;padding:2px 6px;border-radius:4px}a{color:#285ba4}
+</style><main>
+<p class="muted">Kaggle · House Prices · 2026-10-15 · 用户已提交首版，线上分数已记录</p>
+<h1>房价预测：基线、特征工程与模型融合</h1>
+<p>使用你提供的官方 ZIP。训练集 1,460 行、79 个特征；测试集 1,459 行。目标采用自然对数 <code>ln(SalePrice)</code>，预测后通过 <code>exp</code> 转回美元。log-RMSE 越小越好。</p>
+<div class="cards"><div class="card">Ridge 基线 · 开发集 5 折<div class="number">0.14543</div></div>
+<div class="card">最终方案 · 开发集 5 折<div class="number">0.12186</div></div>
+<div class="card">最终方案 · 预留检查集<div class="number">0.10630</div></div></div>
+<h2>Kaggle 线上结果</h2><p>用户于 2026-10-15 反馈首版 Public Score：<b>0.11969</b>，按对话记录关联推荐的 submission.csv。该分数由用户提供，未通过 Kaggle 接口独立核验。开发集 5 折验证是 0.12186，两者接近；样本不同，不能把差值解释为模型提升。</p>
+<h2>最终选择</h2><p><b>blend_linear25_tree75</b>：elasticnet_features × 25%, catboost_features_d5 × 75%。在对数空间加权，因此最终房价是各模型价格预测的加权几何平均。开发集相对 Ridge 基线降低 16.2% 的 log-RMSE。绝对最低的候选分数是 0.12185；在距最低值 0.0003 以内的方案中，优先选择模型数量更少的组合，再比较误差。此选择在查看预留集之前完成。</p>
+<p>已生成 <a href="../submission.csv">submission.csv</a>（推荐）以及 <a href="../submission_baseline.csv">submission_baseline.csv</a>（对照）。检查了行数、列名、Id 顺序、有限且为正的预测值。推荐文件价格范围：$44,839–$495,533。</p>
+<h2>验证设计与可信边界</h2>
+<p>按房价十分位分层，固定 seed=42 留出 292 行（20%）作为最终检查集；其余 1,168 行用于 5 折交叉验证。缺失值填补、偏态列选择、缩放和类别编码均只在各折训练数据上拟合。Id 不参与建模。验证集从未用于早停，也没有删除异常验证样本。</p>
+<p>先比较 18 个候选方案（含固定权重融合），仅按开发集 OOF 指标选定模型，再一次性检查预留数据；检查后不改模型或参数。预留集 Ridge 基线为 0.12668，所选方案为 0.10630，变化为 16.1% 改善。开发集最优分数有模型选择偏差，预留结果只代表这个拆分；两者都不是 Kaggle 线上分数。</p>
+<p>最后用全部 1,460 行重新训练选定模型，保留拟合后的模型及预测分量。测试集没有真实房价，不能在本地算出比赛分数。</p>
+<h2>数据与特征处理</h2>
+<p>区分字符串 <code>None</code> 和真正的 <code>NA</code>：MasVnrType 的 864 个 None 表示无石材贴面，真正缺失只有 8 条。数值缺失采用训练折中位数，类别缺失使用独立标记；MSSubClass 按类别处理。</p>
+<p>加入总面积、完成面积、卫浴数量、户外面积、房龄、装修后年数、设施有无、质量等级、质量与面积交互、月度周期等特征。线性模型对训练折中偏态的非负数值做 log1p 变换。CatBoost 使用原生类别特征。</p>
+<img src="figures/target_distribution.png" alt="房价及其对数分布">
+<h2>所有实验</h2><img src="figures/model_comparison.png" alt="开发集模型对比"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>模型</th>
+      <th>OOF log-RMSE</th>
+      <th>折间标准差</th>
+      <th>5 折总耗时（秒）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>blend_three_families</td>
+      <td>0.12185</td>
+      <td>0.01542</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>blend_linear25_tree75</td>
+      <td>0.12186</td>
+      <td>0.01354</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>blend_linear50_tree50</td>
+      <td>0.12214</td>
+      <td>0.01588</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>catboost_features_d5</td>
+      <td>0.12427</td>
+      <td>0.01139</td>
+      <td>43.0</td>
+    </tr>
+    <tr>
+      <td>blend_linear75_tree25</td>
+      <td>0.12509</td>
+      <td>0.01836</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>catboost_features_d4</td>
+      <td>0.12638</td>
+      <td>0.01250</td>
+      <td>32.0</td>
+    </tr>
+    <tr>
+      <td>xgboost_features</td>
+      <td>0.12697</td>
+      <td>0.00989</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <td>catboost_raw_d5</td>
+      <td>0.12814</td>
+      <td>0.01223</td>
+      <td>38.8</td>
+    </tr>
+    <tr>
+      <td>lightgbm_features</td>
+      <td>0.12970</td>
+      <td>0.00884</td>
+      <td>4.9</td>
+    </tr>
+    <tr>
+      <td>gbr_huber</td>
+      <td>0.13038</td>
+      <td>0.01284</td>
+      <td>28.1</td>
+    </tr>
+    <tr>
+      <td>elasticnet_features</td>
+      <td>0.13053</td>
+      <td>0.02093</td>
+      <td>2.9</td>
+    </tr>
+    <tr>
+      <td>lasso_features_a0006</td>
+      <td>0.13088</td>
+      <td>0.02256</td>
+      <td>0.8</td>
+    </tr>
+    <tr>
+      <td>lasso_features_a0003</td>
+      <td>0.13139</td>
+      <td>0.02453</td>
+      <td>4.7</td>
+    </tr>
+    <tr>
+      <td>ridge_features_a10</td>
+      <td>0.13217</td>
+      <td>0.01755</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <td>ridge_features_a30</td>
+      <td>0.13379</td>
+      <td>0.01989</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <td>ridge_features_a100</td>
+      <td>0.13670</td>
+      <td>0.02240</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <td>ridge_baseline</td>
+      <td>0.14543</td>
+      <td>0.02762</td>
+      <td>0.1</td>
+    </tr>
+    <tr>
+      <td>random_forest_baseline</td>
+      <td>0.14553</td>
+      <td>0.01220</td>
+      <td>4.3</td>
+    </tr>
+  </tbody>
+</table>
+<h2>误差诊断</h2><p>Id 524 和 1299 的居住面积超过 4,000 平方英尺，但售价低于 $300,000；它们会显著影响部分折的误差。本轮保留全部样本。仅供诊断：开发集排除其中的 2 条后的 log-RMSE 是 0.11456，这个数不参与模型选择，也不应与完整样本分数混用。</p>
+<img src="figures/holdout_diagnostics.png" alt="预留集预测与误差诊断">
+<h2>文件与复现</h2><p><a href="experiments.csv">实验指标 CSV</a> · <a href="selection.json">固定方案与融合权重</a> · <a href="holdout_metrics.json">预留集指标</a> · <a href="../data/manifest.json">官方数据校验记录</a> · <a href="../README.md">运行说明</a></p>
+<p class="muted">首版线上结果已保存到 kaggle_results.json。后续实验继续以本地交叉验证选择方案，再用有限的线上提交检查泛化表现。 <a href="https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques">比赛页面</a></p>
+</main></html>
