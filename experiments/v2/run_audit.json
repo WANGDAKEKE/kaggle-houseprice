@@ -1,0 +1,11 @@
+{
+  "single_model_configurations": 44,
+  "cv_runs": 60,
+  "successful_fold_fits": 300,
+  "confirmed_base_models": 8,
+  "no_holdout_rows_in_cv": true,
+  "validation_outliers_retained": true,
+  "all_three_paired_splits_improved": true,
+  "v1_submission_hash_unchanged": true,
+  "official_raw_data_checksums_verified": true
+}

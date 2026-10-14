@@ -12,6 +12,26 @@
       "submission_file": "versions/v1/submission.csv",
       "sha256": "210223272bc07d8c7d483aadc47a9831faa248ca9c5c633699d12ebea9b3e3db",
       "date": "2026-10-15"
+    },
+    {
+      "version": "v2",
+      "git_tag": "v2.0.0",
+      "status": "ready_for_user_submission",
+      "public_log_rmse": null,
+      "development_cv_log_rmse": 0.11972887896771194,
+      "cv_protocol": "mean of three 5-fold splits, seeds 42/2026/137, original 1168 development rows",
+      "v1_comparable_repeated_cv": 0.12219778430709899,
+      "diagnostic_holdout_log_rmse": 0.1003823098175213,
+      "holdout_role": "already evaluated in v1; diagnostic only",
+      "submission_file": "versions/v2/submission_v2.csv",
+      "sha256": "66c2d66ab1b9fe43cfd0bc68229a9881c1181fb87115e5fad6350d363972eb6a",
+      "model": "linear_tree_0.5",
+      "weights": {
+        "en_rich_a0.0007_l0.8": 0.5,
+        "v1_catboost": 0.5
+      },
+      "experiment_directory": "experiments/v2",
+      "date": "2026-10-15"
     }
   ]
 }

@@ -1,0 +1,72 @@
+cat_domain_downweight seed=42 fold=1: 0.14841
+cat_domain_downweight seed=42 fold=2: 0.12037
+cat_domain_downweight seed=42 fold=3: 0.14019
+cat_domain_downweight seed=42 fold=4: 0.11813
+cat_domain_downweight seed=42 fold=5: 0.11089
+xgb_domain_d2 seed=42 fold=1: 0.14452
+xgb_domain_d2 seed=42 fold=2: 0.12196
+xgb_domain_d2 seed=42 fold=3: 0.13446
+xgb_domain_d2 seed=42 fold=4: 0.11677
+xgb_domain_d2 seed=42 fold=5: 0.12059
+xgb_domain_d3 seed=42 fold=1: 0.13935
+xgb_domain_d3 seed=42 fold=2: 0.12104
+xgb_domain_d3 seed=42 fold=3: 0.13406
+xgb_domain_d3 seed=42 fold=4: 0.11775
+xgb_domain_d3 seed=42 fold=5: 0.12013
+lgb_domain_l8 seed=42 fold=1: 0.13932
+lgb_domain_l8 seed=42 fold=2: 0.12338
+lgb_domain_l8 seed=42 fold=3: 0.13870
+lgb_domain_l8 seed=42 fold=4: 0.11878
+lgb_domain_l8 seed=42 fold=5: 0.12101
+lgb_rich_l15 seed=42 fold=1: 0.13669
+lgb_rich_l15 seed=42 fold=2: 0.12168
+lgb_rich_l15 seed=42 fold=3: 0.13785
+lgb_rich_l15 seed=42 fold=4: 0.12246
+lgb_rich_l15 seed=42 fold=5: 0.12377
+Screen complete:                      model  oof_log_rmse  ordinary_rows_diagnostic_log_rmse  fold_std    seconds
+            v1_fixed_blend      0.121859                           0.114560       NaN   0.000000
+      en_rich_a0.0007_l0.8      0.124076                           0.114318  0.016739   3.745594
+                   en_rich      0.124156                           0.115244  0.015602   3.128765
+               v1_catboost      0.124273                           0.118920  0.011391  40.193565
+      en_rich_a0.0003_l0.5      0.124680                           0.117245  0.015347  17.311579
+          cat_domain_d5_l5      0.124730                           0.119352  0.011782  95.734582
+          cat_domain_d4_l3      0.125035                           0.119490  0.010551  35.867150
+       en_rich_a0.001_l0.5      0.125081                           0.114903  0.016549   6.395053
+          cat_domain_d6_l8      0.125568                           0.119858  0.011038 168.795268
+               cat_rich_d5      0.125865                           0.120116  0.010012 146.185075
+      en_rich_a0.0007_l0.2      0.126424                           0.117826  0.015268  12.726711
+             xgb_domain_d3      0.126771                           0.121407  0.008593   9.374224
+          cat_domain_d4_l8      0.127047                           0.121105  0.010440  46.985929
+                 en_cap995      0.127133                           0.116483  0.016201   3.037743
+          lasso_rich_a0007      0.127854                           0.114505  0.020788   3.281818
+             xgb_domain_d2      0.128091                           0.121541  0.010310   7.978696
+     cat_domain_downweight      0.128412                           0.120395  0.014231 123.960607
+          lasso_rich_a0003      0.128535                           0.116274  0.021093  13.882640
+             lgb_domain_l8      0.128562                           0.124161  0.008919   6.954901
+              lgb_rich_l15      0.128702                           0.124729  0.007209  12.093000
+krr_centered_g0.0003_a0.01      0.130012                           0.118916  0.015499   1.296090
+             v1_elasticnet      0.130533                           0.116338  0.020930   2.886476
+              lasso_domain      0.131765                           0.116396  0.023595   1.318162
+    en_domain_a0.0007_l0.5      0.132125                           0.117365  0.021458   2.596388
+     en_domain_a0.001_l0.3      0.132435                           0.117952  0.020347   2.384654
+          krr_poly_a0.1_c1      0.132817                           0.119279  0.018470   0.452362
+                svr_robust      0.133859                           0.127609  0.016909   1.495084
+          ridge_domain_a10      0.134303                           0.121189  0.017422   0.313506
+ krr_centered_g0.0003_a0.1      0.134546                           0.122605  0.018795   1.360826
+     svr_smallgamma_0.0001      0.134845                           0.114416  0.030217   3.568092
+ krr_centered_g0.003_a0.01      0.134875                           0.127913  0.012694   1.714375
+      svr_smallgamma_5e-05      0.135222                           0.115683  0.030044   3.179719
+    en_domain_a0.0003_l0.5      0.135698                           0.120174  0.025109   6.388554
+            svr_C20_g0.001      0.135795                           0.121687  0.017745   1.356218
+            ridge_rich_a30      0.135989                           0.121375  0.019296   0.322822
+        krr_poly_a0.6_c2.5      0.136707                           0.121437  0.021959   0.429523
+            svr_C10_g0.003      0.136972                           0.129193  0.013162   1.220996
+                  svr_rich      0.137024                           0.130906  0.014622   1.276297
+     svr_smallgamma_0.0003      0.137500                           0.116586  0.027521   3.318404
+            svr_C20_g0.003      0.138355                           0.130758  0.012381   1.236370
+                svr_cap995      0.139801                           0.131545  0.011623   1.251842
+            svr_C50_g0.003      0.139802                           0.132188  0.012520   1.245219
+            krr_poly_a1_c1      0.141662                           0.127449  0.020755   0.428160
+             svr_C20_g0.01      0.143006                           0.140120  0.010789   1.082328
+                   krr_rbf      0.371080                           0.321203  0.113006   0.442510
+Confirmation shortlist: ['en_rich_a0.0007_l0.8', 'en_rich', 'v1_catboost', 'en_rich_a0.0003_l0.5', 'cat_domain_d5_l5', 'krr_centered_g0.0003_a0.01', 'xgb_domain_d3', 'v1_elasticnet']

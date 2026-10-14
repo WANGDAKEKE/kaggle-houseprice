@@ -1,0 +1,399 @@
+{
+  "v1_elasticnet": {
+    "kind": "elasticnet",
+    "engineered": true,
+    "log_numeric": true,
+    "params": {
+      "alpha": 0.0007,
+      "l1_ratio": 0.5
+    },
+    "schema_path": "/Users/xueqiyao/kaggle/data/raw/train.csv",
+    "features": "v1"
+  },
+  "v1_catboost": {
+    "kind": "catboost",
+    "engineered": true,
+    "log_numeric": false,
+    "params": {
+      "iterations": 2200,
+      "learning_rate": 0.035,
+      "depth": 5,
+      "l2_leaf_reg": 5
+    },
+    "schema_path": "/Users/xueqiyao/kaggle/data/raw/train.csv",
+    "features": "v1"
+  },
+  "en_domain_a0.0003_l0.5": {
+    "kind": "elasticnet",
+    "params": {
+      "alpha": 0.0003,
+      "l1_ratio": 0.5
+    }
+  },
+  "en_domain_a0.0007_l0.5": {
+    "kind": "elasticnet",
+    "params": {
+      "alpha": 0.0007,
+      "l1_ratio": 0.5
+    }
+  },
+  "en_domain_a0.001_l0.3": {
+    "kind": "elasticnet",
+    "params": {
+      "alpha": 0.001,
+      "l1_ratio": 0.3
+    }
+  },
+  "en_rich": {
+    "kind": "elasticnet",
+    "params": {
+      "alpha": 0.0007,
+      "l1_ratio": 0.5
+    },
+    "rich": true
+  },
+  "en_cap995": {
+    "kind": "elasticnet",
+    "params": {
+      "alpha": 0.0007,
+      "l1_ratio": 0.5
+    },
+    "cap_quantile": 0.995
+  },
+  "lasso_domain": {
+    "kind": "lasso",
+    "params": {
+      "alpha": 0.0005
+    }
+  },
+  "ridge_domain_a10": {
+    "kind": "ridge",
+    "params": {
+      "alpha": 10
+    },
+    "min_frequency": 3
+  },
+  "ridge_rich_a30": {
+    "kind": "ridge",
+    "params": {
+      "alpha": 30
+    },
+    "rich": true,
+    "min_frequency": 3
+  },
+  "svr_C10_g0.003": {
+    "kind": "svr",
+    "params": {
+      "C": 10,
+      "gamma": 0.003,
+      "epsilon": 0.008
+    }
+  },
+  "svr_C20_g0.003": {
+    "kind": "svr",
+    "params": {
+      "C": 20,
+      "gamma": 0.003,
+      "epsilon": 0.008
+    }
+  },
+  "svr_C50_g0.003": {
+    "kind": "svr",
+    "params": {
+      "C": 50,
+      "gamma": 0.003,
+      "epsilon": 0.008
+    }
+  },
+  "svr_C20_g0.001": {
+    "kind": "svr",
+    "params": {
+      "C": 20,
+      "gamma": 0.001,
+      "epsilon": 0.008
+    }
+  },
+  "svr_C20_g0.01": {
+    "kind": "svr",
+    "params": {
+      "C": 20,
+      "gamma": 0.01,
+      "epsilon": 0.008
+    }
+  },
+  "svr_cap995": {
+    "kind": "svr",
+    "params": {
+      "C": 20,
+      "gamma": 0.003,
+      "epsilon": 0.008
+    },
+    "cap_quantile": 0.995
+  },
+  "svr_rich": {
+    "kind": "svr",
+    "params": {
+      "C": 20,
+      "gamma": 0.003,
+      "epsilon": 0.008
+    },
+    "rich": true
+  },
+  "svr_robust": {
+    "kind": "svr",
+    "params": {
+      "C": 20,
+      "gamma": 0.0003,
+      "epsilon": 0.008
+    },
+    "scale": "robust"
+  },
+  "krr_poly_a0.1_c1": {
+    "kind": "kernelridge",
+    "params": {
+      "alpha": 0.1,
+      "kernel": "polynomial",
+      "degree": 2,
+      "gamma": 0.001,
+      "coef0": 1
+    }
+  },
+  "krr_poly_a1_c1": {
+    "kind": "kernelridge",
+    "params": {
+      "alpha": 1,
+      "kernel": "polynomial",
+      "degree": 2,
+      "gamma": 0.001,
+      "coef0": 1
+    }
+  },
+  "krr_poly_a0.6_c2.5": {
+    "kind": "kernelridge",
+    "params": {
+      "alpha": 0.6,
+      "kernel": "polynomial",
+      "degree": 2,
+      "gamma": 0.001,
+      "coef0": 2.5
+    }
+  },
+  "krr_rbf": {
+    "kind": "kernelridge",
+    "params": {
+      "alpha": 0.03,
+      "kernel": "rbf",
+      "gamma": 0.003
+    }
+  },
+  "cat_domain_d4_l3": {
+    "kind": "catboost",
+    "params": {
+      "iterations": 2600,
+      "learning_rate": 0.03,
+      "depth": 4,
+      "l2_leaf_reg": 3
+    },
+    "log_numeric": false
+  },
+  "cat_domain_d4_l8": {
+    "kind": "catboost",
+    "params": {
+      "iterations": 2600,
+      "learning_rate": 0.03,
+      "depth": 4,
+      "l2_leaf_reg": 8
+    },
+    "log_numeric": false
+  },
+  "cat_domain_d5_l5": {
+    "kind": "catboost",
+    "params": {
+      "iterations": 2600,
+      "learning_rate": 0.03,
+      "depth": 5,
+      "l2_leaf_reg": 5
+    },
+    "log_numeric": false
+  },
+  "cat_domain_d6_l8": {
+    "kind": "catboost",
+    "params": {
+      "iterations": 2600,
+      "learning_rate": 0.03,
+      "depth": 6,
+      "l2_leaf_reg": 8
+    },
+    "log_numeric": false
+  },
+  "cat_rich_d5": {
+    "kind": "catboost",
+    "params": {
+      "iterations": 2600,
+      "learning_rate": 0.03,
+      "depth": 5,
+      "l2_leaf_reg": 5
+    },
+    "log_numeric": false,
+    "rich": true
+  },
+  "cat_domain_downweight": {
+    "kind": "catboost",
+    "params": {
+      "iterations": 2600,
+      "learning_rate": 0.03,
+      "depth": 5,
+      "l2_leaf_reg": 5
+    },
+    "log_numeric": false,
+    "sample_weight": "downweight_large"
+  },
+  "xgb_domain_d2": {
+    "kind": "xgboost",
+    "params": {
+      "n_estimators": 2000,
+      "learning_rate": 0.025,
+      "max_depth": 2,
+      "min_child_weight": 3,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "reg_lambda": 5,
+      "reg_alpha": 0.05
+    },
+    "dense": true
+  },
+  "xgb_domain_d3": {
+    "kind": "xgboost",
+    "params": {
+      "n_estimators": 1800,
+      "learning_rate": 0.025,
+      "max_depth": 3,
+      "min_child_weight": 3,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "reg_lambda": 5,
+      "reg_alpha": 0.05
+    },
+    "dense": true
+  },
+  "lgb_domain_l8": {
+    "kind": "lightgbm",
+    "params": {
+      "n_estimators": 1800,
+      "learning_rate": 0.02,
+      "num_leaves": 8,
+      "min_child_samples": 15,
+      "colsample_bytree": 0.8,
+      "reg_lambda": 3
+    }
+  },
+  "lgb_rich_l15": {
+    "kind": "lightgbm",
+    "params": {
+      "n_estimators": 1600,
+      "learning_rate": 0.02,
+      "num_leaves": 15,
+      "min_child_samples": 15,
+      "colsample_bytree": 0.8,
+      "reg_lambda": 5
+    },
+    "rich": true
+  },
+  "en_rich_a0.0003_l0.5": {
+    "kind": "elasticnet",
+    "params": {
+      "alpha": 0.0003,
+      "l1_ratio": 0.5
+    },
+    "rich": true
+  },
+  "en_rich_a0.001_l0.5": {
+    "kind": "elasticnet",
+    "params": {
+      "alpha": 0.001,
+      "l1_ratio": 0.5
+    },
+    "rich": true
+  },
+  "en_rich_a0.0007_l0.2": {
+    "kind": "elasticnet",
+    "params": {
+      "alpha": 0.0007,
+      "l1_ratio": 0.2
+    },
+    "rich": true
+  },
+  "en_rich_a0.0007_l0.8": {
+    "kind": "elasticnet",
+    "params": {
+      "alpha": 0.0007,
+      "l1_ratio": 0.8
+    },
+    "rich": true
+  },
+  "lasso_rich_a0003": {
+    "kind": "lasso",
+    "params": {
+      "alpha": 0.0003
+    },
+    "rich": true
+  },
+  "lasso_rich_a0007": {
+    "kind": "lasso",
+    "params": {
+      "alpha": 0.0007
+    },
+    "rich": true
+  },
+  "svr_smallgamma_5e-05": {
+    "kind": "svr",
+    "params": {
+      "C": 30,
+      "gamma": 5e-05,
+      "epsilon": 0.008
+    }
+  },
+  "svr_smallgamma_0.0001": {
+    "kind": "svr",
+    "params": {
+      "C": 30,
+      "gamma": 0.0001,
+      "epsilon": 0.008
+    }
+  },
+  "svr_smallgamma_0.0003": {
+    "kind": "svr",
+    "params": {
+      "C": 30,
+      "gamma": 0.0003,
+      "epsilon": 0.008
+    }
+  },
+  "krr_centered_g0.0003_a0.01": {
+    "kind": "kernelridge",
+    "params": {
+      "kernel": "rbf",
+      "gamma": 0.0003,
+      "alpha": 0.01
+    },
+    "center_target": true
+  },
+  "krr_centered_g0.003_a0.01": {
+    "kind": "kernelridge",
+    "params": {
+      "kernel": "rbf",
+      "gamma": 0.003,
+      "alpha": 0.01
+    },
+    "center_target": true
+  },
+  "krr_centered_g0.0003_a0.1": {
+    "kind": "kernelridge",
+    "params": {
+      "kernel": "rbf",
+      "gamma": 0.0003,
+      "alpha": 0.1
+    },
+    "center_target": true
+  }
+}

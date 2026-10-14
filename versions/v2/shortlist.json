@@ -1,0 +1,19 @@
+{
+  "models": [
+    "en_rich_a0.0007_l0.8",
+    "en_rich",
+    "v1_catboost",
+    "en_rich_a0.0003_l0.5",
+    "cat_domain_d5_l5",
+    "krr_centered_g0.0003_a0.01",
+    "xgb_domain_d3",
+    "v1_elasticnet"
+  ],
+  "confirmation_seeds": [
+    42,
+    2026,
+    137
+  ],
+  "screen_seed": 42,
+  "holdout_used_for_selection": false
+}

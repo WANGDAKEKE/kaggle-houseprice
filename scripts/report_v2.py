@@ -27,7 +27,8 @@ plt.rcParams.update({"figure.dpi": 150, "axes.spines.top": False, "axes.spines.r
 top = confirmed.head(15).sort_values("mean_seed_rmse", ascending=False)
 fig, ax = plt.subplots(figsize=(10, 6), constrained_layout=True)
 colors = ["#1b806a" if name == selection["name"] else "#ce8b45" if name == "v1_fixed_blend" else "#9aadc7" for name in top.model]
-ax.barh(top.model, top.mean_seed_rmse, color=colors)
+ax.scatter(top.mean_seed_rmse, np.arange(len(top)), c=colors, s=45)
+ax.set_yticks(np.arange(len(top)), top.model)
 for i, value in enumerate(top.mean_seed_rmse):
     ax.text(value + .0002, i, f"{value:.5f}", va="center", fontsize=8)
 ax.set_xlim(min(top.mean_seed_rmse) - .005, max(top.mean_seed_rmse) + .006)
@@ -52,7 +53,7 @@ plt.close(fig)
 def display_table(frame):
     f = frame.copy()
     for col in f.select_dtypes(include="number"):
-        f[col] = f[col].map(lambda x: f"{x:.5f}" if pd.notna(x) else "—")
+        f[col] = f[col].map(lambda x: (str(int(x)) if col == "components" else f"{x:.5f}") if pd.notna(x) else "—")
     return f.to_html(index=False, border=0, escape=True)
 
 weights = ", ".join(f"{name} × {w:.0%}" for name, w in selection["weights"].items())

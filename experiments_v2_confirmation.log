@@ -1,0 +1,43 @@
+cat_domain_d5_l5 seed=2026 fold=1: 0.12617
+cat_domain_d5_l5 seed=2026 fold=2: 0.12351
+cat_domain_d5_l5 seed=2026 fold=3: 0.11497
+cat_domain_d5_l5 seed=2026 fold=4: 0.12425
+cat_domain_d5_l5 seed=2026 fold=5: 0.13590
+cat_domain_d5_l5 seed=137 fold=1: 0.12177
+cat_domain_d5_l5 seed=137 fold=2: 0.12856
+cat_domain_d5_l5 seed=137 fold=3: 0.12324
+cat_domain_d5_l5 seed=137 fold=4: 0.11117
+cat_domain_d5_l5 seed=137 fold=5: 0.14585
+xgb_domain_d3 seed=2026 fold=1: 0.13014
+xgb_domain_d3 seed=2026 fold=2: 0.12526
+xgb_domain_d3 seed=2026 fold=3: 0.11877
+xgb_domain_d3 seed=2026 fold=4: 0.12898
+xgb_domain_d3 seed=2026 fold=5: 0.13208
+xgb_domain_d3 seed=137 fold=1: 0.11908
+xgb_domain_d3 seed=137 fold=2: 0.13415
+xgb_domain_d3 seed=137 fold=3: 0.12811
+xgb_domain_d3 seed=137 fold=4: 0.11811
+xgb_domain_d3 seed=137 fold=5: 0.14342
+                     model  mean_seed_rmse  seed_std  components  seed_42  seed_2026  seed_137
+           linear_tree_0.5        0.119729  0.000950           2 0.119917   0.118483  0.120787
+          linear_tree_0.75        0.120308  0.001090           2 0.120945   0.118774  0.121204
+         two_linear_tree50        0.120810  0.001000           3 0.120819   0.119580  0.122029
+         two_linear_tree60        0.120843  0.001023           3 0.120772   0.119628  0.122131
+              three_tree50        0.121160  0.001347           3 0.121308   0.119440  0.122730
+          linear_tree_0.25        0.121339  0.000902           2 0.121046   0.120410  0.122561
+              three_tree60        0.121358  0.001247           3 0.121322   0.119849  0.122902
+               three_equal        0.121488  0.001522           3 0.121935   0.119442  0.123088
+         two_linear_tree75        0.121669  0.001015           3 0.121400   0.120582  0.123025
+            v1_fixed_blend        0.122198  0.001059           2 0.121859   0.121104  0.123630
+      en_rich_a0.0007_l0.8        0.123045  0.001262           1 0.124076   0.121268  0.123789
+          kernel_tree_0.25        0.123255  0.001333           2 0.122926   0.121812  0.125028
+           kernel_tree_0.5        0.123325  0.001788           2 0.123462   0.121070  0.125443
+                   en_rich        0.123992  0.000634           1 0.124156   0.123146  0.124673
+               v1_catboost        0.125053  0.000978           1 0.124273   0.124452  0.126432
+      en_rich_a0.0003_l0.5        0.125254  0.000575           1 0.124680   0.125043  0.126039
+          kernel_tree_0.75        0.125259  0.002245           2 0.125858   0.122259  0.127660
+          cat_domain_d5_l5        0.125494  0.000816           1 0.124730   0.125127  0.126625
+             xgb_domain_d3        0.127607  0.000941           1 0.126771   0.127129  0.128921
+krr_centered_g0.0003_a0.01        0.128975  0.002660           1 0.130012   0.125326  0.131588
+             v1_elasticnet        0.133215  0.002289           1 0.130533   0.136126  0.132985
+Frozen v2 selection: {"version": "v2", "name": "linear_tree_0.5", "weights": {"en_rich_a0.0007_l0.8": 0.5, "v1_catboost": 0.5}, "mean_repeated_cv_log_rmse": 0.11972887896771194, "v1_mean_repeated_cv_log_rmse": 0.12219778430709899, "seeds": [42, 2026, 137], "selected_seed_scores": {"42": 0.11991704694626529, "2026": 0.11848257871808286, "137": 0.12078701123878764}, "v1_seed_scores": {"42": 0.12185895440903398, "2026": 0.12110442245720227, "137": 0.12362997605506071}, "paired_bootstrap_improvement_95pct": [0.000633497882576237, 0.004598392733396306], "bootstrap_note": "Exploratory uncertainty after model selection; not an independent confidence guarantee.", "selection_rule": "3-seed 5-fold development CV; within 0.0002 choose fewer components then RMSE", "holdout_used_for_selection": false, "validation_rows_removed": 0, "v1_public_score_user_reported": 0.11969, "v2_public_score": null, "final_training_policy": "all official rows, average three model seeds for stochastic models"}

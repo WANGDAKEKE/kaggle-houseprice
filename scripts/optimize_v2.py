@@ -88,6 +88,8 @@ def cache_signature(name, spec, seed, dev):
     digest = hashlib.sha256()
     for path in [ROOT / "src/house_prices.py", ROOT / "src/house_prices_v2.py", ROOT / "data/raw/train.csv", ROOT / "requirements.lock.txt"]:
         digest.update(path.read_bytes())
+    if spec.get("sample_weight", "none") != "none" and spec["kind"] == "catboost":
+        digest.update((ROOT / "src/weighted_catboost.py").read_bytes())
     digest.update(json.dumps({"name": name, "spec": spec, "seed": seed, "dev": dev.tolist(), "folds": 5}, sort_keys=True).encode())
     return digest.hexdigest()
 
@@ -97,6 +99,9 @@ def fit_model(spec, train, y, seed):
     if spec.get("center_target", False):
         model = TransformedTargetRegressor(regressor=model, transformer=StandardScaler(with_std=False))
     weights = training_weights(train, y, spec.get("sample_weight", "none"))
+    if weights is not None and spec["kind"] == "catboost":
+        from src.weighted_catboost import WeightedCatEstimator
+        model.set_params(model=WeightedCatEstimator(params=spec.get("params", {}), seed=seed))
     if weights is None:
         model.fit(train, y)
     else:

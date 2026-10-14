@@ -1,0 +1,6 @@
+{
+  "log_rmse": 0.1003823098175213,
+  "n": 292,
+  "role": "diagnostic only; this holdout was already evaluated in v1",
+  "used_for_selection": false
+}

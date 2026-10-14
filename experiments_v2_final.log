@@ -1,0 +1,6 @@
+Final fit: en_rich_a0.0007_l0.8, seed=42
+Final fit: v1_catboost, seed=42
+Final fit: v1_catboost, seed=2026
+Final fit: v1_catboost, seed=137
+v2 submission: {"rows": 1459, "columns": ["Id", "SalePrice"], "positive_finite": true, "test_ids_match": true, "submission_sha256": "66c2d66ab1b9fe43cfd0bc68229a9881c1181fb87115e5fad6350d363972eb6a", "v1_preserved_sha256": "210223272bc07d8c7d483aadc47a9831faa248ca9c5c633699d12ebea9b3e3db", "min_price": 45122.52507523061, "max_price": 513604.27432648675, "median_prediction_ratio_to_v1": 1.003794610369311, "p01_prediction_ratio_to_v1": 0.9604297829400825, "p99_prediction_ratio_to_v1": 1.0511387519554654, "submitted_to_kaggle": false}
+Old holdout diagnostic: {"log_rmse": 0.1003823098175213, "n": 292, "role": "diagnostic only; this holdout was already evaluated in v1", "used_for_selection": false}

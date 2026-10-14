@@ -1,0 +1,36 @@
+{
+  "version": "v2",
+  "name": "linear_tree_0.5",
+  "weights": {
+    "en_rich_a0.0007_l0.8": 0.5,
+    "v1_catboost": 0.5
+  },
+  "mean_repeated_cv_log_rmse": 0.11972887896771194,
+  "v1_mean_repeated_cv_log_rmse": 0.12219778430709899,
+  "seeds": [
+    42,
+    2026,
+    137
+  ],
+  "selected_seed_scores": {
+    "42": 0.11991704694626529,
+    "2026": 0.11848257871808286,
+    "137": 0.12078701123878764
+  },
+  "v1_seed_scores": {
+    "42": 0.12185895440903398,
+    "2026": 0.12110442245720227,
+    "137": 0.12362997605506071
+  },
+  "paired_bootstrap_improvement_95pct": [
+    0.000633497882576237,
+    0.004598392733396306
+  ],
+  "bootstrap_note": "Exploratory uncertainty after model selection; not an independent confidence guarantee.",
+  "selection_rule": "3-seed 5-fold development CV; within 0.0002 choose fewer components then RMSE",
+  "holdout_used_for_selection": false,
+  "validation_rows_removed": 0,
+  "v1_public_score_user_reported": 0.11969,
+  "v2_public_score": null,
+  "final_training_policy": "all official rows, average three model seeds for stochastic models"
+}
