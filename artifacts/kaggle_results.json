@@ -52,6 +52,30 @@
       "v2_public_log_rmse": 0.11741,
       "change_vs_v2": 0.0002899999999999986,
       "outcome": "worse than v2; retain v2 as best actually submitted version"
+    },
+    {
+      "version": "v4",
+      "date": "2026-10-15",
+      "timezone": "Asia/Shanghai",
+      "competition": "house-prices-advanced-regression-techniques",
+      "submission_file": "submission_v4.csv",
+      "submission_sha256": "6767f59cd9feaaa1b7521341be9fa18c8587b64cd8a0f4e80ee2ec54c4a7a8ad",
+      "model": "geometric_mean_v2_v3",
+      "weights_in_log_space": {
+        "submission_v2.csv": 0.5,
+        "submission_v3.csv": 0.5
+      },
+      "public_log_rmse": 0.11679,
+      "source": "user-reported Kaggle score; not independently read from submission history",
+      "previous_best_version": "v2",
+      "previous_best_public_log_rmse": 0.11741,
+      "improvement_vs_previous_best": 0.0006199999999999956,
+      "relative_improvement_pct": 0.5280640490588517,
+      "pre_submission_estimate": 0.11679519249745522,
+      "outcome": "best user-reported submitted version",
+      "comparison_score_user_reported": 0.1139,
+      "comparison_source": "user reports a fellow participant score; method and submission not independently verified",
+      "gap_to_comparison_score": 0.0028900000000000037
     }
   ]
 }

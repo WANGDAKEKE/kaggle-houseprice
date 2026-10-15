@@ -64,8 +64,8 @@
     {
       "version": "v4",
       "git_tag": "v4.0.0",
-      "status": "ready_for_user_submission",
-      "public_log_rmse": null,
+      "status": "submitted_by_user",
+      "public_log_rmse": 0.11679,
       "estimated_public_log_rmse": 0.11679519249745522,
       "estimate_role": "algebraic estimate using user-reported leaderboard scores; not observed score",
       "development_cv_log_rmse": 0.1196636814944392,
@@ -78,9 +78,12 @@
         "submission_v3.csv": 0.5
       },
       "experiment_directory": "experiments/v4",
-      "date": "2026-10-15"
+      "date": "2026-10-15",
+      "score_source": "user_report",
+      "score_reported_date": "2026-10-15",
+      "online_outcome": "new_best"
     }
   ],
-  "best_actually_submitted_version": "v2",
-  "best_user_reported_public_log_rmse": 0.11741
+  "best_actually_submitted_version": "v4",
+  "best_user_reported_public_log_rmse": 0.11679
 }

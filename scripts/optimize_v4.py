@@ -200,6 +200,12 @@ def main():
 
 
 def plot_report(results, details, diagnosis, estimate, audit):
+    online_path = ART / "online_result.json"
+    online = json.loads(online_path.read_text()) if online_path.exists() else None
+    online_status = (
+        f'用户已提交 v4，反馈实测 <b>{online["public_log_rmse"]:.5f}</b>，目前为已提交最佳版本。'
+        if online else 'v2 仍是目前实际提交的最佳版本。v4 尚未提交。'
+    )
     plt.rcParams.update({"figure.dpi": 150, "axes.spines.top": False, "axes.spines.right": False})
     fig, axes = plt.subplots(1, 2, figsize=(11, 4), constrained_layout=True)
     for ax, group, title in zip(axes, ["all_1168", "without_two_extreme_houses_diagnostic_only"],
@@ -216,7 +222,7 @@ def plot_report(results, details, diagnosis, estimate, audit):
     report = f'''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>House Prices v4：回退诊断与固定融合</title><style>body{{font:16px/1.8 -apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif;color:#233148;background:#f4f7fb;margin:0}}main{{max-width:1050px;margin:30px auto;background:white;padding:30px;border-radius:12px}}table{{border-collapse:collapse;width:100%;font-size:13px}}td,th{{padding:7px;border-bottom:1px solid #ddd;text-align:left}}img{{max-width:100%}}code{{overflow-wrap:anywhere}}a{{color:#226da3}}</style><main>
 <h1>v4：先解释 v3 的退步，再减少单一方案的偏差</h1>
-<p>用户反馈：v2 = <b>0.11741</b>，v3 = <b>0.11770</b>。v2 仍是目前实际提交的最佳版本。v4 尚未提交。</p>
+<p>用户反馈：v2 = <b>0.11741</b>，v3 = <b>0.11770</b>。{online_status}</p>
 <h2>为什么之前的对比容易误导</h2><p>原来的五次拆分都使用同一批 1,168 套房屋。v3 对 Id 524、1299 两套极大面积低价房屋的平方误差改善，占净改善的 <b>{diagnosis['two_house_share_of_net_gain']*100:.1f}%</b>；其余房屋合计略有退步。普通成交房屋也略有退步。这能够解释本地指标为什么容易被极少数样本主导，但不能证明测试集退步的具体原因。</p>
 <p>下表加入“新线性模型 + 旧树”和“旧线性模型 + 新树”的匹配消融，帮助区分组件影响。剔除两套房屋只用于诊断；主要指标、训练文件、提交文件均没有删除或针对 Id 覆盖任何样本。</p>
 <img src="figures/paired_diagnosis.png" alt="全部样本与去掉两个极端样本的诊断对比">{table}
