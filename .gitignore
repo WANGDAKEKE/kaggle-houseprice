@@ -1,4 +1,5 @@
 .venv/
+.venv-tabpfn/
 __pycache__/
 .cache/
 .runtime/

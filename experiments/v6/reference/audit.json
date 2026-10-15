@@ -1,0 +1,485 @@
+{
+  "method": "Cache-only reconstruction; no fits or recipe selection performed",
+  "fixed_v5_recipe": {
+    "new_names": [
+      "svr_compact_g001_C5"
+    ],
+    "new_weight": 0.3,
+    "support_gate": true
+  },
+  "baseline_component_weights": {
+    "ref_v2_linear": 0.25,
+    "ref_v2_cat": 0.25,
+    "en_inter_size_scaled": 0.25,
+    "cat_d5_onehot": 0.25
+  },
+  "formula": "v5_log=v4_log+0.3*fold_training_area_gate*(svr_log-v4_log)",
+  "source_hash_v5": "58dd6272f2461f8bcd40be11a674e2dbdc1d97ade0be48fb1af06d8845036d4c",
+  "frozen_candidates_sha256": "af0d0df0a70ed6ac61ef4572fffa67c0a6e483d6528d156c5e62d481e2adf11b",
+  "selection_sha256": "fcff4edc484f193737fbc07b4c2c16af867d43178b49fbdfcd1651a66e7300e9",
+  "train_sha256": "1e18addf81e5e4d347cc17ee6075bbe4a42b7fa26b9e5b063e8f692a5f929d41",
+  "script_sha256": "4d7ffa718cce8149fc1921c27d02d1a5110654a10b780f6540bc36317dd5649f",
+  "validation_caveat": "v5 final recipe was selected after historical screening. Applying it to old outer folds is retrospective fixed-recipe analysis, not the previously reported nested selector evaluation and not fresh independent evidence.",
+  "references": [
+    {
+      "path": "experiments/v6/reference/full1460_seed5501.csv",
+      "sha256": "a5aff95f6b66b05682278cfa08828aa326db5cf01949e7685951a92841b9efbc",
+      "rows": 1460,
+      "seed": 5501,
+      "folds": [
+        {
+          "fold": 0,
+          "training_rows": 1168,
+          "validation_rows": 292,
+          "area_q95_q99": [
+            2437.499999999996,
+            2913.5099999999966
+          ],
+          "caches": [
+            {
+              "path": "experiments/v5/cv/outer5501_fold0_outer_ref_v2_linear_94451e480b15.npz",
+              "sha256": "bdf9c4f99a64abc1e7b65b0d1d59acbaaf043009449d0429b2564b939ff98242",
+              "signature": "94451e480b15cb6b78360de36e2c043eff257e8a05d890525beb4e8528d25101"
+            },
+            {
+              "path": "experiments/v5/cv/outer5501_fold0_outer_ref_v2_cat_a83205ce1ba4.npz",
+              "sha256": "68f8df1ad071d57059324a2afb5036288076edbb92cd30737edc8f21dd1945a8",
+              "signature": "a83205ce1ba4832e01268d2e9b5d635b90ec63f93cbf085c9275e77c5a9dc451"
+            },
+            {
+              "path": "experiments/v5/cv/outer5501_fold0_outer_en_inter_size_scaled_bf14f1d42de3.npz",
+              "sha256": "1184f34cdd459ca23456ed2f61d4c8145419ce6a829d6341c05c3ee6d2448f77",
+              "signature": "bf14f1d42de3e99f6cdb7af905b5ffb10d79ed639cbc0ac96efcf6b819784506"
+            },
+            {
+              "path": "experiments/v5/cv/outer5501_fold0_outer_cat_d5_onehot_21f04356030f.npz",
+              "sha256": "8558cf06bed0dd1ab152bc8e4a3a68edc90287b966e9490f374c5af61ff2ffc1",
+              "signature": "21f04356030f745963e5e100cf06d0a67f454023399bd072a900645ffed0899f"
+            },
+            {
+              "path": "experiments/v5/cv/outer5501_fold0_outer_svr_compact_g001_C5_4f1d9ee869c1.npz",
+              "sha256": "977268e180db9ef766b1fa2c91836a5cdf80bdc64b3b3d7d471e9f8972f055c4",
+              "signature": "4f1d9ee869c1ab04884ddaa476dce9e4e08474712ece3d037d4bba5f4744a3ed"
+            }
+          ]
+        },
+        {
+          "fold": 1,
+          "training_rows": 1168,
+          "validation_rows": 292,
+          "area_q95_q99": [
+            2493.149999999996,
+            3167.059999999994
+          ],
+          "caches": [
+            {
+              "path": "experiments/v5/cv/outer5501_fold1_outer_ref_v2_linear_b328c057e515.npz",
+              "sha256": "72f9a7ad6664bcdd39a3dbd40b1249b334475d47144250a562a57ce20a8e2f8d",
+              "signature": "b328c057e51582293476f82bea3c11bd3dc094735eae63baa93bf1dd289828e0"
+            },
+            {
+              "path": "experiments/v5/cv/outer5501_fold1_outer_ref_v2_cat_857e9e01bb68.npz",
+              "sha256": "bcebca85b47dd0b639065dccfdd217da83f7f0acd0e31cd550c728f025a694f7",
+              "signature": "857e9e01bb68fc81163ba3179913b66d01a54dcee750ff47386bff0f9fbb77a1"
+            },
+            {
+              "path": "experiments/v5/cv/outer5501_fold1_outer_en_inter_size_scaled_56603e36b023.npz",
+              "sha256": "e176e8d456bf364508799a8ad05f5022fbad674905193a1574ccb932a42086ee",
+              "signature": "56603e36b0234d83e6db1199ae6e00645e1229de031810eea4893f779e49ab76"
+            },
+            {
+              "path": "experiments/v5/cv/outer5501_fold1_outer_cat_d5_onehot_40100328cb7c.npz",
+              "sha256": "ea1be77d1bfc47d10b2b6b1e553d4bf556223ab79bdcbee86d81fa943820228a",
+              "signature": "40100328cb7c1ac99838f026855230aa26d9b0ea571c0a4bdbda206a53dc188f"
+            },
+            {
+              "path": "experiments/v5/cv/outer5501_fold1_outer_svr_compact_g001_C5_8b16917c4256.npz",
+              "sha256": "8daeae2eadba64d6001d7698994298aa9b91bba3ab321ecfb66ae0b741a316ca",
+              "signature": "8b16917c4256101695bdad3cf170e4f050c32987c2c5d00116775c75bfe9fc0c"
+            }
+          ]
+        },
+        {
+          "fold": 2,
+          "training_rows": 1168,
+          "validation_rows": 292,
+          "area_q95_q99": [
+            2519.6499999999996,
+            3223.9799999999996
+          ],
+          "caches": [
+            {
+              "path": "experiments/v5/cv/outer5501_fold2_outer_ref_v2_linear_e4a5c0ea9a29.npz",
+              "sha256": "64afc588ed56fe10a66847ce4f36ba0f1ad559e09ea00c82b7d69e84fff62ba3",
+              "signature": "e4a5c0ea9a293007408187a0a065109980ea0e7479c0baad7d42de25af058cb5"
+            },
+            {
+              "path": "experiments/v5/cv/outer5501_fold2_outer_ref_v2_cat_721522256d20.npz",
+              "sha256": "ebc372bb544f82c1c5a94cb46654bc35680314c7db2bdb8362381f35484a899d",
+              "signature": "721522256d20967413d5dd26c8640b98bb17a88e0f01430c72a350ba894ca8e2"
+            },
+            {
+              "path": "experiments/v5/cv/outer5501_fold2_outer_en_inter_size_scaled_eea4b4fc82fa.npz",
+              "sha256": "b0da49f6c65a5fb3b20d8da8d9b8da2ddecb0d35b8be4b7289f702fc9a03e9ac",
+              "signature": "eea4b4fc82fa6f951b05690f5e9ae28cb7f388a85859fd698522203ba0ada946"
+            },
+            {
+              "path": "experiments/v5/cv/outer5501_fold2_outer_cat_d5_onehot_341b52e557b4.npz",
+              "sha256": "52ac2f6d0f64eb5fdff78688d7ea1e58c49c7796917dc290a08e1838105f40d1",
+              "signature": "341b52e557b477754027b86a1b7b17baff4417cf26044da4650f09301d437996"
+            },
+            {
+              "path": "experiments/v5/cv/outer5501_fold2_outer_svr_compact_g001_C5_9d1d9b29b0d4.npz",
+              "sha256": "af4bc9019bf8502d32a512b92dff868edd20165dd3ed1077dc98a65679458ab4",
+              "signature": "9d1d9b29b0d45dc3f6f0a9aca96c56c12939fd78d1b285b9f906bdb1289d2b95"
+            }
+          ]
+        },
+        {
+          "fold": 3,
+          "training_rows": 1168,
+          "validation_rows": 292,
+          "area_q95_q99": [
+            2478.8499999999985,
+            3121.239999999998
+          ],
+          "caches": [
+            {
+              "path": "experiments/v5/cv/outer5501_fold3_outer_ref_v2_linear_2c08cba3a035.npz",
+              "sha256": "1f4688f74bd6d99ff6b03636055b4807c8fe8af77bc4a0538013dedfe2d09212",
+              "signature": "2c08cba3a035531182cdaf984293a2ec380f8972b605fd29f0d62bc44df5e330"
+            },
+            {
+              "path": "experiments/v5/cv/outer5501_fold3_outer_ref_v2_cat_d7d039372ddd.npz",
+              "sha256": "dd5941871ed471cb8725cdb4d789ec27a4f2186f947d6ba752fdbd3edc0196a2",
+              "signature": "d7d039372dddfb538af3fa49e5c5862556bb9724c8fb248c6ada854bee1c21fb"
+            },
+            {
+              "path": "experiments/v5/cv/outer5501_fold3_outer_en_inter_size_scaled_787e35a34ea7.npz",
+              "sha256": "d0e2a720d2629dee796374fbd8c87709998f3e08700edfe8034f155a59949a75",
+              "signature": "787e35a34ea7a1d28e3e219684e0c7f7cfa67359ca5d6f51cb0331ab4b6a1398"
+            },
+            {
+              "path": "experiments/v5/cv/outer5501_fold3_outer_cat_d5_onehot_786fe19d0bdf.npz",
+              "sha256": "17cb7d82559cd1c43dc385f16e443a3cf154b8adb0319afcd7ab193d329ef59d",
+              "signature": "786fe19d0bdf5aecf09d97a4c2715cea68f853e4a07173a7670dae03526e49fd"
+            },
+            {
+              "path": "experiments/v5/cv/outer5501_fold3_outer_svr_compact_g001_C5_4f6ee4506796.npz",
+              "sha256": "ec0978601153fb4bfb04144278615918c02ae720bde8f8a44abf56cac3c1b591",
+              "signature": "4f6ee450679691fa092006dfdb3c627667c5a84d4df414ee27b0a6d4633bf3c4"
+            }
+          ]
+        },
+        {
+          "fold": 4,
+          "training_rows": 1168,
+          "validation_rows": 292,
+          "area_q95_q99": [
+            2436.849999999996,
+            3094.579999999998
+          ],
+          "caches": [
+            {
+              "path": "experiments/v5/cv/outer5501_fold4_outer_ref_v2_linear_6c8be3ae5fe6.npz",
+              "sha256": "b58a2c05f7a88e1b0a7b85d2e4c79ec91c3e62cd78055595dbec00ced1d81c9e",
+              "signature": "6c8be3ae5fe65edd9448a18dcc87e53f5b8198987a7987eaff30828c4b5dc81d"
+            },
+            {
+              "path": "experiments/v5/cv/outer5501_fold4_outer_ref_v2_cat_cd79f944ad79.npz",
+              "sha256": "b550a8ea6f28389b92dfaae3d85c0a7f734fb902522362a4c7d5a047afb5a28c",
+              "signature": "cd79f944ad791516804914bfb17236609eb7dfb1c169b644eff510bb81873d07"
+            },
+            {
+              "path": "experiments/v5/cv/outer5501_fold4_outer_en_inter_size_scaled_889646cc71ff.npz",
+              "sha256": "1811f27b8483d2faa0754e008e63b60e0c9557dc5811b0f50bdb1a863792b362",
+              "signature": "889646cc71ffeefc65828a99973b35486887681acaae406dceae84b9b8f27fff"
+            },
+            {
+              "path": "experiments/v5/cv/outer5501_fold4_outer_cat_d5_onehot_25722dac7625.npz",
+              "sha256": "43acc3a72526ae16ac93611724ff338aa02c8daf6b91f661406e024340434299",
+              "signature": "25722dac7625fde198ef60897f8e3cdd4c2fe1cb1130f8f128b7d4b57a797586"
+            },
+            {
+              "path": "experiments/v5/cv/outer5501_fold4_outer_svr_compact_g001_C5_072165382556.npz",
+              "sha256": "65b903450df68d75311bd1116d09df3ef4a4997227cdad391cc1c9092d0f54df",
+              "signature": "07216538255685c7afc6c10032a8a87c3639852ee2d9a96999c8d1389aeaee6a"
+            }
+          ]
+        }
+      ],
+      "evaluation_role": "Retrospective fixed final-v5 recipe; not v5 automatic inner selector; reused historical data, not new independent validation"
+    },
+    {
+      "path": "experiments/v6/reference/full1460_seed5509.csv",
+      "sha256": "0ed0fca3c3b891848cb721943d67561326f41987ca6ff47f91d4b4dbf1a9217f",
+      "rows": 1460,
+      "seed": 5509,
+      "folds": [
+        {
+          "fold": 0,
+          "training_rows": 1168,
+          "validation_rows": 292,
+          "area_q95_q99": [
+            2458.4999999999986,
+            3203.239999999998
+          ],
+          "caches": [
+            {
+              "path": "experiments/v5/cv/outer5509_fold0_outer_ref_v2_linear_a52fb32858db.npz",
+              "sha256": "c75543122fcfaec1e30f84d6df3e1258ccd2cc4dfd2d7860d5e5590945d82cf2",
+              "signature": "a52fb32858db2399f065d36a80cbfd75676204e90a00902d7652e109f5b7f961"
+            },
+            {
+              "path": "experiments/v5/cv/outer5509_fold0_outer_ref_v2_cat_cb1a4939c8c1.npz",
+              "sha256": "1fd6bfc695031a74039f926e25ef9562e3b4672e52004bbc828697bb0494da03",
+              "signature": "cb1a4939c8c15f2968124492be365994e9c615b475897c96d0bff71552542c13"
+            },
+            {
+              "path": "experiments/v5/cv/outer5509_fold0_outer_en_inter_size_scaled_59f4bdf65332.npz",
+              "sha256": "156dc4c1f2bb6cbde119ba1d52bca4e47193d74a0256f0100c08bcc2269a8fa1",
+              "signature": "59f4bdf65332e601aad2206c44194e3fcabe701094954c420cd0a91bb7efbfe9"
+            },
+            {
+              "path": "experiments/v5/cv/outer5509_fold0_outer_cat_d5_onehot_75d13efe6780.npz",
+              "sha256": "3f2c240ec982f1d998521b1fbb6a725f2a4168824c6a8aeffbc73b2522b9b301",
+              "signature": "75d13efe6780e524825e8641a0afc3e14bff24e44a3768725b44dd3a0bb704ce"
+            },
+            {
+              "path": "experiments/v5/cv/outer5509_fold0_outer_svr_compact_g001_C5_f44a96d6b5d8.npz",
+              "sha256": "9da4f0bac3dce9e854fbb61ff5e9a43d241dedcce64cfa3e33367c4eea4a2dd4",
+              "signature": "f44a96d6b5d81b1549231f228b6684cbf32966aec4c5b020e1589ea03f0f2973"
+            }
+          ]
+        },
+        {
+          "fold": 1,
+          "training_rows": 1168,
+          "validation_rows": 292,
+          "area_q95_q99": [
+            2464.5999999999995,
+            3012.3199999999924
+          ],
+          "caches": [
+            {
+              "path": "experiments/v5/cv/outer5509_fold1_outer_ref_v2_linear_d6b84063d3bd.npz",
+              "sha256": "4bff022b62a811c588c0acccc2d4b1b781928c4cef40acc119166a4bed65d844",
+              "signature": "d6b84063d3bdd116963d598d59e2273e7d7631026d68d914c8536adf6731c8f1"
+            },
+            {
+              "path": "experiments/v5/cv/outer5509_fold1_outer_ref_v2_cat_9adf07ff8524.npz",
+              "sha256": "6c7354293a751373ce898a82f460213ea3587952d3b2fa7caf90725b5e45019a",
+              "signature": "9adf07ff85247ea9cf15aea60461219d3c4610b3c9b0267426064185f508ab02"
+            },
+            {
+              "path": "experiments/v5/cv/outer5509_fold1_outer_en_inter_size_scaled_75fb345244ec.npz",
+              "sha256": "78481e195bfd0566a78dd25127998e878d706c83c5fb00ada5e0a45af4273c95",
+              "signature": "75fb345244ecc182ca35c945dc627c5e3cea428f5c633cfa221bf7f9986f805a"
+            },
+            {
+              "path": "experiments/v5/cv/outer5509_fold1_outer_cat_d5_onehot_27cc88cb6d41.npz",
+              "sha256": "530b4d801efd8a26708ded05960357418c1ee1de522e6c0c661d56e19af6ca9b",
+              "signature": "27cc88cb6d41518eebd1b62cc8cef2adc8f312cb1101f3e507025b50316f2e5e"
+            },
+            {
+              "path": "experiments/v5/cv/outer5509_fold1_outer_svr_compact_g001_C5_e339a6210ba4.npz",
+              "sha256": "76eef7d67c9875d48b3f389e3af0acea32d8cd877476b52f76e0120ad85846b6",
+              "signature": "e339a6210ba430dae8a46639b07c88ccc45dfd69f84d5c55de276fb16617fa82"
+            }
+          ]
+        },
+        {
+          "fold": 2,
+          "training_rows": 1168,
+          "validation_rows": 292,
+          "area_q95_q99": [
+            2467.2999999999997,
+            3101.139999999996
+          ],
+          "caches": [
+            {
+              "path": "experiments/v5/cv/outer5509_fold2_outer_ref_v2_linear_5f8468ee2c70.npz",
+              "sha256": "41825357e2a5f351f21359fc7bbd64b37966ae73b7ed1f10699d7648f720d6cc",
+              "signature": "5f8468ee2c700d4ddfaf3f0be9d46c7713f535456550ed9eb87df1891b95497a"
+            },
+            {
+              "path": "experiments/v5/cv/outer5509_fold2_outer_ref_v2_cat_28adc8665ff2.npz",
+              "sha256": "4b37ff5da0f2d8c7b70239ec2156c1f2ce537f92fe89452883a98ae6d9408e6c",
+              "signature": "28adc8665ff22994b50eaa3e007042a53b116bbd1f937c6c57e7c3c8fb876c28"
+            },
+            {
+              "path": "experiments/v5/cv/outer5509_fold2_outer_en_inter_size_scaled_2dd416d6e78b.npz",
+              "sha256": "a318e68c795e8d2407f8a4a5061b4a635320649a56a4bddb1948b9613c70a458",
+              "signature": "2dd416d6e78b36a3932affb058755bba5ef0bd6b2f0388764a7f4d88f739b926"
+            },
+            {
+              "path": "experiments/v5/cv/outer5509_fold2_outer_cat_d5_onehot_8d94d44cf5f1.npz",
+              "sha256": "36a10b4c8f62ed4afba550cf3bdd71d495bf1e68df32ab04130c8005703e7c58",
+              "signature": "8d94d44cf5f1c19526ce16829fabfe8d80056a9b0cd1fda933d2bff7e9d98e07"
+            },
+            {
+              "path": "experiments/v5/cv/outer5509_fold2_outer_svr_compact_g001_C5_bd1c015f074b.npz",
+              "sha256": "b537d1bfb81124cf954e52b0b5fa6ad5e7562422dd07dd3c399b81899fdee653",
+              "signature": "bd1c015f074b5b9da3f3acaa1716202ae08eb9daf4827126f25d17d4eaaa8779"
+            }
+          ]
+        },
+        {
+          "fold": 3,
+          "training_rows": 1168,
+          "validation_rows": 292,
+          "area_q95_q99": [
+            2452.0,
+            3094.579999999998
+          ],
+          "caches": [
+            {
+              "path": "experiments/v5/cv/outer5509_fold3_outer_ref_v2_linear_11e9092a1796.npz",
+              "sha256": "3bfb1620ce075ad23db5a4228d44d33eb02c9b18182efaf1232b67df52fbc5f7",
+              "signature": "11e9092a1796aab8302cca16dc30eda6621ca8f78b803ab256b35bc1d8e9022a"
+            },
+            {
+              "path": "experiments/v5/cv/outer5509_fold3_outer_ref_v2_cat_f4e2b50e1c8e.npz",
+              "sha256": "5188f839738b8824372c37f0deb8b3ab1c4ba484228e4f1c8b1e33296af9939e",
+              "signature": "f4e2b50e1c8ee16dc40d3503b73f5118f1240065cded335bf0d9c804e953a340"
+            },
+            {
+              "path": "experiments/v5/cv/outer5509_fold3_outer_en_inter_size_scaled_33ec583aeca5.npz",
+              "sha256": "3c1b0682ed2cc21a342c59104b487e921cfec88969d5ce79e1b59fe04cd58fe8",
+              "signature": "33ec583aeca55e1c7ebf46e6d4426cbc206df4fa71cb47ce23208d8ffda96fc6"
+            },
+            {
+              "path": "experiments/v5/cv/outer5509_fold3_outer_cat_d5_onehot_9fbc4783fdc4.npz",
+              "sha256": "cdd7b84d7cf5916ac86e6c58f358e379103af0ee1d4822759cf76678d9c56e9b",
+              "signature": "9fbc4783fdc4e907c9eec20583c9d531102d810f1d27ce533b4acef8867be1ac"
+            },
+            {
+              "path": "experiments/v5/cv/outer5509_fold3_outer_svr_compact_g001_C5_b97e3fbb2c9e.npz",
+              "sha256": "3b03a8ebe84bb89a0a3cfb507123e24232905707464b5d27be3de8c2eb322fb3",
+              "signature": "b97e3fbb2c9e0d441fd1a103948a6b27256a1a622b53a91aaacc02245ac0ec6b"
+            }
+          ]
+        },
+        {
+          "fold": 4,
+          "training_rows": 1168,
+          "validation_rows": 292,
+          "area_q95_q99": [
+            2496.299999999997,
+            3203.239999999998
+          ],
+          "caches": [
+            {
+              "path": "experiments/v5/cv/outer5509_fold4_outer_ref_v2_linear_ba118f3e53e3.npz",
+              "sha256": "02ea67fa7d887a7cd3a27568d73aa8b5e5c89b3b9e2cd3af65d4f33b6792856a",
+              "signature": "ba118f3e53e3cb99e37b88a0ce404b6d3b36e4c9909143b1dbce751dd7368bb1"
+            },
+            {
+              "path": "experiments/v5/cv/outer5509_fold4_outer_ref_v2_cat_ccbcf6ad1904.npz",
+              "sha256": "9263d37e4380c5190d6cc03e93392c789c61173cc38754d8ed4135814330af7a",
+              "signature": "ccbcf6ad1904521d7b35551b80297b42e435f5a792d25c6ef9667f020bc45778"
+            },
+            {
+              "path": "experiments/v5/cv/outer5509_fold4_outer_en_inter_size_scaled_63e9cd113d17.npz",
+              "sha256": "5860f65da401e4fb03d30b39ccfedef48a343d26e841fa65c304ec9597de5969",
+              "signature": "63e9cd113d17c7e2e56ef81931446bfb24345fa7665f7f9511a3444e83c26796"
+            },
+            {
+              "path": "experiments/v5/cv/outer5509_fold4_outer_cat_d5_onehot_8785a9174e43.npz",
+              "sha256": "f5ee60e201fba495d008c572b4efbff24532a90136f1d3767d00c51801188724",
+              "signature": "8785a9174e4301e5814384f454483dc83373338880425a8dd062f51981593e40"
+            },
+            {
+              "path": "experiments/v5/cv/outer5509_fold4_outer_svr_compact_g001_C5_a3e4aa1f4f54.npz",
+              "sha256": "86633ebf0f1fd182f240ebae6287e8b76e414df80a6dd227f782000f672368e6",
+              "signature": "a3e4aa1f4f54871d770c1ae04ea1806de8c98a9f5f67c17dba841628e571affd"
+            }
+          ]
+        }
+      ],
+      "evaluation_role": "Retrospective fixed final-v5 recipe; not v5 automatic inner selector; reused historical data, not new independent validation"
+    },
+    {
+      "path": "experiments/v6/reference/original_dev1168_seed42.csv",
+      "sha256": "c408c259821e76542ec8b3b25bf839d25d458d7e6d6658cf1760ff5f9fed7879",
+      "rows": 1168,
+      "seed": 42,
+      "folds": [
+        {
+          "fold": 0,
+          "training_rows": 934,
+          "validation_rows": 234,
+          "area_q95_q99": [
+            2519.35,
+            3176.1799999999976
+          ]
+        },
+        {
+          "fold": 1,
+          "training_rows": 934,
+          "validation_rows": 234,
+          "area_q95_q99": [
+            2459.349999999998,
+            3176.1799999999976
+          ]
+        },
+        {
+          "fold": 2,
+          "training_rows": 934,
+          "validation_rows": 234,
+          "area_q95_q99": [
+            2522.0999999999995,
+            3130.759999999999
+          ]
+        },
+        {
+          "fold": 3,
+          "training_rows": 935,
+          "validation_rows": 233,
+          "area_q95_q99": [
+            2453.5999999999995,
+            3198.079999999997
+          ]
+        },
+        {
+          "fold": 4,
+          "training_rows": 935,
+          "validation_rows": 233,
+          "area_q95_q99": [
+            2516.2,
+            3101.7999999999993
+          ]
+        }
+      ],
+      "caches": [
+        {
+          "path": "experiments/v3/cv/dev_ref_v2_linear_seed42.npz",
+          "sha256": "653e82e7c5cf36928abf6b280f50703e7a060a13e5440f2ff22af186a37bca59",
+          "signature": "8f38ee5939f71bba388c28abc05adaa684c26853c000d2223d4ac86159e17fc2"
+        },
+        {
+          "path": "experiments/v3/cv/dev_ref_v2_cat_seed42.npz",
+          "sha256": "e2269c6cac106f143e937b11ae899d36029fb47b1c7bdc639d688ebcf9754aa1",
+          "signature": "afa32b96c5b56ae327bc67f2be6a2fefac312dc46d2b89e8d6267d77be90ae1b"
+        },
+        {
+          "path": "experiments/v3/cv/dev_en_inter_size_scaled_seed42.npz",
+          "sha256": "27408fcddde690c6a680e849cf3c266dd9df030a07a4ee5021d76ed341cc82c3",
+          "signature": "62c8ea6b74a4e6be4b48d9f7b7334da44a20515e09fd805e6bcdcce177164cbe"
+        },
+        {
+          "path": "experiments/v3/cv/dev_cat_d5_onehot_seed42.npz",
+          "sha256": "862b8880ec03e997897f39ca8e33ef0a2e761acf7258bcbde81da7c0dc636121",
+          "signature": "be355a20a73df89bbb9cf5150ea5c7b2b6252576a423ea464674e944bed6ee22"
+        },
+        {
+          "path": "experiments/v5/kernel_screen/cv/svr_compact_g001_C5__seed42.npz",
+          "sha256": "46f03b7ef05c1ac81a5c07bbff4cfcb529c480f74529b5045846e5d1506064f6",
+          "signature": "d19d07d7d04066a1cf8206e9b9ff4ae48f72ef6edc284c134b3994072b74ae63"
+        }
+      ],
+      "evaluation_role": "Historical original development split; screening comparison only, no new independent validation",
+      "baseline_bagging_caveat": "Original v3 dev caches use one CatBoost seed per fold, rather than full v5 outer three-seed bagging. New SVR is deterministic. All comparisons must use this matched reference."
+    }
+  ]
+}

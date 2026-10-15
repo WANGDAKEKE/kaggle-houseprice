@@ -1,0 +1,11 @@
+{
+  "repository": "Prior-Labs/TabPFN-v2-reg",
+  "revision": "4972a65a1b30806315c6f92499959ffbfc69a673",
+  "model_version": "v2",
+  "model_file": "tabpfn-v2-regressor.ckpt",
+  "model_sha256": "2ab5a07d5c41dfe6db9aa7ae106fc6de898326c2765be66505a07e2868c10736",
+  "source_url": "https://huggingface.co/Prior-Labs/TabPFN-v2-reg/resolve/4972a65a1b30806315c6f92499959ffbfc69a673/tabpfn-v2-regressor.ckpt",
+  "license_file": "LICENSE.txt",
+  "attribution": "Built with PriorLabs-TabPFN",
+  "user_screenshot_version_known": false
+}

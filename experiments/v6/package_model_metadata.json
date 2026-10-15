@@ -1,0 +1,82 @@
+{
+  "tabpfn": {
+    "version": "9.2.0",
+    "requires_python": ">=3.10",
+    "requires_dist": [
+      "torch>=2.5",
+      "safetensors>=0.4.0",
+      "numpy>=1.21.6",
+      "scikit-learn>=1.2.0",
+      "typing_extensions>=4.12.0",
+      "scipy>=1.11.1",
+      "pandas>=1.4.0",
+      "einops>=0.4.0",
+      "huggingface-hub>=0.23.0",
+      "pydantic>=2.8.0",
+      "pydantic-settings>=2.10.1",
+      "joblib>=1.2.0",
+      "tqdm>=4.66.0",
+      "filelock>=3.11.0",
+      "lightgbm>=4.4",
+      "skrub<0.11,>=0.7",
+      "matplotlib>=3.6.1",
+      "mlx>=0.29.3; sys_platform == \"darwin\" and platform_machine == \"arm64\"",
+      "wandb>=0.25.1; extra == \"wandb\""
+    ],
+    "candidate_wheels": [
+      {
+        "filename": "tabpfn-9.2.0-py3-none-any.whl",
+        "size_mb": 0.9,
+        "sha256": "bf8edb860cf490ab021d0ba6e91a9798f1b549bdb220066599661c8fc6d6089f"
+      }
+    ]
+  },
+  "torch": {
+    "version": "2.14.1",
+    "requires_python": ">=3.10",
+    "requires_dist": [
+      "filelock",
+      "typing-extensions>=4.10.0",
+      "setuptools>=77.0.3",
+      "sympy>=1.13.3",
+      "networkx>=2.5.1",
+      "jinja2",
+      "fsspec>=0.8.5",
+      "cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == \"Linux\"",
+      "cuda-bindings<14,>=13.0.3; platform_system == \"Linux\" and python_version < \"3.15\"",
+      "nvidia-cudnn-cu13==9.24.0.43; platform_system == \"Linux\"",
+      "nvidia-cusparselt-cu13==0.8.1; platform_system == \"Linux\"",
+      "nvidia-nccl-cu13==2.30.7; platform_system == \"Linux\"",
+      "nvidia-nvshmem-cu13==3.4.5; platform_system == \"Linux\"",
+      "triton~=3.8.0; platform_system == \"Linux\" and python_version < \"3.15\"",
+      "optree>=0.13.0; extra == \"optree\"",
+      "opt-einsum>=3.3; extra == \"opt-einsum\"",
+      "pyyaml; extra == \"pyyaml\""
+    ],
+    "candidate_wheels": [
+      {
+        "filename": "torch-2.14.1-cp312-cp312-macosx_14_0_arm64.whl",
+        "size_mb": 127.3,
+        "sha256": "420dbf314c180ee4b86e9bc00aee5746a7d6e5bacdd7df925af671ed393f0b2e"
+      }
+    ]
+  },
+  "v2_model": {
+    "id": "Prior-Labs/TabPFN-v2-reg",
+    "gated": false,
+    "sha": "4972a65a1b30806315c6f92499959ffbfc69a673",
+    "siblings": [
+      ".DS_Store",
+      ".gitattributes",
+      "LICENSE.txt",
+      "README.md",
+      "config.json",
+      "tabpfn-v2-regressor-09gpqh39.ckpt",
+      "tabpfn-v2-regressor-2noar4o2.ckpt",
+      "tabpfn-v2-regressor-5wof9ojf.ckpt",
+      "tabpfn-v2-regressor-v2_default.ckpt",
+      "tabpfn-v2-regressor-wyl4o83o.ckpt",
+      "tabpfn-v2-regressor.ckpt"
+    ]
+  }
+}

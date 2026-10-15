@@ -1,0 +1,27 @@
+{
+  "version": "v6",
+  "purpose": "prioritize screenshot TabPFN model-family lead, avoid refitting all previous models",
+  "screenshot": "user shows TabPFN50%+originalensemble50% =0.11390; original4models=.11963; exact version/code/blendspace unknown",
+  "foundation_model": "public official TabPFN v2 checkpoint, pinned revision and SHA256",
+  "target": "natural log(SalePrice)",
+  "feature_candidates": [
+    "raw79 with MSSubClass categorical",
+    "physical engineered only if raw has no ordinary-sale benefit or model runtime permits a second bounded comparison"
+  ],
+  "primary_comparison": "all1460 matched KFold5 seed5509; baseline v5 reconstructed only from cached predictions; fold-local data processing",
+  "runtime_probe": "n_estimators1 first fold 32-row and292-row timing. Set final n_estimators4 unless per-full-fold predict >45seconds, then2. If MPS unavailable record it and bound CPU workload.",
+  "recipe": "fixed50/50 log-space TabPFN-v5 blend, matching screenshot broad concept, no weight optimization",
+  "diagnostic_comparisons": "tabpfn weights0/.25/.5/.75/1 and 50% price-space for transparency; not used to select delivered weights",
+  "gate": "ordinary and Normal full-OOF RMSE both below matched v5; report all rows even if extreme houses dominate. Show all RMSE and house-level contributions.",
+  "historical_data_reuse": true,
+  "no_external_test_labels": true,
+  "no_agent_Kaggle_submission": true,
+  "environment": "separate .venv-tabpfn and requirements-tabpfn.lock.txt; old requirements untouched",
+  "previous_submission_hashes": {
+    "submission.csv": "210223272bc07d8c7d483aadc47a9831faa248ca9c5c633699d12ebea9b3e3db",
+    "submission_v2.csv": "66c2d66ab1b9fe43cfd0bc68229a9881c1181fb87115e5fad6350d363972eb6a",
+    "submission_v3.csv": "f9787b96b898cb3ace1eea03bb79bffc56fb2967d34649155508b61d3f02b4de",
+    "submission_v4.csv": "6767f59cd9feaaa1b7521341be9fa18c8587b64cd8a0f4e80ee2ec54c4a7a8ad",
+    "submission_v5.csv": "a48b84f57802f0adf5b7344a3b8ba7cdbf31a18bf7e8ff1c670be48bb4fb05db"
+  }
+}
