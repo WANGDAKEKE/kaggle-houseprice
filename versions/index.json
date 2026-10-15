@@ -86,8 +86,8 @@
     {
       "version": "v5",
       "git_tag": "v5.0.0",
-      "status": "ready_for_user_submission",
-      "public_log_rmse": null,
+      "status": "submitted_by_user",
+      "public_log_rmse": 0.11595,
       "v4_user_reported_public_log_rmse": 0.11679,
       "model": "svr_compact_g001_C5_w0.3_support",
       "recipe": {
@@ -108,9 +108,12 @@
       "sha256": "a48b84f57802f0adf5b7344a3b8ba7cdbf31a18bf7e8ff1c670be48bb4fb05db",
       "experiment_directory": "experiments/v5",
       "source_hash": "58dd6272f2461f8bcd40be11a674e2dbdc1d97ade0be48fb1af06d8845036d4c",
-      "date": "2026-10-15"
+      "date": "2026-10-15",
+      "score_source": "user_report",
+      "score_reported_date": "2026-10-15",
+      "online_outcome": "new_best"
     }
   ],
-  "best_actually_submitted_version": "v4",
-  "best_user_reported_public_log_rmse": 0.11679
+  "best_actually_submitted_version": "v5",
+  "best_user_reported_public_log_rmse": 0.11595
 }

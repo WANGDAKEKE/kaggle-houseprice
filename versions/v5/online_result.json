@@ -1,0 +1,37 @@
+{
+  "version": "v5",
+  "date": "2026-10-15",
+  "timezone": "Asia/Shanghai",
+  "competition": "house-prices-advanced-regression-techniques",
+  "submission_file": "submission_v5.csv",
+  "submission_sha256": "a48b84f57802f0adf5b7344a3b8ba7cdbf31a18bf7e8ff1c670be48bb4fb05db",
+  "model": "svr_compact_g001_C5_w0.3_support",
+  "recipe": {
+    "new_names": [
+      "svr_compact_g001_C5"
+    ],
+    "new_weight": 0.3,
+    "support_gate": true
+  },
+  "public_log_rmse": 0.11595,
+  "source": "user-reported Kaggle score; not independently read from submission history",
+  "file_association": "associated with recommended submission_v5.csv from conversation context",
+  "previous_best_version": "v4",
+  "previous_best_public_log_rmse": 0.11679,
+  "improvement_vs_previous_best": 0.0008400000000000074,
+  "relative_improvement_pct": 0.7192396609298805,
+  "outcome": "best user-reported submitted version as of this report",
+  "comparison_score_user_reported": 0.1139,
+  "comparison_source": "user-provided screenshot of another participant submission history; identity, code, data and settings not independently verified",
+  "gap_to_comparison_score": 0.0020499999999999963,
+  "comparison_screenshot": {
+    "filename": "codex-clipboard-f4ceaec9-b6ca-44b7-80e7-3bf6d5110afd.png",
+    "reported_frontier_submission": "submission_frontier.csv",
+    "reported_frontier_description": "50% TabPFN + 50% 原集成",
+    "reported_frontier_score": 0.1139,
+    "reported_previous_submission": "submission_optimized.csv",
+    "reported_previous_description": "Lasso + SVR + CatBoost + XGBoost equal blend",
+    "reported_previous_score": 0.11963,
+    "interpretation_limit": "Screenshot records submitted descriptions and scores, not a controlled ablation. TabPFN version, model settings and exact original ensemble are unknown; no causal improvement is inferred."
+  }
+}
