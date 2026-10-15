@@ -1,0 +1,531 @@
+{
+  "source_oof": "experiments/v6/oof_diverse_e20_seed5509.csv",
+  "source_oof_sha256": "de3502d7350d0d76938aeeed5a62acf310ad61c9dc0deb0f29328b2ffd884686",
+  "train_sha256": "1e18addf81e5e4d347cc17ee6075bbe4a42b7fa26b9e5b063e8f692a5f929d41",
+  "comparison_seed": 5509,
+  "rows": 1460,
+  "folds": 5,
+  "all_validation_rows_preserved": true,
+  "diagnostic_extreme_rule": "GrLivArea>4000 and SalePrice<300000",
+  "diagnostic_extreme_ids": [
+    524,
+    1299
+  ],
+  "choices": [
+    {
+      "name": "half",
+      "tabpfn_weight": 0.5,
+      "weights_in_log_space": {
+        "v5": 0.5,
+        "physical_e16": 0.25,
+        "quality_e4": 0.25
+      },
+      "metrics": {
+        "all": 0.11464014695029272,
+        "ordinary": 0.10362850894110325,
+        "normal": 0.08404011486101522
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "metrics": {
+            "all": {
+              "rows": 292,
+              "log_rmse": 0.09911381650914795
+            },
+            "ordinary": {
+              "rows": 292,
+              "log_rmse": 0.09911381650914795
+            },
+            "normal": {
+              "rows": 239,
+              "log_rmse": 0.08517928020746836
+            }
+          }
+        },
+        {
+          "fold": 1,
+          "metrics": {
+            "all": {
+              "rows": 292,
+              "log_rmse": 0.15087809151331835
+            },
+            "ordinary": {
+              "rows": 290,
+              "log_rmse": 0.10366665579443608
+            },
+            "normal": {
+              "rows": 246,
+              "log_rmse": 0.07644943672733485
+            }
+          }
+        },
+        {
+          "fold": 2,
+          "metrics": {
+            "all": {
+              "rows": 292,
+              "log_rmse": 0.11267720688669557
+            },
+            "ordinary": {
+              "rows": 292,
+              "log_rmse": 0.11267720688669557
+            },
+            "normal": {
+              "rows": 241,
+              "log_rmse": 0.09283378875453696
+            }
+          }
+        },
+        {
+          "fold": 3,
+          "metrics": {
+            "all": {
+              "rows": 292,
+              "log_rmse": 0.1006065552958305
+            },
+            "ordinary": {
+              "rows": 292,
+              "log_rmse": 0.1006065552958305
+            },
+            "normal": {
+              "rows": 236,
+              "log_rmse": 0.07380310179388268
+            }
+          }
+        },
+        {
+          "fold": 4,
+          "metrics": {
+            "all": {
+              "rows": 292,
+              "log_rmse": 0.1015196405723199
+            },
+            "ordinary": {
+              "rows": 292,
+              "log_rmse": 0.1015196405723199
+            },
+            "normal": {
+              "rows": 236,
+              "log_rmse": 0.0903597512998564
+            }
+          }
+        }
+      ],
+      "increment_vs_half": {
+        "total_squared_error_gain": 0.0,
+        "two_extreme_squared_error_gain": 0.0,
+        "ordinary_squared_error_gain": 0.0,
+        "two_extreme_fraction_of_total_gain": null,
+        "group_sensitivity": {
+          "all": {
+            "rows": 1460,
+            "net_squared_error_gain": 0.0,
+            "fraction_houses_improved": 0.0,
+            "net_squared_error_gain_without_top5": 0.0,
+            "net_squared_error_gain_without_top10": 0.0,
+            "top5_removed_rule": "Remove five largest per-house positive-direction MSE gains for diagnosis only; all validation rows stay in every reported RMSE"
+          },
+          "ordinary": {
+            "rows": 1458,
+            "net_squared_error_gain": 0.0,
+            "fraction_houses_improved": 0.0,
+            "net_squared_error_gain_without_top5": 0.0,
+            "net_squared_error_gain_without_top10": 0.0,
+            "top5_removed_rule": "Remove five largest per-house positive-direction MSE gains for diagnosis only; all validation rows stay in every reported RMSE"
+          },
+          "normal": {
+            "rows": 1198,
+            "net_squared_error_gain": 0.0,
+            "fraction_houses_improved": 0.0,
+            "net_squared_error_gain_without_top5": 0.0,
+            "net_squared_error_gain_without_top10": 0.0,
+            "top5_removed_rule": "Remove five largest per-house positive-direction MSE gains for diagnosis only; all validation rows stay in every reported RMSE"
+          }
+        }
+      },
+      "improvement_vs_v5": {
+        "group_sensitivity": {
+          "all": {
+            "rows": 1460,
+            "net_squared_error_gain": 1.726413621387538,
+            "fraction_houses_improved": 0.55,
+            "net_squared_error_gain_without_top5": 0.4421463089172559,
+            "net_squared_error_gain_without_top10": 0.29947127539024687,
+            "top5_removed_rule": "Remove five largest per-house positive-direction MSE gains for diagnosis only; all validation rows stay in every reported RMSE"
+          },
+          "ordinary": {
+            "rows": 1458,
+            "net_squared_error_gain": 0.6845767425472122,
+            "fraction_houses_improved": 0.5500685871056241,
+            "net_squared_error_gain_without_top5": 0.4667565051201418,
+            "net_squared_error_gain_without_top10": 0.33244138269909973,
+            "top5_removed_rule": "Remove five largest per-house positive-direction MSE gains for diagnosis only; all validation rows stay in every reported RMSE"
+          },
+          "normal": {
+            "rows": 1198,
+            "net_squared_error_gain": 0.5206802807144975,
+            "fraction_houses_improved": 0.5425709515859767,
+            "net_squared_error_gain_without_top5": 0.3608919823532434,
+            "net_squared_error_gain_without_top10": 0.2810542683003215,
+            "top5_removed_rule": "Remove five largest per-house positive-direction MSE gains for diagnosis only; all validation rows stay in every reported RMSE"
+          }
+        }
+      },
+      "folds_improving_vs_half": {
+        "all": 0,
+        "ordinary": 0,
+        "normal": 0
+      }
+    },
+    {
+      "name": "natural_three_equal",
+      "tabpfn_weight": 0.6666666666666666,
+      "weights_in_log_space": {
+        "v5": 0.33333333333333337,
+        "physical_e16": 0.3333333333333333,
+        "quality_e4": 0.3333333333333333
+      },
+      "metrics": {
+        "all": 0.11367346183788428,
+        "ordinary": 0.1035176821235781,
+        "normal": 0.08390638923149497
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "metrics": {
+            "all": {
+              "rows": 292,
+              "log_rmse": 0.09857943311953173
+            },
+            "ordinary": {
+              "rows": 292,
+              "log_rmse": 0.09857943311953173
+            },
+            "normal": {
+              "rows": 239,
+              "log_rmse": 0.08472480664377219
+            }
+          }
+        },
+        {
+          "fold": 1,
+          "metrics": {
+            "all": {
+              "rows": 292,
+              "log_rmse": 0.14781315045156376
+            },
+            "ordinary": {
+              "rows": 290,
+              "log_rmse": 0.1040226813617877
+            },
+            "normal": {
+              "rows": 246,
+              "log_rmse": 0.07713202751060465
+            }
+          }
+        },
+        {
+          "fold": 2,
+          "metrics": {
+            "all": {
+              "rows": 292,
+              "log_rmse": 0.11274685216015465
+            },
+            "ordinary": {
+              "rows": 292,
+              "log_rmse": 0.11274685216015465
+            },
+            "normal": {
+              "rows": 241,
+              "log_rmse": 0.09274253856826771
+            }
+          }
+        },
+        {
+          "fold": 3,
+          "metrics": {
+            "all": {
+              "rows": 292,
+              "log_rmse": 0.10055813557880981
+            },
+            "ordinary": {
+              "rows": 292,
+              "log_rmse": 0.10055813557880981
+            },
+            "normal": {
+              "rows": 236,
+              "log_rmse": 0.07375975975109174
+            }
+          }
+        },
+        {
+          "fold": 4,
+          "metrics": {
+            "all": {
+              "rows": 292,
+              "log_rmse": 0.10108341232541453
+            },
+            "ordinary": {
+              "rows": 292,
+              "log_rmse": 0.10108341232541453
+            },
+            "normal": {
+              "rows": 236,
+              "log_rmse": 0.08968550253187348
+            }
+          }
+        }
+      ],
+      "increment_vs_half": {
+        "total_squared_error_gain": 0.3222327552006231,
+        "two_extreme_squared_error_gain": 0.28876093435435446,
+        "ordinary_squared_error_gain": 0.03347182084626869,
+        "two_extreme_fraction_of_total_gain": 0.8961253308173808,
+        "group_sensitivity": {
+          "all": {
+            "rows": 1460,
+            "net_squared_error_gain": 0.3222327552006231,
+            "fraction_houses_improved": 0.510958904109589,
+            "net_squared_error_gain_without_top5": -0.038821778254569894,
+            "net_squared_error_gain_without_top10": -0.0816693204097324,
+            "top5_removed_rule": "Remove five largest per-house positive-direction MSE gains for diagnosis only; all validation rows stay in every reported RMSE"
+          },
+          "ordinary": {
+            "rows": 1458,
+            "net_squared_error_gain": 0.03347182084626869,
+            "fraction_houses_improved": 0.5109739368998628,
+            "net_squared_error_gain_without_top5": -0.030126400359621525,
+            "net_squared_error_gain_without_top10": -0.06924802417095897,
+            "top5_removed_rule": "Remove five largest per-house positive-direction MSE gains for diagnosis only; all validation rows stay in every reported RMSE"
+          },
+          "normal": {
+            "rows": 1198,
+            "net_squared_error_gain": 0.0269055848786199,
+            "fraction_houses_improved": 0.5041736227045075,
+            "net_squared_error_gain_without_top5": -0.018866843682921085,
+            "net_squared_error_gain_without_top10": -0.03998499479625091,
+            "top5_removed_rule": "Remove five largest per-house positive-direction MSE gains for diagnosis only; all validation rows stay in every reported RMSE"
+          }
+        }
+      },
+      "improvement_vs_v5": {
+        "group_sensitivity": {
+          "all": {
+            "rows": 1460,
+            "net_squared_error_gain": 2.0486463765881617,
+            "fraction_houses_improved": 0.5383561643835616,
+            "net_squared_error_gain_without_top5": 0.4033245306626865,
+            "net_squared_error_gain_without_top10": 0.21780195498051502,
+            "top5_removed_rule": "Remove five largest per-house positive-direction MSE gains for diagnosis only; all validation rows stay in every reported RMSE"
+          },
+          "ordinary": {
+            "rows": 1458,
+            "net_squared_error_gain": 0.7180485633934811,
+            "fraction_houses_improved": 0.5384087791495199,
+            "net_squared_error_gain_without_top5": 0.43663010476052044,
+            "net_squared_error_gain_without_top10": 0.26437312696622917,
+            "top5_removed_rule": "Remove five largest per-house positive-direction MSE gains for diagnosis only; all validation rows stay in every reported RMSE"
+          },
+          "normal": {
+            "rows": 1198,
+            "net_squared_error_gain": 0.5475858655931174,
+            "fraction_houses_improved": 0.5300500834724541,
+            "net_squared_error_gain_without_top5": 0.34320490710841056,
+            "net_squared_error_gain_without_top10": 0.2417497203647102,
+            "top5_removed_rule": "Remove five largest per-house positive-direction MSE gains for diagnosis only; all validation rows stay in every reported RMSE"
+          }
+        }
+      },
+      "folds_improving_vs_half": {
+        "all": 4,
+        "ordinary": 3,
+        "normal": 4
+      }
+    },
+    {
+      "name": "three_quarters",
+      "tabpfn_weight": 0.75,
+      "weights_in_log_space": {
+        "v5": 0.25,
+        "physical_e16": 0.375,
+        "quality_e4": 0.375
+      },
+      "metrics": {
+        "all": 0.11333059738828032,
+        "ordinary": 0.10358316968896304,
+        "normal": 0.08397622163383135
+      },
+      "folds": [
+        {
+          "fold": 0,
+          "metrics": {
+            "all": {
+              "rows": 292,
+              "log_rmse": 0.09844265282589544
+            },
+            "ordinary": {
+              "rows": 292,
+              "log_rmse": 0.09844265282589544
+            },
+            "normal": {
+              "rows": 239,
+              "log_rmse": 0.08464117488015885
+            }
+          }
+        },
+        {
+          "fold": 1,
+          "metrics": {
+            "all": {
+              "rows": 292,
+              "log_rmse": 0.14649004276421712
+            },
+            "ordinary": {
+              "rows": 290,
+              "log_rmse": 0.10434877425556782
+            },
+            "normal": {
+              "rows": 246,
+              "log_rmse": 0.07766542324759511
+            }
+          }
+        },
+        {
+          "fold": 2,
+          "metrics": {
+            "all": {
+              "rows": 292,
+              "log_rmse": 0.11290922140000927
+            },
+            "ordinary": {
+              "rows": 292,
+              "log_rmse": 0.11290922140000927
+            },
+            "normal": {
+              "rows": 241,
+              "log_rmse": 0.09282215883611075
+            }
+          }
+        },
+        {
+          "fold": 3,
+          "metrics": {
+            "all": {
+              "rows": 292,
+              "log_rmse": 0.10063598625077132
+            },
+            "ordinary": {
+              "rows": 292,
+              "log_rmse": 0.10063598625077132
+            },
+            "normal": {
+              "rows": 236,
+              "log_rmse": 0.07385433831925567
+            }
+          }
+        },
+        {
+          "fold": 4,
+          "metrics": {
+            "all": {
+              "rows": 292,
+              "log_rmse": 0.10095909563599882
+            },
+            "ordinary": {
+              "rows": 292,
+              "log_rmse": 0.10095909563599882
+            },
+            "normal": {
+              "rows": 236,
+              "log_rmse": 0.08945518643807182
+            }
+          }
+        }
+      ],
+      "increment_vs_half": {
+        "total_squared_error_gain": 0.4358669230643175,
+        "two_extreme_squared_error_gain": 0.4221692717954546,
+        "ordinary_squared_error_gain": 0.013697651268862882,
+        "two_extreme_fraction_of_total_gain": 0.9685737766643017,
+        "group_sensitivity": {
+          "all": {
+            "rows": 1460,
+            "net_squared_error_gain": 0.4358669230643175,
+            "fraction_houses_improved": 0.5068493150684932,
+            "net_squared_error_gain_without_top5": -0.09314589511193583,
+            "net_squared_error_gain_without_top10": -0.15653393290333328,
+            "top5_removed_rule": "Remove five largest per-house positive-direction MSE gains for diagnosis only; all validation rows stay in every reported RMSE"
+          },
+          "ordinary": {
+            "rows": 1458,
+            "net_squared_error_gain": 0.013697651268862882,
+            "fraction_houses_improved": 0.5068587105624143,
+            "net_squared_error_gain_without_top5": -0.08001058217688378,
+            "net_squared_error_gain_without_top10": -0.1377194116716934,
+            "top5_removed_rule": "Remove five largest per-house positive-direction MSE gains for diagnosis only; all validation rows stay in every reported RMSE"
+          },
+          "normal": {
+            "rows": 1198,
+            "net_squared_error_gain": 0.012860656938000054,
+            "fraction_houses_improved": 0.4991652754590985,
+            "net_squared_error_gain_without_top5": -0.05447933207651402,
+            "net_squared_error_gain_without_top10": -0.08508309841624791,
+            "top5_removed_rule": "Remove five largest per-house positive-direction MSE gains for diagnosis only; all validation rows stay in every reported RMSE"
+          }
+        }
+      },
+      "improvement_vs_v5": {
+        "group_sensitivity": {
+          "all": {
+            "rows": 1460,
+            "net_squared_error_gain": 2.162280544451856,
+            "fraction_houses_improved": 0.5335616438356164,
+            "net_squared_error_gain_without_top5": 0.34900041380532043,
+            "net_squared_error_gain_without_top10": 0.14293734248691425,
+            "top5_removed_rule": "Remove five largest per-house positive-direction MSE gains for diagnosis only; all validation rows stay in every reported RMSE"
+          },
+          "ordinary": {
+            "rows": 1458,
+            "net_squared_error_gain": 0.6982743938160751,
+            "fraction_houses_improved": 0.53360768175583,
+            "net_squared_error_gain_without_top5": 0.38674592294325805,
+            "net_squared_error_gain_without_top10": 0.1960945224592956,
+            "top5_removed_rule": "Remove five largest per-house positive-direction MSE gains for diagnosis only; all validation rows stay in every reported RMSE"
+          },
+          "normal": {
+            "rows": 1198,
+            "net_squared_error_gain": 0.5335409376524975,
+            "fraction_houses_improved": 0.5242070116861436,
+            "net_squared_error_gain_without_top5": 0.3077852017086186,
+            "net_squared_error_gain_without_top10": 0.1966516167447132,
+            "top5_removed_rule": "Remove five largest per-house positive-direction MSE gains for diagnosis only; all validation rows stay in every reported RMSE"
+          }
+        }
+      },
+      "folds_improving_vs_half": {
+        "all": 3,
+        "ordinary": 2,
+        "normal": 3
+      }
+    }
+  ],
+  "selected": {
+    "name": "natural_three_equal",
+    "tabpfn_weight": 0.6666666666666666,
+    "weights_in_log_space": {
+      "v5": 0.3333333333333333,
+      "physical_e16": 0.3333333333333333,
+      "quality_e4": 0.3333333333333333
+    },
+    "rationale": "Use a natural equal average of the three distinct predictors. The two-thirds PFN mixture has better ordinary-house and Normal-transaction RMSE than both half and three-quarter PFN mixtures, with more folds improving than three-quarter. This is a discrete natural-weight choice; no continuous or fine-grid weight optimization was performed.",
+    "three_quarters_role": "Diagnostic alternative, not main delivered weight",
+    "half_role": "Previously prepared fixed half mixture, preserved as a fallback candidate"
+  },
+  "selection_caveat": "All these representations and weights were compared on reused historical houses and the same folds. The final choice uses those outcomes and carries historical selection bias; it is not new independent validation. Incremental gains from raising PFN above half concentrate in a few houses, even though gains versus v5 remain positive after removing each group's top five improvements.",
+  "top5_sensitivity_caveat": "Top-five exclusions affect diagnosis only and never modify the main metric or training/validation membership.",
+  "kaggle_score_known": false,
+  "gpu_used_for_this_diagnostic": false,
+  "main_submission_modified_by_this_diagnostic": false
+}

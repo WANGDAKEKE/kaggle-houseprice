@@ -1,0 +1,5 @@
+{
+  "formula": "MSE(sum_i w_i p_i,y)=sum_i w_i score_i^2 - 0.5*sum_ij w_i*w_j*mean((p_i-p_j)^2), sum(w)=1; p=log(SalePrice)",
+  "evaluation_role": "Leaderboard-feedback optimization, not independent validation",
+  "rounding_half_width": 5e-06
+}

@@ -1,0 +1,39 @@
+{
+  "method": "natural equal-thirds log blend of v5, physical/e16 and quality/e4",
+  "weights_in_log_space": {
+    "v5": 0.3333333333333333,
+    "physical_e16": 0.3333333333333333,
+    "quality_e4": 0.3333333333333333
+  },
+  "comparison_seed": 5509,
+  "all_validation_rows_retained": true,
+  "physical_half_metrics": {
+    "all": 0.1145937228777466,
+    "ordinary": 0.10399593946601662,
+    "normal": 0.08419694441067702
+  },
+  "diverse_half_metrics": {
+    "all": 0.11464014695029272,
+    "ordinary": 0.10362850894110326,
+    "normal": 0.08404011486101524
+  },
+  "diverse_equal_thirds_metrics": {
+    "all": 0.11367346183788435,
+    "ordinary": 0.10351768212357813,
+    "normal": 0.08390638923149503
+  },
+  "v5_metrics": {
+    "all": 0.11968641683970181,
+    "ordinary": 0.10586972767909383,
+    "normal": 0.08658732883123549
+  },
+  "selection_caveat": "Model representations and ensemble size were explored on these same historical folds; final bag is informed by those comparisons, not independent validation. No finer bag weight optimization was performed.",
+  "rationale": "Choose natural equal thirds after comparing historical folds: it improves ordinary and Normal groups over the 50% baseline-weight draft and 75% TabPFN grid point. Most additional all-house gain from 75% versus 50% came from two extreme houses. Keep the initial half candidate and disclose adaptive weight selection.",
+  "source_sha256": {
+    "physical_oof": "2d1b086e3f000ea8783dd93a2338431934d3962e385034416cec44608675d808",
+    "quality_oof": "56a5212486a62861dccece4b61e36674422b0b4693feeac57a340e3615a9f86a",
+    "v5_reference": "0ed0fca3c3b891848cb721943d67561326f41987ca6ff47f91d4b4dbf1a9217f",
+    "quality_transform": "3c79bcff0ca0491dbcb68cac21b5904ac2c04989ecc574b5fe532287f9c35522",
+    "finalizer": "a06ec5117e47e2270b43220ccb85e8665afb26d801f4c3cfea7f7e221a3dd9ad"
+  }
+}

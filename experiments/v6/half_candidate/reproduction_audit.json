@@ -1,0 +1,10 @@
+{
+  "rows": 1459,
+  "max_abs_log_prediction_difference": 1.1900516128093841e-08,
+  "log_prediction_tolerance": 5e-05,
+  "device": "mps",
+  "elapsed_seconds": 179.93215703964233,
+  "previous_files_preserved": true,
+  "checkpoint_revalidated": true,
+  "bitwise_identical_prices": false
+}

@@ -1,0 +1,177 @@
+{
+  "method": "Adaptive blend from reported full-test log-RMSE and prediction vector distances; no model fitting",
+  "formula": "MSE(sum_i w_i p_i,y)=sum_i w_i score_i^2 - 0.5*sum_ij w_i*w_j*mean((p_i-p_j)^2), sum(w)=1; p=log(SalePrice)",
+  "evaluation_role": "Leaderboard-feedback optimization, not independent validation",
+  "full_test_scoring_assumption": "Official leaderboard observed to state scoring on all test data; earlier v4 score prediction was checked against the user's actual submission result",
+  "source_inputs": [
+    {
+      "version": "v1",
+      "path": "submission.csv",
+      "score": 0.11969,
+      "sha256": "210223272bc07d8c7d483aadc47a9831faa248ca9c5c633699d12ebea9b3e3db",
+      "score_source": "User's reported Kaggle submission score in this conversation",
+      "score_rounding_assumed_half_width": 5e-06
+    },
+    {
+      "version": "v2",
+      "path": "submission_v2.csv",
+      "score": 0.11741,
+      "sha256": "66c2d66ab1b9fe43cfd0bc68229a9881c1181fb87115e5fad6350d363972eb6a",
+      "score_source": "User's reported Kaggle submission score in this conversation",
+      "score_rounding_assumed_half_width": 5e-06
+    },
+    {
+      "version": "v3",
+      "path": "submission_v3.csv",
+      "score": 0.1177,
+      "sha256": "f9787b96b898cb3ace1eea03bb79bffc56fb2967d34649155508b61d3f02b4de",
+      "score_source": "User's reported Kaggle submission score in this conversation",
+      "score_rounding_assumed_half_width": 5e-06
+    },
+    {
+      "version": "v4",
+      "path": "submission_v4.csv",
+      "score": 0.11679,
+      "sha256": "6767f59cd9feaaa1b7521341be9fa18c8587b64cd8a0f4e80ee2ec54c4a7a8ad",
+      "score_source": "User's reported Kaggle submission score in this conversation",
+      "score_rounding_assumed_half_width": 5e-06
+    },
+    {
+      "version": "v5",
+      "path": "submission_v5.csv",
+      "score": 0.11595,
+      "sha256": "a48b84f57802f0adf5b7344a3b8ba7cdbf31a18bf7e8ff1c670be48bb4fb05db",
+      "score_source": "User's reported Kaggle submission score in this conversation",
+      "score_rounding_assumed_half_width": 5e-06
+    }
+  ],
+  "test_ids_source": "data/raw/test.csv",
+  "test_sha256": "8fdd3d829d4d986b58f845c9553b225e67dd8383624d90fb6ca1d4bed5798c1e",
+  "test_rows": 1459,
+  "script_sha256": "fb102a46e34cb3bcba3b874dbb6ad6458a6c65ca360b46c98d068332495f89cc",
+  "v4_exact_linear_dependence_max_abs_log": 0.0,
+  "v4_from_reported_v2_v3_central_scores": 0.11679519249745522,
+  "score_rounding_caveat": "Reported scores have only five decimals. Central scores need not exactly obey the linear-dependence identity. Bounds independently vary each reported score by +/-0.000005; no labels are reconstructed.",
+  "optimization": "Six-start SLSQP on nonnegative weights summing to one; no matrix inversion; v4's exact dependence is retained and disclosed",
+  "comparisons": {
+    "convex_central_score_optimum": {
+      "weights": {
+        "v1": 5.278287214307564e-18,
+        "v2": 6.45532249176496e-18,
+        "v3": 0.07757080281042611,
+        "v4": 1.2511520638345384e-18,
+        "v5": 0.9224291971895738
+      },
+      "estimated_log_rmse": 0.11593744145708354,
+      "input_score_rounding_interval_log_rmse": [
+        0.11593243506079576,
+        0.11594244785281932
+      ],
+      "estimated_improvement_vs_reported_v5": 1.2558542916457638e-05,
+      "candidate_minus_v5_mse_rounding_interval": [
+        -3.0934125660915795e-06,
+        -2.730924204558013e-06
+      ]
+    },
+    "convex_rounding_upper_bound_optimum": {
+      "weights": {
+        "v1": 5.278287214307564e-18,
+        "v2": 6.45532249176496e-18,
+        "v3": 0.07757080281042611,
+        "v4": 1.2511520638345384e-18,
+        "v5": 0.9224291971895738
+      },
+      "estimated_log_rmse": 0.11593744145708354,
+      "input_score_rounding_interval_log_rmse": [
+        0.11593243506079576,
+        0.11594244785281932
+      ],
+      "estimated_improvement_vs_reported_v5": 1.2558542916457638e-05,
+      "candidate_minus_v5_mse_rounding_interval": [
+        -3.0934125660915795e-06,
+        -2.730924204558013e-06
+      ]
+    },
+    "v4_v5_weight5_upper_bound_1.0": {
+      "weights": {
+        "v1": 0.0,
+        "v2": 0.0,
+        "v3": 0.0,
+        "v4": 0.02309403660694187,
+        "v5": 0.9769059633930581
+      },
+      "estimated_log_rmse": 0.1159495286035746,
+      "input_score_rounding_interval_log_rmse": [
+        0.11594452774668262,
+        0.11595452946039267
+      ],
+      "estimated_improvement_vs_reported_v5": 4.713964253943992e-07,
+      "candidate_minus_v5_mse_rounding_interval": [
+        -1.6306566963183158e-07,
+        -5.556754803371314e-08
+      ]
+    },
+    "v4_v5_weight5_upper_bound_1.5": {
+      "weights": {
+        "v1": 0.0,
+        "v2": 0.0,
+        "v3": 0.0,
+        "v4": 0.023094069261488936,
+        "v5": 0.9769059307385111
+      },
+      "estimated_log_rmse": 0.1159495286035746,
+      "input_score_rounding_interval_log_rmse": [
+        0.11594452774668144,
+        0.11595452946039388
+      ],
+      "estimated_improvement_vs_reported_v5": 4.713964253943992e-07,
+      "candidate_minus_v5_mse_rounding_interval": [
+        -1.630657456313571e-07,
+        -5.556747203286456e-08
+      ]
+    },
+    "released_rounded_convex_blend": {
+      "weights": {
+        "v1": 0.0,
+        "v2": 0.0,
+        "v3": 0.08,
+        "v4": 0.0,
+        "v5": 0.92
+      },
+      "estimated_log_rmse": 0.11593745377370858,
+      "input_score_rounding_interval_log_rmse": [
+        0.11593244719460903,
+        0.1159424603522403
+      ],
+      "estimated_improvement_vs_reported_v5": 1.2546226291418328e-05,
+      "candidate_minus_v5_mse_rounding_interval": [
+        -3.096232469185827e-06,
+        -2.7223924691855875e-06
+      ]
+    }
+  },
+  "released_submission": {
+    "path": "submission_v6_lb_blend.csv",
+    "sha256": "fe28acc825f7ba4e5efba37e902b8b6cee1fab27d7bb59075d800650e9d3a800",
+    "weights": {
+      "v1": 0.0,
+      "v2": 0.0,
+      "v3": 0.08,
+      "v4": 0.0,
+      "v5": 0.92
+    },
+    "estimated_log_rmse": 0.11593745377370858,
+    "input_score_rounding_interval_log_rmse": [
+      0.11593244719460903,
+      0.1159424603522403
+    ],
+    "estimated_improvement_vs_reported_v5": 1.2546226291418328e-05,
+    "candidate_minus_v5_mse_rounding_interval": [
+      -3.096232469185827e-06,
+      -2.7223924691855875e-06
+    ]
+  },
+  "interpretation": "Existing vectors offer only about 0.00001 additional estimated RMSE improvement. A material ranking gain requires a new prediction direction rather than more historical blend tuning.",
+  "no_external_labels": true,
+  "no_Kaggle_submission_by_agent": true
+}

@@ -23,5 +23,39 @@
     "submission_v3.csv": "f9787b96b898cb3ace1eea03bb79bffc56fb2967d34649155508b61d3f02b4de",
     "submission_v4.csv": "6767f59cd9feaaa1b7521341be9fa18c8587b64cd8a0f4e80ee2ec54c4a7a8ad",
     "submission_v5.csv": "a48b84f57802f0adf5b7344a3b8ba7cdbf31a18bf7e8ff1c670be48bb4fb05db"
+  },
+  "steering_addendum": {
+    "recorded_at_utc": "2026-10-15T15:48:20Z",
+    "user_priority": "Improve Kaggle leaderboard rank; investigate multiple routes rather than reproduce classmate recipe.",
+    "decisions_after_initial_raw_e4_and_physical_e4_results": [
+      "Both models complement v5 on ordinary and Normal houses; continue bounded TabPFN comparison with physical16 internal estimators.",
+      "Also compare training-only removal of two extreme partial sales and quality-category representation, retaining every validation row.",
+      "Compute existing-model blend geometry using already reported online scores; keep it separate from local model validation.",
+      "Read official competition/external Ames provenance sources; external-data permission remains unverified and no external labels are used."
+    ],
+    "no_additional_old_model_fits": true,
+    "candidate_weight_grid": [
+      0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "selection_caveat": "These historical folds have been reused and model/feature candidates are adaptive. Any follow-up split uses the same houses, not independent data."
+  },
+  "final_selection_addendum": {
+    "recorded_at_utc": "2026-10-15T16:03:53.594047+00:00",
+    "final_recipe_log_weights": {
+      "v5": 0.3333333333333333,
+      "physical_e16": 0.3333333333333333,
+      "quality_categorical_e4": 0.3333333333333333
+    },
+    "status": "Selected after historical OOF comparisons; supersedes initial fixed-half draft under user ranking-priority steering",
+    "reason": "Natural equal thirds gives better ordinary and Normal errors than either 50% or 75% total TabPFN. The 75% grid point has lower all-house error, but its additional gain is concentrated in two extreme houses.",
+    "weight_analysis": "weight_choice_diagnostic.json",
+    "historical_selection_bias": true,
+    "initial_half_candidate_retained": "half_candidate/",
+    "full_component_rebuild_rows": 1459,
+    "weight_only_recheck": "Same reloaded component contexts and their full predictions were algebraically reweighted, without extra model fitting."
   }
 }

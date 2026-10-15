@@ -1,0 +1,29 @@
+{
+  "device": "mps",
+  "torch_version": "2.14.1",
+  "mps_built": true,
+  "mps_available": true,
+  "n_estimators": 1,
+  "training_rows": 1168,
+  "validation_rows": 292,
+  "fit_seconds": 0.8312771320343018,
+  "predict_32_seconds": 2.5340638160705566,
+  "predict_292_seconds": 1.6122400760650635,
+  "tabpfn_single_estimator_scores": {
+    "all": 0.10426822291331782,
+    "ordinary": 0.10426822291331782,
+    "normal": 0.08929365472416892
+  },
+  "v5_same_fold_scores": {
+    "all": 0.10273486594123177,
+    "ordinary": 0.10273486594123177,
+    "normal": 0.08875959575833575
+  },
+  "half_log_blend_scores": {
+    "all": 0.10088875788901383,
+    "ordinary": 0.10088875788901383,
+    "normal": 0.08584658514339881
+  },
+  "used_for_hyperparameter_selection": false,
+  "role": "runtime and feasibility probe; not independent validation"
+}

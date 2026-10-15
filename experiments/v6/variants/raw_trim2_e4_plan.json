@@ -1,0 +1,53 @@
+{
+  "variant": "raw_trim2_e4",
+  "seed": 5509,
+  "estimators": 4,
+  "no_training_performed": true,
+  "validation_rows_removed": 0,
+  "purpose": "Exploratory variant on reused historical full-train folds; not independent validation",
+  "quality_encoding_note": "quality_01..quality_10 are strings and inferred categorical indices; no enforced ordinal monotonicity",
+  "folds": [
+    {
+      "fold": 0,
+      "fit_rows": 1166,
+      "validation_rows": 292,
+      "dropped_training_ids": [
+        524,
+        1299
+      ]
+    },
+    {
+      "fold": 1,
+      "fit_rows": 1168,
+      "validation_rows": 292,
+      "dropped_training_ids": []
+    },
+    {
+      "fold": 2,
+      "fit_rows": 1166,
+      "validation_rows": 292,
+      "dropped_training_ids": [
+        524,
+        1299
+      ]
+    },
+    {
+      "fold": 3,
+      "fit_rows": 1166,
+      "validation_rows": 292,
+      "dropped_training_ids": [
+        524,
+        1299
+      ]
+    },
+    {
+      "fold": 4,
+      "fit_rows": 1166,
+      "validation_rows": 292,
+      "dropped_training_ids": [
+        524,
+        1299
+      ]
+    }
+  ]
+}

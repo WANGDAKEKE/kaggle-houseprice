@@ -1,0 +1,10 @@
+{
+  "purpose": "Add frozen parent Features source to cache key, assert Id/fold and preserve cumulative elapsed time",
+  "no_model_fitting": true,
+  "predictions_unchanged": true,
+  "prediction_array_sha256": {
+    "experiments/v6/cv/tabpfn_v2_physical_e16_seed5509.npz": "347cca608f8dccf163e01a8056f1e5119dc8ab97ad0e13e508bf4b1b989813b4",
+    "experiments/v6/cv/tabpfn_v2_physical_e4_seed5509.npz": "76eed6e8dfaf7707719a916a3572f8be66d8398e1daabeb527a5cf23bdd4ab9f",
+    "experiments/v6/cv/tabpfn_v2_raw_e4_seed5509.npz": "05c8c191a1f5c2b590d1da3d12786636a1eff85e3805a6c9b9933dbde3234280"
+  }
+}

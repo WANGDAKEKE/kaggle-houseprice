@@ -6,6 +6,8 @@
 
 ## 输出
 
+- **`submission_v6.csv`：本轮建议先提交这个文件**。对数空间 v5、physical TabPFN/e16、quality 类别 TabPFN/e4 三路各 1/3，尚未提交，线上分数未知。
+- `experiments/v6/report.html`：新模型、结构特征、训练处理、完整候选权重与逐房屋收益诊断。
 - `submission_v5.csv`：保留 v4、加入 30% SVR，并用折内面积分位数降低大面积外推权重。用户反馈线上 **0.11595**，目前已提交最佳版本。
 - `experiments/v5/report.html`：24 个基础模型/特征配置、固定候选后的嵌套拟合比较、普通成交及年份/面积诊断。
 - `submission_v4.csv`：v2/v3 对数空间等权融合，用户反馈线上 **0.11679**，是 v5 提交前的最佳版本。提交前公式估算约 0.11680。
@@ -118,3 +120,49 @@ sh scripts/run.sh scripts/report_v5.py
 公开方案的来源与取舍见 `experiments/v5/research_notes.md`。本轮未使用外部 Ames 真实售价、公开答案提交或按 Id 查表覆盖。代码、全部实验、模型和预测由 `v5.0.0` 标签冻结。
 
 用户提供的同学提交历史截图显示：旧的 Lasso + SVR + CatBoost + XGBoost 等权融合为 **0.11963**，后续描述为“50% TabPFN + 50% 原集成”的文件为 **0.11390**。当前 v5 与其差 **0.00205**。截图提供了可继续研究的模型方向，但未提供代码、TabPFN 版本或控制其他条件的消融，不能据此把全部收益归因于 TabPFN。来源说明与截图文字保存在 v5 线上结果记录中。
+
+
+## v6：TabPFN、两种表示与训练处理
+
+2026-10-16 生成 `submission_v6.csv`，版本号 `v6.0.0`。**用户本轮先提交这一份即可**；当前已提交最佳仍是 v5 的 **0.11595**，v6 线上分数留空。
+
+新增官方公开 TabPFN v2 回归模型（Python 包 9.2.0；Built with PriorLabs-TabPFN），比较 raw/e4、physical/e4、physical/e16、raw 训练部分剔除两套极端房屋、raw 将质量字段改为类别，共 5 个基础配置，各做相同 seed5509 的 5 折。v5 参考从核验过的历史缓存重建，旧模型新增拟合为 **0 次**。最终采用全部训练样本的 physical/e16 和质量类别 raw/e4 两种表示，合计 20 个内部成员；训练部分剔除样本的方案只作未采用的探索。主方案保留所有训练行和所有验证行。
+
+最终在对数空间将 **v5、physical/e16、quality 类别 raw/e4 三路各取 1/3**，TabPFN 合计占 2/3。在全部 1,460 条历史房屋的相同 5 折 OOF 上：
+
+| 指标 | 固定 v5 同折参考 | v6 三路等权 |
+|---|---:|---:|
+| 全体 log-RMSE | 0.11968642 | 0.11367346 |
+| 去两套极端房屋，仅诊断 | 0.10586973 | 0.10351768 |
+| Normal 成交 | 0.08658733 | 0.08390639 |
+
+初案先比较单表示与两种表示各半，再比较 TabPFN 总权重 50%、75% 和自然三路等权。75% 的全体误差更低，但相对半权初案的增量约 96.9% 来自两套极端房屋；三路等权的普通房屋和 Normal 指标都比 50%/75% 更好，分别在 3/5、4/5 折优于半权初案，因此最终选择三路等权。相对原 v5，去掉各组收益最大的 5 条后，普通房屋和 Normal 仍有正净收益。不过三路等权相对半权初案的增量也有约 89.6% 来自两套极端房屋，不能称为全面稳定改善。
+
+这些配方只组合既有预测，不新增模型拟合。表示和权重决定参考了同一批历史 CV，存在适应选择偏差；不能把 OOF 分数当作新独立验证或线上估算。`selection_rationale.json` 保留最初的 physical/pending 和后来的半权方案记录，再追加最终三路等权决定，未伪装成预先固定。完整权重、逐折及集中度对照见 `experiments/v6/weight_choice_diagnostic.json`。
+
+`submission_v6.csv` 含 1,459 行，SHA-256 为 `cf1c335f3a580accd45457e8bc4247185bd97b9aef656a6adf5ecc8cb288b63f`。先独立重载两套模型并重建全部 1,459 行预测方向，再核对相同组件上下文，将重建方向换权为最终三路等权并核验，最大绝对对数差 **1.586735e-8**；换权没有新增 GPU 推理。方法和原半权重载审计见 `experiments/v6/reproduction_audit.json` 及 `half_candidate/`。公开权重及许可、训练上下文、组件预测、缓存和 physical/半权备份均保存在 `experiments/v6/`。
+
+另用已反馈线上分数计算旧预测融合，备用 `submission_v6_lb_blend.csv` 估算只降低约 **0.0000125**，所以不优先提交；该值依赖全量相同测试评分及分数舍入前提。主 v6 加入新预测方向，线上结果需用户提交确认。公开研究与排名路径见 `experiments/v6/ranking_routes_research.md`，完整候选见 `experiments/v6/candidate_comparison.csv`。
+
+v6 使用独立 `.venv-tabpfn` 和 `requirements-tabpfn.lock.txt`（本机 macOS ARM64/MPS 环境），旧环境锁文件不变。已有环境下，以下命令会重新加载两个组件模型、生成全部测试预测并按保存的最终权重核验：
+
+```sh
+sh scripts/run_tabpfn.sh scripts/predict_v6.py
+sh scripts/run_tabpfn.sh scripts/report_v6.py
+```
+
+在独立 checkout 中重建同一实验，先按独立锁文件准备 Python 3.12 环境，并保留仓库内的公开权重、官方数据与历史缓存：
+
+```sh
+python3.12 -m venv .venv-tabpfn
+.venv-tabpfn/bin/python -m pip install -r requirements-tabpfn.lock.txt
+sh scripts/run_tabpfn.sh scripts/prepare_v6_reference.py
+sh scripts/run_tabpfn.sh scripts/optimize_v6.py cv --features raw --estimators 4 --seed 5509
+sh scripts/run_tabpfn.sh scripts/optimize_v6.py cv --features physical --estimators 4 --seed 5509
+sh scripts/run_tabpfn.sh scripts/optimize_v6.py cv --features physical --estimators 16 --seed 5509
+sh scripts/run_tabpfn.sh scripts/tabpfn_variants_v6.py cv --variant all
+sh scripts/run_tabpfn.sh scripts/optimize_v6.py finalize --features physical --estimators 16 --seed 5509
+sh scripts/run_tabpfn.sh scripts/finalize_v6_diverse.py finalize
+sh scripts/run_tabpfn.sh scripts/predict_v6.py
+sh scripts/run_tabpfn.sh scripts/report_v6.py
+```

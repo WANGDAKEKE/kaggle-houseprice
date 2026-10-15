@@ -1,0 +1,17 @@
+{
+  "role": "Exact original physical/e16 + v5 half blend retained before representation bag",
+  "sha256": {
+    "selection.json": "b7f12ff246b99afcd28068ed832193c7a6ff2b8c1531c2945b2c59f7b25f7e24",
+    "fit_context.joblib": "1806682a3f4e0ce72806a8f4e6502594ad4536b327f225cd1d2e5e02a87f8852",
+    "test_component_log_predictions.csv": "d8261f93f7336bb65adf1e303a041c0c7a45ef8c441c0f36783d57cd77d0404a",
+    "submission_v6.csv": "0b2e61e25d72dc33765f2bd7e96e794de14bb83f11df82cf1ce81f2f08273b94",
+    "submission_audit.json": "1d61795210a47cc99a351e732741933c7636e7489af0f7b39e790ec7bedbb9b2"
+  },
+  "source_paths": {
+    "selection.json": "experiments/v6/selection.json",
+    "fit_context.joblib": "experiments/v6/fit_context.joblib",
+    "test_component_log_predictions.csv": "experiments/v6/test_component_log_predictions.csv",
+    "submission_v6.csv": "submission_v6.csv",
+    "submission_audit.json": "experiments/v6/submission_audit.json"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "role": "50% v5 +25% physical16 +25% quality4 candidate before final three-way equal blend",
+  "sha256": {
+    "selection.json": "b4ccb3528f085b343da797b9254449a4a38a2a7cff11afb65f29f1848b8698c6",
+    "submission_audit.json": "7eab19d4a06f83dcae7b800e17725f38a911fb6a876fc1536e56c3194bc764c6",
+    "fit_context.joblib": "36753e894c7126aa4f6f11b765e2ec850de8f172321df3241af16d5d2481f64e",
+    "test_component_log_predictions.csv": "95a991e67d3cde7e455fb90f0f1132b95f36b13d8d247d7dff540db1a1d52da5",
+    "reproduction_audit.json": "02b55d5495206163187160bd4c2260d020f10a5335adf847f01cf8fea5bddc55",
+    "reproduced_submission_v6.csv": "570ad121e2c719ac2c7c898a3342a04369bcc672c85f555ed007383be34893bc",
+    "submission_v6.csv": "646463d5d610108b342a16e5682f3e62d0821f1af87038c13d6090e1a21c7a75"
+  }
+}

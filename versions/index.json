@@ -112,6 +112,58 @@
       "score_source": "user_report",
       "score_reported_date": "2026-10-15",
       "online_outcome": "new_best"
+    },
+    {
+      "version": "v6",
+      "git_tag": "v6.0.0",
+      "status": "ready_for_user_submission",
+      "public_log_rmse": null,
+      "model": "TabPFN-v2_diverse_physical16_quality4_v5_equal_thirds_log_blend",
+      "weights_in_log_space": {
+        "v5": 0.3333333333333333,
+        "physical_e16": 0.3333333333333333,
+        "quality_e4": 0.3333333333333333
+      },
+      "components": [
+        {
+          "name": "physical_e16",
+          "features": "physical",
+          "estimators": 16,
+          "seed": 42,
+          "feature_variant": "identity",
+          "global_log_weight": 0.3333333333333333
+        },
+        {
+          "name": "quality_e4",
+          "features": "raw",
+          "estimators": 4,
+          "seed": 42,
+          "feature_variant": "quality_categorical",
+          "global_log_weight": 0.3333333333333333
+        }
+      ],
+      "development_cv_log_rmse": 0.11367346183788428,
+      "ordinary_house_diagnostic_log_rmse": 0.1035176821235781,
+      "normal_transaction_log_rmse": 0.08390638923149497,
+      "v5_same_fold_metrics": {
+        "all": 0.1196864168397018,
+        "ordinary": 0.1058697276790938,
+        "normal": 0.0865873288312354
+      },
+      "cv_protocol": "Full 1460 historical houses, matched KFold 5 seed5509, pooled OOF; 5 base configurations and an equal representation bag built without extra CV fits. Cached final-v5 recipe as baseline; no old model refits.",
+      "validation_caveat": "All these representations and weights were compared on reused historical houses and the same folds. The final choice uses those outcomes and carries historical selection bias; it is not new independent validation. Incremental gains from raising PFN above half concentrate in a few houses, even though gains versus v5 remain positive after removing each group's top five improvements.",
+      "all_main_training_and_validation_rows_retained": true,
+      "unselected_training_only_trim_variant": true,
+      "submission_file": "versions/v6/submission_v6.csv",
+      "sha256": "cf1c335f3a580accd45457e8bc4247185bd97b9aef656a6adf5ecc8cb288b63f",
+      "experiment_directory": "experiments/v6",
+      "environment_lock": "requirements-tabpfn.lock.txt",
+      "checkpoint_sha256": "2ab5a07d5c41dfe6db9aa7ae106fc6de898326c2765be66505a07e2868c10736",
+      "reproduction_audit": "experiments/v6/reproduction_audit.json",
+      "reproduction_status": "full_component_models_reloaded_and_final_weights_algebraically_verified",
+      "date": "2026-10-16",
+      "reproduction_max_abs_log_prediction_difference": 1.5867353653220562e-08,
+      "reproduction_method": "Both models were independently reloaded and predicted all 1459 rows for the saved half-weight candidate. Identical component contexts were checked, then those rebuilt predictions were algebraically reweighted to final equal thirds. No new inference was needed for this weight-only update."
     }
   ],
   "best_actually_submitted_version": "v5",

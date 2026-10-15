@@ -1,0 +1,164 @@
+{
+  "main_configuration_candidate": "physical_e16",
+  "weights_in_log_space": {
+    "v5": 0.5,
+    "TabPFN_v2": 0.5
+  },
+  "choice_reason": "Physical features improved ordinary and Normal-house errors versus raw. The 4- and 16-member half blends are practically tied; retain the larger internal ensemble to average preprocessing randomness. The half blend improves ordinary and Normal groups more than pure TabPFN, whose all-house advantage is concentrated in the two extremes. This is adaptive selection from historical folds, not independent confirmation.",
+  "physical_e4_half": {
+    "name": "log_blend_0.5",
+    "tabpfn_weight": 0.5,
+    "space": "log",
+    "all": 0.1145769273769485,
+    "ordinary": 0.1039893974008089,
+    "normal": 0.0842225725827486
+  },
+  "physical_e16_half": {
+    "name": "log_blend_0.5",
+    "tabpfn_weight": 0.5,
+    "space": "log",
+    "all": 0.1145937228777466,
+    "ordinary": 0.1039959394660166,
+    "normal": 0.084196944410677
+  },
+  "variant_results_pending_at_recording": true,
+  "recorded_at_utc": "2026-10-15T15:53:17.361486+00:00",
+  "historical_record_note": "The original physical_e16 candidate, its weights, pending-variant flag and timestamp above describe an earlier phase. They are preserved as recorded and are superseded by the subsequent decision below; this was not a preregistered final representation choice.",
+  "subsequent_decisions": [
+    {
+      "recorded_at_utc": "2026-10-15T16:00:34.970014+00:00",
+      "phase": "final_diverse_representation_choice_after_completed_variant_comparisons",
+      "main_configuration_candidate": "diverse_physical_e16_quality_categorical_e4",
+      "weights_in_log_space": {
+        "v5": 0.5,
+        "physical_e16": 0.25,
+        "quality_e4": 0.25
+      },
+      "choice_reason": "Equal representation bag improves ordinary and Normal groups versus physical-only half blend while slightly worsening all-house RMSE; use both representations to reduce reliance on exceptional houses.",
+      "local_metrics": {
+        "all": 0.11464014695029272,
+        "ordinary": 0.10362850894110326,
+        "normal": 0.08404011486101524
+      },
+      "v5_same_fold_metrics": {
+        "all": 0.1196864168397018,
+        "ordinary": 0.1058697276790938,
+        "normal": 0.0865873288312354
+      },
+      "physical_only_half_metrics": {
+        "all": 0.1145937228777466,
+        "ordinary": 0.10399593946601662,
+        "normal": 0.08419694441067702
+      },
+      "adaptive_selection_caveat": "Model representations and ensemble size were explored on these same historical folds; final bag is informed by those comparisons, not independent validation. No finer bag weight optimization was performed.",
+      "phase_history": [
+        "Initial protocol: raw and bounded physical comparison, 50% total TabPFN / 50% v5.",
+        "After raw/e4 and physical/e4 ordinary/Normal benefits, expanded to physical/e16, training-only trimming and quality-category representation.",
+        "Initially retained physical/e16 half blend while variant results were pending, as recorded in the original fields above.",
+        "After variant comparisons, tested equal representation bag without new CV fits. Compared quality fractions 0, .5 and 1 within the TabPFN half.",
+        "Selected equal physical/e16 + quality/e4 representations for better ordinary and Normal scores with a small all-row RMSE cost versus physical-only."
+      ],
+      "main_training_and_validation_rows_preserved": true,
+      "training_only_trim_variant_selected": false,
+      "new_base_configurations": 5,
+      "folds_per_base_configuration": 5,
+      "additional_cv_fits_for_representation_average": 0,
+      "new_old_model_fits": 0,
+      "fine_representation_weight_search": false,
+      "submitted_to_kaggle": false,
+      "main_submission_file": "submission_v6.csv",
+      "main_submission_sha256": "646463d5d610108b342a16e5682f3e62d0821f1af87038c13d6090e1a21c7a75"
+    },
+    {
+      "recorded_at_utc": "2026-10-15T16:04:55.042562+00:00",
+      "phase": "final_natural_three_equal_weight_choice_after_saved_direction_diagnostics",
+      "supersedes_phase": "final_diverse_representation_choice_after_completed_variant_comparisons",
+      "main_configuration_candidate": "diverse_physical_e16_quality_categorical_e4_equal_thirds",
+      "weights_in_log_space": {
+        "v5": 0.3333333333333333,
+        "physical_e16": 0.3333333333333333,
+        "quality_e4": 0.3333333333333333
+      },
+      "metrics": {
+        "all": 0.11367346183788428,
+        "ordinary": 0.1035176821235781,
+        "normal": 0.08390638923149497
+      },
+      "choice_reason": "Use a natural equal average of the three distinct predictors. The two-thirds PFN mixture has better ordinary-house and Normal-transaction RMSE than both half and three-quarter PFN mixtures, with more folds improving than three-quarter. This is a discrete natural-weight choice; no continuous or fine-grid weight optimization was performed.",
+      "half_candidate_preserved": "experiments/v6/half_candidate",
+      "physical_candidate_preserved": "experiments/v6/physical_candidate",
+      "coarse_three_quarter_candidate_role": "Diagnostic only; not delivered main weight. Most of its incremental squared-error gain over half comes from the two extreme houses.",
+      "increment_vs_half": {
+        "total_squared_error_gain": 0.3222327552006231,
+        "two_extreme_squared_error_gain": 0.28876093435435446,
+        "ordinary_squared_error_gain": 0.03347182084626869,
+        "two_extreme_fraction_of_total_gain": 0.8961253308173808,
+        "group_sensitivity": {
+          "all": {
+            "rows": 1460,
+            "net_squared_error_gain": 0.3222327552006231,
+            "fraction_houses_improved": 0.510958904109589,
+            "net_squared_error_gain_without_top5": -0.038821778254569894,
+            "net_squared_error_gain_without_top10": -0.0816693204097324,
+            "top5_removed_rule": "Remove five largest per-house positive-direction MSE gains for diagnosis only; all validation rows stay in every reported RMSE"
+          },
+          "ordinary": {
+            "rows": 1458,
+            "net_squared_error_gain": 0.03347182084626869,
+            "fraction_houses_improved": 0.5109739368998628,
+            "net_squared_error_gain_without_top5": -0.030126400359621525,
+            "net_squared_error_gain_without_top10": -0.06924802417095897,
+            "top5_removed_rule": "Remove five largest per-house positive-direction MSE gains for diagnosis only; all validation rows stay in every reported RMSE"
+          },
+          "normal": {
+            "rows": 1198,
+            "net_squared_error_gain": 0.0269055848786199,
+            "fraction_houses_improved": 0.5041736227045075,
+            "net_squared_error_gain_without_top5": -0.018866843682921085,
+            "net_squared_error_gain_without_top10": -0.03998499479625091,
+            "top5_removed_rule": "Remove five largest per-house positive-direction MSE gains for diagnosis only; all validation rows stay in every reported RMSE"
+          }
+        }
+      },
+      "folds_improving_vs_half": {
+        "all": 4,
+        "ordinary": 3,
+        "normal": 4
+      },
+      "improvement_vs_v5_group_sensitivity": {
+        "all": {
+          "rows": 1460,
+          "net_squared_error_gain": 2.0486463765881617,
+          "fraction_houses_improved": 0.5383561643835616,
+          "net_squared_error_gain_without_top5": 0.4033245306626865,
+          "net_squared_error_gain_without_top10": 0.21780195498051502,
+          "top5_removed_rule": "Remove five largest per-house positive-direction MSE gains for diagnosis only; all validation rows stay in every reported RMSE"
+        },
+        "ordinary": {
+          "rows": 1458,
+          "net_squared_error_gain": 0.7180485633934811,
+          "fraction_houses_improved": 0.5384087791495199,
+          "net_squared_error_gain_without_top5": 0.43663010476052044,
+          "net_squared_error_gain_without_top10": 0.26437312696622917,
+          "top5_removed_rule": "Remove five largest per-house positive-direction MSE gains for diagnosis only; all validation rows stay in every reported RMSE"
+        },
+        "normal": {
+          "rows": 1198,
+          "net_squared_error_gain": 0.5475858655931174,
+          "fraction_houses_improved": 0.5300500834724541,
+          "net_squared_error_gain_without_top5": 0.34320490710841056,
+          "net_squared_error_gain_without_top10": 0.2417497203647102,
+          "top5_removed_rule": "Remove five largest per-house positive-direction MSE gains for diagnosis only; all validation rows stay in every reported RMSE"
+        }
+      },
+      "additional_model_fits_for_weight_choice": 0,
+      "selection_caveat": "All these representations and weights were compared on reused historical houses and the same folds. The final choice uses those outcomes and carries historical selection bias; it is not new independent validation. Incremental gains from raising PFN above half concentrate in a few houses, even though gains versus v5 remain positive after removing each group's top five improvements.",
+      "main_submission_file": "submission_v6.csv",
+      "main_submission_sha256": "cf1c335f3a580accd45457e8bc4247185bd97b9aef656a6adf5ecc8cb288b63f",
+      "reproduction_audit": "experiments/v6/reproduction_audit.json",
+      "reproduction_method": "Both models were independently reloaded and predicted all 1459 rows for the saved half-weight candidate. Identical component contexts were checked, then those rebuilt predictions were algebraically reweighted to final equal thirds. No new inference was needed for this weight-only update.",
+      "submitted_to_kaggle": false
+    }
+  ],
+  "current_main_decision_phase": "final_natural_three_equal_weight_choice_after_saved_direction_diagnostics"
+}

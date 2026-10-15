@@ -1,0 +1,23 @@
+{
+  "role": "Exploratory equal bag of two existing OOF directions; no extra fitting and no independent validation",
+  "results": [
+    {
+      "quality_fraction_of_TabPFN": 0.0,
+      "all": 0.1145937228777466,
+      "ordinary": 0.10399593946601662,
+      "normal": 0.084196944410677
+    },
+    {
+      "quality_fraction_of_TabPFN": 0.5,
+      "all": 0.11464014695029272,
+      "ordinary": 0.10362850894110325,
+      "normal": 0.08404011486101523
+    },
+    {
+      "quality_fraction_of_TabPFN": 1.0,
+      "all": 0.11504553025419995,
+      "ordinary": 0.10365034209504226,
+      "normal": 0.08432220457583486
+    }
+  ]
+}

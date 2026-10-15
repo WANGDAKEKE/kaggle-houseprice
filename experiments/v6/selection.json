@@ -1,0 +1,70 @@
+{
+  "version": "v6",
+  "model_name": "TabPFN-v2_diverse_physical16_quality4_v5_equal_thirds_log_blend",
+  "public_log_rmse": null,
+  "model_version": "TabPFN v2",
+  "screenshot_tabpfn_version_known": false,
+  "features": "diverse",
+  "n_estimators": 20,
+  "device": "mps",
+  "weights_in_log_space": {
+    "v5": 0.3333333333333333,
+    "physical_e16": 0.3333333333333333,
+    "quality_e4": 0.3333333333333333
+  },
+  "comparison_seed": 5509,
+  "validation_role": "matched historical full-train KFold; not new independent data; no old model refitting",
+  "local_half_blend_metrics": {
+    "all": 0.1136734618378843,
+    "ordinary": 0.10351768212357809,
+    "normal": 0.08390638923149497
+  },
+  "v5_same_local_metrics": {
+    "all": 0.1196864168397018,
+    "ordinary": 0.1058697276790938,
+    "normal": 0.0865873288312354
+  },
+  "pretrained_sha256": "2ab5a07d5c41dfe6db9aa7ae106fc6de898326c2765be66505a07e2868c10736",
+  "base_submission_sha256": "a48b84f57802f0adf5b7344a3b8ba7cdbf31a18bf7e8ff1c670be48bb4fb05db",
+  "pipeline_source_sha256": "5c850b5376c4a93c6f5f1cf17c84c752f286e322cd2b0fb3e7f9a0aa96989682",
+  "feature_source_sha256": "e82895b47a9112e095c7e8a4646694e5fbf0f6298fde03b86ec29f30f96214f1",
+  "requirements_sha256": "bf700d1a9c142db27bda81acbda891b80c133d33c2c0f08a134bf7d1ea91f307",
+  "train_sha256": "1e18addf81e5e4d347cc17ee6075bbe4a42b7fa26b9e5b063e8f692a5f929d41",
+  "test_sha256": "8fdd3d829d4d986b58f845c9553b225e67dd8383624d90fb6ca1d4bed5798c1e",
+  "elapsed_final_fit_predict_seconds": 172.4084701538086,
+  "components": [
+    {
+      "name": "physical_e16",
+      "features": "physical",
+      "estimators": 16,
+      "seed": 42,
+      "feature_variant": "identity",
+      "global_log_weight": 0.3333333333333333
+    },
+    {
+      "name": "quality_e4",
+      "features": "raw",
+      "estimators": 4,
+      "seed": 42,
+      "feature_variant": "quality_categorical",
+      "global_log_weight": 0.3333333333333333
+    }
+  ],
+  "local_selected_blend_metrics": {
+    "all": 0.1136734618378843,
+    "ordinary": 0.10351768212357809,
+    "normal": 0.08390638923149497
+  },
+  "legacy_metrics_key_note": "local_half_blend_metrics is retained for schema compatibility and now records the selected equal-thirds blend; use local_selected_blend_metrics.",
+  "quality_transform_source_sha256": "3c79bcff0ca0491dbcb68cac21b5904ac2c04989ecc574b5fe532287f9c35522",
+  "finalizer_source_sha256": "a06ec5117e47e2270b43220ccb85e8665afb26d801f4c3cfea7f7e221a3dd9ad",
+  "elapsed_diverse_finalize_wall_seconds": 0.6268069744110107,
+  "quality_full_fit_predict_seconds": 25.181864976882935,
+  "physical_full_fit_predict_seconds": 147.22660517692566,
+  "submission_sha256": "cf1c335f3a580accd45457e8bc4247185bd97b9aef656a6adf5ecc8cb288b63f",
+  "fit_context_sha256": "92f4003a251a129d4fb3dd068842a52e37c4039e0c7123a08c561dcef7e63a6a",
+  "representation_choice_rationale": "Choose natural equal thirds after comparing historical folds: it improves ordinary and Normal groups over the 50% baseline-weight draft and 75% TabPFN grid point. Most additional all-house gain from 75% versus 50% came from two extreme houses. Keep the initial half candidate and disclose adaptive weight selection.",
+  "selection_bias": "Model representations and ensemble size were explored on these same historical folds; final bag is informed by those comparisons, not independent validation. No finer bag weight optimization was performed.",
+  "physical_candidate_backup": "experiments/v6/physical_candidate",
+  "no_finer_representation_weight_search": true
+}

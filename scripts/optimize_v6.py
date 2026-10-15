@@ -53,20 +53,35 @@ def probe():
 def cv(seed,features,estimators):
     train,_=load_data();y=np.log(train.SalePrice.to_numpy());ref=pd.read_csv(ART/"reference"/f"full1460_seed{seed}.csv")
     assert np.array_equal(ref.Id,train.Id)
-    signature=hashlib.sha256((digest(ROOT/"src/house_prices_v6.py")+digest(ROOT/"data/raw/train.csv")+
+    legacy_signature=hashlib.sha256((digest(ROOT/"src/house_prices_v6.py")+digest(ROOT/"data/raw/train.csv")+
         digest(ROOT/"requirements-tabpfn.lock.txt")+json.dumps({"seed":seed,"features":features,"estimators":estimators,
         "device":device_name(),"checkpoint":CHECKPOINT_SHA256},sort_keys=True)).encode()).hexdigest()
+    feature_source_hash=digest(ROOT/"src/house_prices.py")
+    signature=hashlib.sha256((legacy_signature+feature_source_hash).encode()).hexdigest()
     path=ART/"cv"/f"tabpfn_v2_{features}_e{estimators}_seed{seed}.npz";path.parent.mkdir(exist_ok=True)
-    p=np.full(len(train),np.nan);fold_ids=np.full(len(train),-1);elapsed=[]
+    p=np.full(len(train),np.nan);fold_ids=np.full(len(train),-1);elapsed=[];cached_seconds=0.
     if path.exists():
         old=np.load(path)
-        if str(old["signature"])==signature:p=old["prediction"];fold_ids=old["fold_ids"]
+        # Earlier v6 caches predate the parent-source key. This exact frozen
+        # parent hash was independently checked before migration; predictions
+        # are retained only for that unchanged implementation.
+        legacy_ok=(str(old["signature"])==legacy_signature and feature_source_hash==
+                   "e82895b47a9112e095c7e8a4646694e5fbf0f6298fde03b86ec29f30f96214f1")
+        if str(old["signature"])==signature or legacy_ok:
+            assert np.array_equal(old["ids"],train.Id.to_numpy())
+            p=old["prediction"].copy();fold_ids=old["fold_ids"].copy();cached_seconds=float(old["seconds"])
+            for fold,(_,va) in enumerate(KFold(5,shuffle=True,random_state=seed).split(train)):
+                if np.isfinite(p[va]).any():assert np.isfinite(p[va]).all() and (fold_ids[va]==fold).all()
+            if legacy_ok:
+                np.savez_compressed(path,prediction=p,fold_ids=fold_ids,ids=train.Id.to_numpy(),signature=signature,
+                    seconds=cached_seconds,feature_source_sha256=feature_source_hash,legacy_signature=legacy_signature)
     for fold,(tr,va) in enumerate(KFold(5,shuffle=True,random_state=seed).split(train)):
         assert np.array_equal(ref.fold.to_numpy()[va],np.full(len(va),fold))
         if np.isfinite(p[va]).all():continue
         start=time.time();model=LocalTabPFN(estimators,features,device_name(),42+fold).fit(train.iloc[tr],y[tr]);p[va]=model.predict(train.iloc[va]);fold_ids[va]=fold
         elapsed.append(time.time()-start)
-        np.savez_compressed(path,prediction=p,fold_ids=fold_ids,ids=train.Id.to_numpy(),signature=signature,seconds=sum(elapsed))
+        np.savez_compressed(path,prediction=p,fold_ids=fold_ids,ids=train.Id.to_numpy(),signature=signature,
+            seconds=cached_seconds+sum(elapsed),feature_source_sha256=feature_source_hash)
         print(json.dumps({"seed":seed,"features":features,"estimators":estimators,"fold":fold,"seconds":elapsed[-1],
             "tabpfn":metrics(y[va],p[va],train.iloc[va]),"v5":metrics(y[va],ref.v5_log.to_numpy()[va],train.iloc[va]),
             "half_blend":metrics(y[va],.5*(p[va]+ref.v5_log.to_numpy()[va]),train.iloc[va])}),flush=True)
@@ -87,6 +102,9 @@ def cv(seed,features,estimators):
 
 def finalize(seed,features,estimators):
     train,test=load_data();y=np.log(train.SalePrice.to_numpy())
+    protocol=json.loads((ART/"protocol.json").read_text())
+    for name,expected in protocol["previous_submission_hashes"].items():
+        assert digest(ROOT/name)==expected,f"Historical submission changed: {name}"
     comparison=pd.read_csv(ART/f"comparison_{features}_e{estimators}_seed{seed}.csv")
     baseline=comparison[comparison.name=="log_blend_0.0"].iloc[0]
     # Fixed 50/50 log-space blend reproduces the screenshot's broad idea. We do
@@ -112,7 +130,12 @@ def finalize(seed,features,estimators):
         "local_half_blend_metrics":{n:float(candidate[n]) for n in ["all","ordinary","normal"]},
         "v5_same_local_metrics":{n:float(baseline[n]) for n in ["all","ordinary","normal"]},
         "pretrained_sha256":CHECKPOINT_SHA256,"base_submission_sha256":base_hash,
-        "pipeline_source_sha256":digest(ROOT/"src/house_prices_v6.py"),"elapsed_final_fit_predict_seconds":time.time()-start}
+        "pipeline_source_sha256":digest(ROOT/"src/house_prices_v6.py"),
+        "feature_source_sha256":digest(ROOT/"src/house_prices.py"),
+        "requirements_sha256":digest(ROOT/"requirements-tabpfn.lock.txt"),
+        "train_sha256":digest(ROOT/"data/raw/train.csv"),
+        "test_sha256":digest(ROOT/"data/raw/test.csv"),
+        "elapsed_final_fit_predict_seconds":time.time()-start}
     save("selection.json",selection)
     audit={"rows":len(frame),"id_order_matches_test":True,"positive_finite":True,"sha256":digest(ROOT/"submission_v6.csv"),
         "preserved_previous_submission_sha256":{n:digest(ROOT/n) for n in ["submission.csv","submission_v2.csv","submission_v3.csv","submission_v4.csv","submission_v5.csv"]},

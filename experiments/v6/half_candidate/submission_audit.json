@@ -1,0 +1,32 @@
+{
+  "rows": 1459,
+  "id_order_matches_test": true,
+  "positive_finite": true,
+  "sha256": "646463d5d610108b342a16e5682f3e62d0821f1af87038c13d6090e1a21c7a75",
+  "preserved_previous_submission_sha256": {
+    "submission.csv": "210223272bc07d8c7d483aadc47a9831faa248ca9c5c633699d12ebea9b3e3db",
+    "submission_v2.csv": "66c2d66ab1b9fe43cfd0bc68229a9881c1181fb87115e5fad6350d363972eb6a",
+    "submission_v3.csv": "f9787b96b898cb3ace1eea03bb79bffc56fb2967d34649155508b61d3f02b4de",
+    "submission_v4.csv": "6767f59cd9feaaa1b7521341be9fa18c8587b64cd8a0f4e80ee2ec54c4a7a8ad",
+    "submission_v5.csv": "a48b84f57802f0adf5b7344a3b8ba7cdbf31a18bf7e8ff1c670be48bb4fb05db"
+  },
+  "submitted_to_kaggle": false,
+  "min_price": 45712.306129125216,
+  "max_price": 537612.4357838649,
+  "physical_candidate_backup_manifest_sha256": "0250d5f57158dc6de4db7061d5b467957d86fb1ea2a82515bf4f51ea960cebe5",
+  "quality_test_cache_sha256": "ab71610cb773606bfd53244ceff09e3b18acf4b757287455a0bf09148d79f4a1",
+  "quality_settings": {
+    "checkpoint_sha256": "2ab5a07d5c41dfe6db9aa7ae106fc6de898326c2765be66505a07e2868c10736",
+    "pipeline_source_sha256": "5c850b5376c4a93c6f5f1cf17c84c752f286e322cd2b0fb3e7f9a0aa96989682",
+    "quality_transform_source_sha256": "3c79bcff0ca0491dbcb68cac21b5904ac2c04989ecc574b5fe532287f9c35522",
+    "train_sha256": "1e18addf81e5e4d347cc17ee6075bbe4a42b7fa26b9e5b063e8f692a5f929d41",
+    "test_sha256": "8fdd3d829d4d986b58f845c9553b225e67dd8383624d90fb6ca1d4bed5798c1e",
+    "requirements_sha256": "bf700d1a9c142db27bda81acbda891b80c133d33c2c0f08a134bf7d1ea91f307",
+    "features": "raw",
+    "estimators": 4,
+    "seed": 42,
+    "feature_variant": "quality_categorical",
+    "device": "mps"
+  },
+  "component_rows_match_official_test": true
+}

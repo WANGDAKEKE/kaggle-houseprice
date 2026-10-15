@@ -1,0 +1,52 @@
+{
+  "selection": {
+    "version": "v6",
+    "model_name": "TabPFN-v2_v5_half_log_blend",
+    "public_log_rmse": null,
+    "model_version": "TabPFN v2",
+    "screenshot_tabpfn_version_known": false,
+    "features": "physical",
+    "n_estimators": 16,
+    "device": "mps",
+    "weights_in_log_space": {
+      "v5": 0.5,
+      "TabPFN_v2": 0.5
+    },
+    "comparison_seed": 5509,
+    "validation_role": "matched historical full-train KFold; not new independent data; no old model refitting",
+    "local_half_blend_metrics": {
+      "all": 0.1145937228777466,
+      "ordinary": 0.1039959394660166,
+      "normal": 0.084196944410677
+    },
+    "v5_same_local_metrics": {
+      "all": 0.1196864168397018,
+      "ordinary": 0.1058697276790938,
+      "normal": 0.0865873288312354
+    },
+    "pretrained_sha256": "2ab5a07d5c41dfe6db9aa7ae106fc6de898326c2765be66505a07e2868c10736",
+    "base_submission_sha256": "a48b84f57802f0adf5b7344a3b8ba7cdbf31a18bf7e8ff1c670be48bb4fb05db",
+    "pipeline_source_sha256": "5c850b5376c4a93c6f5f1cf17c84c752f286e322cd2b0fb3e7f9a0aa96989682",
+    "feature_source_sha256": "e82895b47a9112e095c7e8a4646694e5fbf0f6298fde03b86ec29f30f96214f1",
+    "requirements_sha256": "bf700d1a9c142db27bda81acbda891b80c133d33c2c0f08a134bf7d1ea91f307",
+    "train_sha256": "1e18addf81e5e4d347cc17ee6075bbe4a42b7fa26b9e5b063e8f692a5f929d41",
+    "test_sha256": "8fdd3d829d4d986b58f845c9553b225e67dd8383624d90fb6ca1d4bed5798c1e",
+    "elapsed_final_fit_predict_seconds": 147.22660517692566
+  },
+  "audit": {
+    "rows": 1459,
+    "id_order_matches_test": true,
+    "positive_finite": true,
+    "sha256": "0b2e61e25d72dc33765f2bd7e96e794de14bb83f11df82cf1ce81f2f08273b94",
+    "preserved_previous_submission_sha256": {
+      "submission.csv": "210223272bc07d8c7d483aadc47a9831faa248ca9c5c633699d12ebea9b3e3db",
+      "submission_v2.csv": "66c2d66ab1b9fe43cfd0bc68229a9881c1181fb87115e5fad6350d363972eb6a",
+      "submission_v3.csv": "f9787b96b898cb3ace1eea03bb79bffc56fb2967d34649155508b61d3f02b4de",
+      "submission_v4.csv": "6767f59cd9feaaa1b7521341be9fa18c8587b64cd8a0f4e80ee2ec54c4a7a8ad",
+      "submission_v5.csv": "a48b84f57802f0adf5b7344a3b8ba7cdbf31a18bf7e8ff1c670be48bb4fb05db"
+    },
+    "submitted_to_kaggle": false,
+    "min_price": 46275.57425143015,
+    "max_price": 539055.8602576535
+  }
+}
