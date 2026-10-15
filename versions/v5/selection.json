@@ -1,0 +1,44 @@
+{
+  "version": "v5",
+  "selected_recipe": "svr_compact_g001_C5_w0.3_support",
+  "recipe": {
+    "new_names": [
+      "svr_compact_g001_C5"
+    ],
+    "new_weight": 0.3,
+    "support_gate": true
+  },
+  "final_inner_selection_seed": 24501,
+  "final_inner_scores": {
+    "name": "svr_compact_g001_C5_w0.3_support",
+    "all": 0.1114279644625971,
+    "ordinary": 0.10697881606259743,
+    "normal": 0.0874965339217435,
+    "eligible": true,
+    "objective": 0.10433281972738379,
+    "weight": 0.3,
+    "new_components": 1
+  },
+  "public_log_rmse": null,
+  "v4_user_reported_public_log_rmse": 0.11679,
+  "outer_release_gate": {
+    "passed": true,
+    "mean_two_outer_repeat_scores": {
+      "v4": {
+        "all": 0.11697105751334871,
+        "ordinary": 0.10737702064322341,
+        "normal": 0.08877461795817224
+      },
+      "selected": {
+        "all": 0.11651844554747498,
+        "ordinary": 0.10700182577746944,
+        "normal": 0.08744526328030137
+      }
+    },
+    "criterion": "nested mean all RMSE <= baseline+0.0003 and mean ordinary and Normal RMSE each below baseline; report all five folds per repeat plus per-house error contributions and year slices. If this fails do not label as a validated improvement.",
+    "retuned_after_outer_results": false
+  },
+  "outer_results_used_for_recipe_selection": false,
+  "source_hash": "58dd6272f2461f8bcd40be11a674e2dbdc1d97ade0be48fb1af06d8845036d4c",
+  "validation_caveat": "Screening saw historical development data before shortlist freeze. Nested inner selection excludes each outer validation fold but cannot undo that historical reuse."
+}

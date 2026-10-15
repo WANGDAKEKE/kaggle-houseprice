@@ -1,0 +1,57 @@
+{
+  "version": "v5",
+  "declared_before_new_outer_results": true,
+  "goal": "Improve ordinary houses and normal transactions, not only extreme low-price large homes",
+  "baseline": "frozen v4 four base model families at 25% each in log space",
+  "historical_data_reuse": "All train houses have appeared in earlier diagnostics; nested fits prevent within-run label leakage but do not make the data newly untouched. Screening uses original1168 seed42.",
+  "outer_cv": {
+    "rows": "all 1460 official train houses",
+    "method": "KFold shuffle",
+    "n_splits": 5,
+    "seeds": [
+      5501,
+      5509
+    ]
+  },
+  "inner_cv": {
+    "n_splits": 3,
+    "seed_rule": "19000 + outer_seed + outer_fold",
+    "data": "outer training rows only"
+  },
+  "candidate_shortlist_rule": "At most two kernel and two tree configs from screen, plus at most two target-encoded configs. Screen shortlist favors v4 graft improvement on ordinary and Normal rows and does not use outer folds.",
+  "recipe_grid": {
+    "baseline_weight": "1-new_weight",
+    "new_weight": [
+      0.15,
+      0.3
+    ],
+    "new_components": "each shortlisted model separately; equal kernel/tree or all-new average if >=2 candidates"
+  },
+  "inner_selection_rule": {
+    "metrics": "all rows log-RMSE, non-extreme diagnostic log-RMSE, Normal transaction log-RMSE",
+    "training_extreme_rule": "GrLivArea>4000 and SalePrice<300000; used only to define diagnostics, validation samples never removed",
+    "eligibility": "all RMSE <= baseline+0.0005; ordinary and Normal each improve >=0.00015",
+    "objective": "0.5*all RMSE + 0.25*ordinary RMSE + 0.25*Normal RMSE",
+    "fallback": "frozen v4 if no eligible recipe",
+    "tie_rule": "within 0.00005 prefer lower graft weight, then fewer new components"
+  },
+  "release_gate": "nested mean all RMSE <= baseline+0.0003 and mean ordinary and Normal RMSE each below baseline; report all five folds per repeat plus per-house error contributions and year slices. If this fails do not label as a validated improvement.",
+  "final_selection": "same inner selection rule on all1460 rows, 3-fold seed24501, no choice based on test prediction tails or leaderboard scores",
+  "full_training": "all1460 train rows; stochastic chosen components average seeds42/2026/137, deterministic fit once",
+  "no_external_test_labels": true,
+  "no_Kaggle_submission_by_agent": true,
+  "frozen_submission_hashes": {
+    "submission.csv": "210223272bc07d8c7d483aadc47a9831faa248ca9c5c633699d12ebea9b3e3db",
+    "submission_v2.csv": "66c2d66ab1b9fe43cfd0bc68229a9881c1181fb87115e5fad6350d363972eb6a",
+    "submission_v3.csv": "f9787b96b898cb3ace1eea03bb79bffc56fb2967d34649155508b61d3f02b4de",
+    "submission_v4.csv": "6767f59cd9feaaa1b7521341be9fa18c8587b64cd8a0f4e80ee2ec54c4a7a8ad"
+  },
+  "pre_outer_revision": {
+    "timing": "after historical screening results, before any new outer fit/results",
+    "basis": "SVR ordinary-house gains broad, but extreme-area extrapolation regresses; test feature-only applicability taper rather than a label/Id exception",
+    "gate": "For each actual fit subset compute GrLivArea q95 and q99; predict gate clip((q99-area)/(q99-q95),0,1), if equal use indicator area<=q95. Apply common gate to kernel or kernel-containing average graft. Ungated recipes remain inner candidates.",
+    "formula": "v4_log + new_weight*gate*(new_log-v4_log)",
+    "outer_uses": "Evaluate automatic inner recipe selector only; no choice of gate/weights after viewing outer outcomes",
+    "baseline_bagging": "CatBoost averages full frozen seeds42,2026,137 at every CV fit; final frozen v4 file reused exactly"
+  }
+}

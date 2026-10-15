@@ -1,0 +1,29 @@
+{
+  "all": {
+    "paired_house_mean_mse_gain": 0.0001159598134621333,
+    "bootstrap_95pct_interval": [
+      -0.0005514074824967672,
+      0.0007889809458198592
+    ],
+    "interval_role": "descriptive house resampling conditional on these shared-training cross-fit predictions; not a full model-development generalization confidence interval",
+    "net_gain_without_five_largest_positive_contributions": -0.2721425917926139
+  },
+  "ordinary_without_two_extremes_diagnostic": {
+    "paired_house_mean_mse_gain": 8.005211461892386e-05,
+    "bootstrap_95pct_interval": [
+      -0.0003148896603365119,
+      0.00038396126050781404
+    ],
+    "interval_role": "descriptive house resampling conditional on these shared-training cross-fit predictions; not a full model-development generalization confidence interval",
+    "net_gain_without_five_largest_positive_contributions": -0.027567218074423055
+  },
+  "normal_transactions": {
+    "paired_house_mean_mse_gain": 0.00023418635737999118,
+    "bootstrap_95pct_interval": [
+      4.737947998331164e-05,
+      0.00040360809153141853
+    ],
+    "interval_role": "descriptive house resampling conditional on these shared-training cross-fit predictions; not a full model-development generalization confidence interval",
+    "net_gain_without_five_largest_positive_contributions": 0.17551403947893676
+  }
+}

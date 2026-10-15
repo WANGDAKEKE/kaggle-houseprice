@@ -1,0 +1,26 @@
+{
+  "baseline_submission": "submission_v4.csv",
+  "baseline_sha256": "6767f59cd9feaaa1b7521341be9fa18c8587b64cd8a0f4e80ee2ec54c4a7a8ad",
+  "new_models": [
+    {
+      "name": "svr_compact_g001_C5",
+      "seed": 42,
+      "weight_in_new_component": 1.0,
+      "path": "experiments/v5/models/svr_compact_g001_C5_seed42.joblib",
+      "sha256": "233754b8adf1b401e2537fb2bb41b719334d16e8d9da3eeeb5fc126d93d9f3cc"
+    }
+  ],
+  "recipe": {
+    "new_names": [
+      "svr_compact_g001_C5"
+    ],
+    "new_weight": 0.3,
+    "support_gate": true
+  },
+  "gate_area_q95_q99": [
+    2466.1,
+    3123.4800000000023
+  ],
+  "gate_formula": "clip((q99-GrLivArea)/(q99-q95),0,1); gate=1 for uniform recipe",
+  "source_hash": "58dd6272f2461f8bcd40be11a674e2dbdc1d97ade0be48fb1af06d8845036d4c"
+}

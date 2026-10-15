@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "mean_two_outer_repeat_scores": {
+    "v4": {
+      "all": 0.11697105751334871,
+      "ordinary": 0.10737702064322341,
+      "normal": 0.08877461795817224
+    },
+    "selected": {
+      "all": 0.11651844554747498,
+      "ordinary": 0.10700182577746944,
+      "normal": 0.08744526328030137
+    }
+  },
+  "criterion": "nested mean all RMSE <= baseline+0.0003 and mean ordinary and Normal RMSE each below baseline; report all five folds per repeat plus per-house error contributions and year slices. If this fails do not label as a validated improvement.",
+  "retuned_after_outer_results": false
+}

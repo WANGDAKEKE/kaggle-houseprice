@@ -1,0 +1,102 @@
+[
+  {
+    "fold": 0,
+    "selected_recipe": "svr_compact_g001_C5_w0.3_support",
+    "v4": {
+      "all": 0.135743347107167,
+      "ordinary": 0.11898181511807847,
+      "normal": 0.10847536203463765
+    },
+    "selected": {
+      "all": 0.1359972113381478,
+      "ordinary": 0.11927235471499129,
+      "normal": 0.10830348102462733
+    },
+    "outer_train_area_q95_q99": [
+      2437.499999999996,
+      2913.5099999999966
+    ],
+    "validation_support_tapered_rows": 21,
+    "validation_support_zero_rows": 8
+  },
+  {
+    "fold": 1,
+    "selected_recipe": "svr_compact_scaledcats_w0.3_support",
+    "v4": {
+      "all": 0.09224350892231915,
+      "ordinary": 0.09224350892231915,
+      "normal": 0.0830811133109586
+    },
+    "selected": {
+      "all": 0.09196739192015818,
+      "ordinary": 0.09196739192015818,
+      "normal": 0.08279253724246134
+    },
+    "outer_train_area_q95_q99": [
+      2493.149999999996,
+      3167.059999999994
+    ],
+    "validation_support_tapered_rows": 11,
+    "validation_support_zero_rows": 2
+  },
+  {
+    "fold": 2,
+    "selected_recipe": "svr_compact_g001_C5_w0.3_support",
+    "v4": {
+      "all": 0.10537920041764333,
+      "ordinary": 0.10537920041764333,
+      "normal": 0.0818531320323222
+    },
+    "selected": {
+      "all": 0.10204221887050448,
+      "ordinary": 0.10204221887050448,
+      "normal": 0.07894495238649797
+    },
+    "outer_train_area_q95_q99": [
+      2519.6499999999996,
+      3223.9799999999996
+    ],
+    "validation_support_tapered_rows": 7,
+    "validation_support_zero_rows": 0
+  },
+  {
+    "fold": 3,
+    "selected_recipe": "svr_compact_g001_C5_w0.3_support",
+    "v4": {
+      "all": 0.10665810302401384,
+      "ordinary": 0.10665810302401384,
+      "normal": 0.0834013300252238
+    },
+    "selected": {
+      "all": 0.1061934954061159,
+      "ordinary": 0.1061934954061159,
+      "normal": 0.08203448058335039
+    },
+    "outer_train_area_q95_q99": [
+      2478.8499999999985,
+      3121.239999999998
+    ],
+    "validation_support_tapered_rows": 12,
+    "validation_support_zero_rows": 3
+  },
+  {
+    "fold": 4,
+    "selected_recipe": "svr_compact_g001_C5_w0.3_uniform",
+    "v4": {
+      "all": 0.12047693172160621,
+      "ordinary": 0.11270226737879457,
+      "normal": 0.08735694338899902
+    },
+    "selected": {
+      "all": 0.12917638575506965,
+      "ordinary": 0.11652425202789615,
+      "normal": 0.08527513608869662
+    },
+    "outer_train_area_q95_q99": [
+      2436.849999999996,
+      3094.579999999998
+    ],
+    "validation_support_tapered_rows": 21,
+    "validation_support_zero_rows": 4
+  }
+]

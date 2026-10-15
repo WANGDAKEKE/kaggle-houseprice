@@ -1,0 +1,29 @@
+{
+  "screen_unique_configurations": 24,
+  "kernel_configs": 12,
+  "tree_configs": 10,
+  "encoding_configs": 2,
+  "frozen_new_candidates": [
+    "svr_compact_scaledcats",
+    "svr_compact_g001_C5",
+    "crossfit_en_residual_cat"
+  ],
+  "frozen_recipes": 15,
+  "completed_outer_repeats": 2,
+  "outer_folds": 10,
+  "new_cached_train_predict_calls": 301,
+  "ignored_other_fingerprint_cache_files": [],
+  "estimator_fit_calls_in_cached_runs": 559,
+  "additional_internal_EN_fits_in_residual_models": 516,
+  "fit_count_note": "Cached calls only; screen and source-change reruns are documented separately. Residual estimator itself adds three inner EN and one full-fit EN.",
+  "outer_recipe_selection_counts": {
+    "svr_compact_g001_C5_w0.3_support": 5,
+    "svr_compact_scaledcats_w0.3_support": 2,
+    "svr_compact_g001_C5_w0.3_uniform": 3
+  },
+  "source_hash": "58dd6272f2461f8bcd40be11a674e2dbdc1d97ade0be48fb1af06d8845036d4c",
+  "pre_outer_freeze_commit": "389df4a",
+  "all_cached_predict_rows_disjoint_from_fit_rows": true,
+  "prior_global_screening_and_historical_data_reuse": true,
+  "outer_results_used_for_recipe_retuning": false
+}

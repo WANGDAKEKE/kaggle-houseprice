@@ -1,0 +1,10 @@
+{
+  "training_houses": 1460,
+  "any_repeat_tapered_houses": 67,
+  "any_repeat_zero_weight_houses": 13,
+  "potential_any_repeat_tapered_houses": 75,
+  "actual_counts_respect_selected_fold_recipe": true,
+  "taper_uses_features_only": true,
+  "no_validation_rows_removed": true,
+  "interpretation": "q95/q99 are fixed fold-local extrapolation heuristics, not a proven physical boundary. Gate was designed after historical screening, before outer fits."
+}

@@ -1,0 +1,22 @@
+final_selection_inner0 ref_v2_linear: 1 fits, 0.5s
+final_selection_inner0 ref_v2_cat: 3 fits, 62.4s
+final_selection_inner0 en_inter_size_scaled: 1 fits, 0.5s
+final_selection_inner0 cat_d5_onehot: 3 fits, 14.3s
+final_selection_inner0 svr_compact_scaledcats: 1 fits, 0.4s
+final_selection_inner0 svr_compact_g001_C5: 1 fits, 0.3s
+final_selection_inner0 crossfit_en_residual_cat: 3 fits, 7.3s
+final_selection_inner1 ref_v2_linear: 1 fits, 0.3s
+final_selection_inner1 ref_v2_cat: 3 fits, 56.4s
+final_selection_inner1 en_inter_size_scaled: 1 fits, 1.0s
+final_selection_inner1 cat_d5_onehot: 3 fits, 13.4s
+final_selection_inner1 svr_compact_scaledcats: 1 fits, 0.3s
+final_selection_inner1 svr_compact_g001_C5: 1 fits, 0.3s
+final_selection_inner1 crossfit_en_residual_cat: 3 fits, 8.0s
+final_selection_inner2 ref_v2_linear: 1 fits, 1.0s
+final_selection_inner2 ref_v2_cat: 3 fits, 59.6s
+final_selection_inner2 en_inter_size_scaled: 1 fits, 0.5s
+final_selection_inner2 cat_d5_onehot: 3 fits, 14.9s
+final_selection_inner2 svr_compact_scaledcats: 1 fits, 0.3s
+final_selection_inner2 svr_compact_g001_C5: 1 fits, 0.3s
+final_selection_inner2 crossfit_en_residual_cat: 3 fits, 10.1s
+Final inner predictions cached; recipe choice and release still governed by frozen protocol.

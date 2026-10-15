@@ -82,6 +82,33 @@
       "score_source": "user_report",
       "score_reported_date": "2026-10-15",
       "online_outcome": "new_best"
+    },
+    {
+      "version": "v5",
+      "git_tag": "v5.0.0",
+      "status": "ready_for_user_submission",
+      "public_log_rmse": null,
+      "v4_user_reported_public_log_rmse": 0.11679,
+      "model": "svr_compact_g001_C5_w0.3_support",
+      "recipe": {
+        "new_names": [
+          "svr_compact_g001_C5"
+        ],
+        "new_weight": 0.3,
+        "support_gate": true
+      },
+      "nested_selection_process_mean_log_rmse": 0.11651844554747498,
+      "v4_same_protocol_mean_log_rmse": 0.11697105751334871,
+      "ordinary_house_diagnostic_mean_log_rmse": 0.10700182577746944,
+      "normal_transaction_mean_log_rmse": 0.08744526328030137,
+      "cv_protocol": "fixed historically screened shortlist; two whole-train 5-fold outer splits, fold-local 3-fold inner recipe selection; not fresh independent data",
+      "validation_caveat": "seed5501 overall and ordinary regressed; overall/ordinary descriptive bootstrap intervals include zero; Normal improved all10 outer folds",
+      "release_gate_passed": true,
+      "submission_file": "versions/v5/submission_v5.csv",
+      "sha256": "a48b84f57802f0adf5b7344a3b8ba7cdbf31a18bf7e8ff1c670be48bb4fb05db",
+      "experiment_directory": "experiments/v5",
+      "source_hash": "58dd6272f2461f8bcd40be11a674e2dbdc1d97ade0be48fb1af06d8845036d4c",
+      "date": "2026-10-15"
     }
   ],
   "best_actually_submitted_version": "v4",
