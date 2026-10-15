@@ -34,6 +34,24 @@
       "v1_public_log_rmse": 0.11969,
       "improvement": 0.0022800000000000042,
       "relative_improvement_pct": 1.9049210460355954
+    },
+    {
+      "version": "v3",
+      "date": "2026-10-15",
+      "timezone": "Asia/Shanghai",
+      "competition": "house-prices-advanced-regression-techniques",
+      "submission_file": "submission_v3.csv",
+      "submission_sha256": "f9787b96b898cb3ace1eea03bb79bffc56fb2967d34649155508b61d3f02b4de",
+      "model": "pair_en_inter_size_scaled_cat_d5_onehot_0.5",
+      "weights": {
+        "en_inter_size_scaled": 0.5,
+        "cat_d5_onehot": 0.5
+      },
+      "public_log_rmse": 0.1177,
+      "source": "user-reported Kaggle score; not independently read from submission history",
+      "v2_public_log_rmse": 0.11741,
+      "change_vs_v2": 0.0002899999999999986,
+      "outcome": "worse than v2; retain v2 as best actually submitted version"
     }
   ]
 }

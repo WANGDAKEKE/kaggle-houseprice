@@ -26,9 +26,13 @@ five={"v3_five_split_mean":float(np.mean(five_new)),"v2_five_split_mean":float(n
 audit=json.loads((ART/"submission_audit.json").read_text())
 online_file=ART/"online_result.json"
 online=json.loads(online_file.read_text()) if online_file.exists() else None
+five["online_score_v3"]=online["public_log_rmse"] if online else None
+(ART/"five_split_summary.json").write_text(json.dumps(five,indent=2)+"\n")
 status="v3 已由用户提交，线上结果已记录" if online else "v3 尚未提交 Kaggle"
 online_text=(f'<p>用户反馈 v3 线上分数：<b>{online["public_log_rmse"]:.5f}</b>。分数来源为用户反馈，未从提交历史独立核验。</p>' if online else '')
 online_boundary="用户反馈的线上结果已单独记录，训练与提交文件保持冻结。" if online else "Kaggle 线上分数待用户提交后确认，本地改善不保证线上一定下降。"
+if online and online["public_log_rmse"] > .11741:
+    online_text += '<p><b>v3 线上退步，v2 仍是已提交的最佳版本。</b>复查发现本地净改善主要由两套极端房屋贡献；详见 <a href="../v4/report.html">v4 回退诊断与融合报告</a>。不能把五次相同房屋的拆分改善理解为五个独立数据集上的改善。</p>'
 screen=pd.read_csv(ART/"screen_results.csv")
 confirmed=pd.read_csv(ART/"confirmation_results.csv")
 train,test=load_data();dev,hold=partitions(train);y=np.log(train.SalePrice.to_numpy())

@@ -1,0 +1,117 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>House Prices v4：回退诊断与固定融合</title><style>body{font:16px/1.8 -apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif;color:#233148;background:#f4f7fb;margin:0}main{max-width:1050px;margin:30px auto;background:white;padding:30px;border-radius:12px}table{border-collapse:collapse;width:100%;font-size:13px}td,th{padding:7px;border-bottom:1px solid #ddd;text-align:left}img{max-width:100%}code{overflow-wrap:anywhere}a{color:#226da3}</style><main>
+<h1>v4：先解释 v3 的退步，再减少单一方案的偏差</h1>
+<p>用户反馈：v2 = <b>0.11741</b>，v3 = <b>0.11770</b>。v2 仍是目前实际提交的最佳版本。v4 尚未提交。</p>
+<h2>为什么之前的对比容易误导</h2><p>原来的五次拆分都使用同一批 1,168 套房屋。v3 对 Id 524、1299 两套极大面积低价房屋的平方误差改善，占净改善的 <b>110.7%</b>；其余房屋合计略有退步。普通成交房屋也略有退步。这能够解释本地指标为什么容易被极少数样本主导，但不能证明测试集退步的具体原因。</p>
+<p>下表加入“新线性模型 + 旧树”和“旧线性模型 + 新树”的匹配消融，帮助区分组件影响。剔除两套房屋只用于诊断；主要指标、训练文件、提交文件均没有删除或针对 Id 覆盖任何样本。</p>
+<img src="figures/paired_diagnosis.png" alt="全部样本与去掉两个极端样本的诊断对比"><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>group</th>
+      <th>rows</th>
+      <th>model</th>
+      <th>mean_split_log_rmse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>all_1168</td>
+      <td>1168</td>
+      <td>v2</td>
+      <td>0.122041</td>
+    </tr>
+    <tr>
+      <td>all_1168</td>
+      <td>1168</td>
+      <td>v3</td>
+      <td>0.119411</td>
+    </tr>
+    <tr>
+      <td>all_1168</td>
+      <td>1168</td>
+      <td>new_linear_old_cat</td>
+      <td>0.120191</td>
+    </tr>
+    <tr>
+      <td>all_1168</td>
+      <td>1168</td>
+      <td>old_linear_new_cat</td>
+      <td>0.120823</td>
+    </tr>
+    <tr>
+      <td>all_1168</td>
+      <td>1168</td>
+      <td>v4_half_blend</td>
+      <td>0.119664</td>
+    </tr>
+    <tr>
+      <td>without_two_extreme_houses_diagnostic_only</td>
+      <td>1166</td>
+      <td>v2</td>
+      <td>0.113262</td>
+    </tr>
+    <tr>
+      <td>without_two_extreme_houses_diagnostic_only</td>
+      <td>1166</td>
+      <td>v3</td>
+      <td>0.113559</td>
+    </tr>
+    <tr>
+      <td>without_two_extreme_houses_diagnostic_only</td>
+      <td>1166</td>
+      <td>new_linear_old_cat</td>
+      <td>0.113815</td>
+    </tr>
+    <tr>
+      <td>without_two_extreme_houses_diagnostic_only</td>
+      <td>1166</td>
+      <td>old_linear_new_cat</td>
+      <td>0.112650</td>
+    </tr>
+    <tr>
+      <td>without_two_extreme_houses_diagnostic_only</td>
+      <td>1166</td>
+      <td>v4_half_blend</td>
+      <td>0.112416</td>
+    </tr>
+    <tr>
+      <td>SaleCondition=Normal</td>
+      <td>962</td>
+      <td>v2</td>
+      <td>0.093412</td>
+    </tr>
+    <tr>
+      <td>SaleCondition=Normal</td>
+      <td>962</td>
+      <td>v3</td>
+      <td>0.094238</td>
+    </tr>
+    <tr>
+      <td>SaleCondition=Normal</td>
+      <td>962</td>
+      <td>new_linear_old_cat</td>
+      <td>0.094763</td>
+    </tr>
+    <tr>
+      <td>SaleCondition=Normal</td>
+      <td>962</td>
+      <td>old_linear_new_cat</td>
+      <td>0.092480</td>
+    </tr>
+    <tr>
+      <td>SaleCondition=Normal</td>
+      <td>962</td>
+      <td>v4_half_blend</td>
+      <td>0.092704</td>
+    </tr>
+  </tbody>
+</table>
+<p>逐房屋贡献：<a href="house_error_contributions.csv">CSV</a>；所有拆分及按年份、质量、交易状态的比较：<a href="paired_comparisons.csv">CSV</a>；5,000 次按房屋配对 bootstrap 的 MSE 差区间：<a href="regression_diagnosis.json">JSON</a>。这些均是复用开发集的回顾分析，不能当作新的独立验证。</p>
+<h2>v4 的提交方法</h2><p><code>SalePrice_v4 = exp(0.5 * log(SalePrice_v2) + 0.5 * log(SalePrice_v3))</code>。固定等权融合，保留两版互补部分，不为极小的估算差异细调权重。本轮没有新增训练拟合。</p>
+<p>官方<a href="https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/leaderboard">排行榜</a>的可见说明明确写着使用全部测试数据。对相同测试集的 log-RMSE，已知两版分数和两版对数预测的均方距离，便可按以下恒等式估算融合分数：</p>
+<p><code>E(w)^2 = (1-w)E2^2 + wE3^2 - w(1-w)mean((log(p2)-log(p3))^2)</code></p>
+<p>取 w=0.5，估算为 <b>0.11679519</b>。若两份反馈分数按五位小数四舍五入，输入舍入对应范围约为 <b>0.11679016–0.11680023</b>。这个范围只是舍入误差界限，不是置信区间，也不是实际提交分数。公式已用有真实标签的开发集逐拆分数值核验。</p>
+<p>估算要求两份分数确实对应保存的 v2/v3 文件，且都按相同的完整测试集等权计算 log-RMSE。v4 明确使用线上反馈，不能声称它是完全不看榜单得到的模型改进；没有读取任何单套测试房屋的标签。官网显示若干零分，仅凭分数无法判断其方法，本轮没有使用这些提交或外部答案。</p>
+<h2>文件与下一轮比较</h2><p><a href="../../submission_v4.csv">submission_v4.csv</a>：1459 行，Id 与官方测试集顺序一致，价格正数且有限。SHA-256：<code>6767f59cd9feaaa1b7521341be9fa18c8587b64cd8a0f4e80ee2ec54c4a7a8ad</code>。v1、v2、v3 文件校验值均保持不变。</p>
+<p>后续训练先固定少量候选，在外层验证中比较匹配消融，参数只在内层选择；同时报告全样本、普通交易、异常房屋和年份分组结果。需要明确承认这些数据已有多轮使用记录。嵌套验证避免同一分数同时选参数和评价方案的原则，见 <a href="https://scikit-learn.org/stable/auto_examples/model_selection/plot_nested_cross_validation_iris.html">scikit-learn 官方说明</a>。</p>
+<p>复现：<code>sh scripts/run.sh scripts/optimize_v4.py</code>。<a href="selection.json">方案</a> · <a href="score_estimate.json">估算与前提</a> · <a href="submission_audit.json">文件校验</a> · <a href="leaderboard_observation.json">榜单观察</a> · <a href="../../VERSIONS.md">版本记录</a>。</p></main></html>

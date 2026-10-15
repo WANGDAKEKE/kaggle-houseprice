@@ -1,0 +1,19 @@
+{
+  "rows": 1459,
+  "columns": [
+    "Id",
+    "SalePrice"
+  ],
+  "positive_finite": true,
+  "id_order_matches_official_test": true,
+  "sha256": "6767f59cd9feaaa1b7521341be9fa18c8587b64cd8a0f4e80ee2ec54c4a7a8ad",
+  "preserved_input_sha256": {
+    "submission.csv": "210223272bc07d8c7d483aadc47a9831faa248ca9c5c633699d12ebea9b3e3db",
+    "submission_v2.csv": "66c2d66ab1b9fe43cfd0bc68229a9881c1181fb87115e5fad6350d363972eb6a",
+    "submission_v3.csv": "f9787b96b898cb3ace1eea03bb79bffc56fb2967d34649155508b61d3f02b4de"
+  },
+  "min_price": 42814.461266990525,
+  "max_price": 523000.48190160317,
+  "submitted_to_kaggle": false,
+  "generation_command": "sh scripts/run.sh scripts/optimize_v4.py"
+}

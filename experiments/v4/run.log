@@ -1,0 +1,104 @@
+{
+  "submission": "/Users/xueqiyao/kaggle/submission_v4.csv",
+  "audit": {
+    "rows": 1459,
+    "columns": [
+      "Id",
+      "SalePrice"
+    ],
+    "positive_finite": true,
+    "id_order_matches_official_test": true,
+    "sha256": "6767f59cd9feaaa1b7521341be9fa18c8587b64cd8a0f4e80ee2ec54c4a7a8ad",
+    "preserved_input_sha256": {
+      "submission.csv": "210223272bc07d8c7d483aadc47a9831faa248ca9c5c633699d12ebea9b3e3db",
+      "submission_v2.csv": "66c2d66ab1b9fe43cfd0bc68229a9881c1181fb87115e5fad6350d363972eb6a",
+      "submission_v3.csv": "f9787b96b898cb3ace1eea03bb79bffc56fb2967d34649155508b61d3f02b4de"
+    },
+    "min_price": 42814.461266990525,
+    "max_price": 523000.48190160317,
+    "submitted_to_kaggle": false,
+    "generation_command": "sh scripts/run.sh scripts/optimize_v4.py"
+  },
+  "estimate": {
+    "status": "algebraic estimate; not an observed Kaggle submission score",
+    "expected_log_rmse": 0.11679519249745522,
+    "displayed_input_rounding_bound": [
+      0.1167901599687132,
+      0.11680022502340319
+    ],
+    "input_score_precision": 5,
+    "score_sources": "user reports for exact frozen v2/v3 files",
+    "v2_score": 0.11741,
+    "v3_score": 0.1177,
+    "test_log_prediction_distance": 0.02668947803778714,
+    "formula": "E(w)^2=(1-w)*E2^2+w*E3^2-w*(1-w)*mean((log(p2)-log(p3))^2)",
+    "required_assumptions": [
+      "reported scores belong to the hashed files",
+      "both scores evaluate the same complete 1459-row test set with equal row weights",
+      "metric is RMSE of log(SalePrice), as described in the supplied official overview",
+      "displayed scores rounded to nearest 0.00001"
+    ],
+    "coverage_source": "https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/leaderboard",
+    "coverage_observation_date": "2026-10-15",
+    "coverage_visible_text": "This leaderboard is calculated with all of the test data.",
+    "interpretation": "Leaderboard-informed combination of existing predictions; not evidence of independent model generalization or access to any individual test label.",
+    "identity_numerical_check_max_abs_error": 4.163336342344337e-17
+  },
+  "all_rows_comparison": [
+    {
+      "group": "all_1168",
+      "rows": 1168,
+      "model": "v2",
+      "mean_split_log_rmse": 0.12204067234736797,
+      "seed_42": 0.11991704694626529,
+      "seed_2026": 0.11848257871808286,
+      "seed_137": 0.12078701123878764,
+      "seed_2701": 0.12075365566637186,
+      "seed_901": 0.13026306916733224
+    },
+    {
+      "group": "all_1168",
+      "rows": 1168,
+      "model": "v3",
+      "mean_split_log_rmse": 0.11941051888750076,
+      "seed_42": 0.11657229315365736,
+      "seed_2026": 0.11670607957166809,
+      "seed_137": 0.11710755411029428,
+      "seed_2701": 0.11773717448211228,
+      "seed_901": 0.12892949311977178
+    },
+    {
+      "group": "all_1168",
+      "rows": 1168,
+      "model": "new_linear_old_cat",
+      "mean_split_log_rmse": 0.12019100250890014,
+      "seed_42": 0.11679544254196238,
+      "seed_2026": 0.11661633062974275,
+      "seed_137": 0.11778383091022525,
+      "seed_2701": 0.11855339458718203,
+      "seed_901": 0.13120601387538827
+    },
+    {
+      "group": "all_1168",
+      "rows": 1168,
+      "model": "old_linear_new_cat",
+      "mean_split_log_rmse": 0.12082297793895472,
+      "seed_42": 0.11939255245466313,
+      "seed_2026": 0.11791994671887264,
+      "seed_137": 0.11963301321666277,
+      "seed_2701": 0.11955969797126834,
+      "seed_901": 0.1276096793333067
+    },
+    {
+      "group": "all_1168",
+      "rows": 1168,
+      "model": "v4_half_blend",
+      "mean_split_log_rmse": 0.1196636814944392,
+      "seed_42": 0.11728930589497841,
+      "seed_2026": 0.11639488765855545,
+      "seed_137": 0.11775308762428414,
+      "seed_2701": 0.11817456575544419,
+      "seed_901": 0.1287065605389338
+    }
+  ]
+}

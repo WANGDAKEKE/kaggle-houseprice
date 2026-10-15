@@ -1,0 +1,25 @@
+{
+  "status": "algebraic estimate; not an observed Kaggle submission score",
+  "expected_log_rmse": 0.11679519249745522,
+  "displayed_input_rounding_bound": [
+    0.1167901599687132,
+    0.11680022502340319
+  ],
+  "input_score_precision": 5,
+  "score_sources": "user reports for exact frozen v2/v3 files",
+  "v2_score": 0.11741,
+  "v3_score": 0.1177,
+  "test_log_prediction_distance": 0.02668947803778714,
+  "formula": "E(w)^2=(1-w)*E2^2+w*E3^2-w*(1-w)*mean((log(p2)-log(p3))^2)",
+  "required_assumptions": [
+    "reported scores belong to the hashed files",
+    "both scores evaluate the same complete 1459-row test set with equal row weights",
+    "metric is RMSE of log(SalePrice), as described in the supplied official overview",
+    "displayed scores rounded to nearest 0.00001"
+  ],
+  "coverage_source": "https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/leaderboard",
+  "coverage_observation_date": "2026-10-15",
+  "coverage_visible_text": "This leaderboard is calculated with all of the test data.",
+  "interpretation": "Leaderboard-informed combination of existing predictions; not evidence of independent model generalization or access to any individual test label.",
+  "identity_numerical_check_max_abs_error": 4.163336342344337e-17
+}

@@ -1,0 +1,37 @@
+{
+  "validation_role": "retrospective diagnosis on reused development houses; not fresh validation",
+  "split_seeds": [
+    42,
+    2026,
+    137,
+    2701,
+    901
+  ],
+  "original_rows": 1168,
+  "validation_rows_removed_for_primary_metric": 0,
+  "diagnostic_extreme_ids": [
+    524,
+    1299
+  ],
+  "v3_total_squared_error_gain": 0.7356507879117488,
+  "two_extreme_houses_gain": 0.8143385026003467,
+  "two_house_share_of_net_gain": 1.1069634070697651,
+  "fraction_houses_with_positive_gain": 0.5179794520547946,
+  "bootstrap": {
+    "all_1168": {
+      "mean_mse_gain_v3": 0.0006298380033490999,
+      "paired_house_bootstrap_95pct_interval": [
+        -0.0002833084504720698,
+        0.0018107124459745966
+      ]
+    },
+    "without_two_extreme_houses_diagnostic_only": {
+      "mean_mse_gain_v3": -6.748517554768261e-05,
+      "paired_house_bootstrap_95pct_interval": [
+        -0.0005352140116136428,
+        0.0003774653475687738
+      ]
+    }
+  },
+  "conclusion": "V3's net development gain is more than explained by two extreme houses; the remainder slightly regresses. This is a diagnostic finding, not proof of why unseen test errors changed."
+}

@@ -38,8 +38,8 @@
     {
       "version": "v3",
       "git_tag": "v3.0.0",
-      "status": "ready_for_user_submission",
-      "public_log_rmse": null,
+      "status": "submitted_by_user",
+      "public_log_rmse": 0.1177,
       "development_cv_log_rmse": 0.11679530894520658,
       "cv_protocol": "three original 5-fold selection splits, followed by two additional fixed split checks on the same 1168 development houses",
       "five_split_development_cv_log_rmse": 0.11941051888750076,
@@ -56,7 +56,31 @@
         "cat_d5_onehot": 0.5
       },
       "experiment_directory": "experiments/v3",
+      "date": "2026-10-15",
+      "score_source": "user_report",
+      "score_reported_date": "2026-10-15",
+      "online_outcome": "regressed_vs_v2"
+    },
+    {
+      "version": "v4",
+      "git_tag": "v4.0.0",
+      "status": "ready_for_user_submission",
+      "public_log_rmse": null,
+      "estimated_public_log_rmse": 0.11679519249745522,
+      "estimate_role": "algebraic estimate using user-reported leaderboard scores; not observed score",
+      "development_cv_log_rmse": 0.1196636814944392,
+      "cv_protocol": "retrospective reuse of five splits on the same 1168 houses; no new independent validation",
+      "submission_file": "versions/v4/submission_v4.csv",
+      "sha256": "6767f59cd9feaaa1b7521341be9fa18c8587b64cd8a0f4e80ee2ec54c4a7a8ad",
+      "model": "geometric_mean_v2_v3",
+      "weights_in_log_space": {
+        "submission_v2.csv": 0.5,
+        "submission_v3.csv": 0.5
+      },
+      "experiment_directory": "experiments/v4",
       "date": "2026-10-15"
     }
-  ]
+  ],
+  "best_actually_submitted_version": "v2",
+  "best_user_reported_public_log_rmse": 0.11741
 }

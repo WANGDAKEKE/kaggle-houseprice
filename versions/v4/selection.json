@@ -1,0 +1,21 @@
+{
+  "version": "v4",
+  "method": "fixed geometric mean of v2 and v3 prices",
+  "weights_in_log_space": {
+    "submission_v2.csv": 0.5,
+    "submission_v3.csv": 0.5
+  },
+  "selection_basis": "explicit leaderboard feedback and complementary prediction errors; no additional model training",
+  "public_log_rmse": null,
+  "estimated_public_log_rmse": 0.11679519249745522,
+  "reused_five_split_development_mean": 0.1196636814944392,
+  "new_independent_validation": false,
+  "new_training_fits": 0,
+  "test_labels_used": false,
+  "input_sha256": {
+    "submission.csv": "210223272bc07d8c7d483aadc47a9831faa248ca9c5c633699d12ebea9b3e3db",
+    "submission_v2.csv": "66c2d66ab1b9fe43cfd0bc68229a9881c1181fb87115e5fad6350d363972eb6a",
+    "submission_v3.csv": "f9787b96b898cb3ace1eea03bb79bffc56fb2967d34649155508b61d3f02b4de"
+  },
+  "future_training_gate": "Compare matched component ablations with whole-sample, ordinary-sale, extreme-house and sale-year diagnostics; keep all validation rows. Use a small predeclared candidate set in outer CV, with tuning only in inner folds; reuse of this dataset must still be disclosed."
+}

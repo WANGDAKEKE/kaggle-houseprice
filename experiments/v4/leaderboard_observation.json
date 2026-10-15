@@ -1,0 +1,14 @@
+{
+  "observed_date": "2026-10-15",
+  "url": "https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/leaderboard",
+  "access": "public page rendered in browser, logged out",
+  "coverage_text": "This leaderboard is calculated with all of the test data.",
+  "visible_table_total_teams": 4209,
+  "visible_zero_score_entries": 18,
+  "visible_score_examples": {
+    "rank_44": 0.09531,
+    "rank_45": 0.10667,
+    "rank_49": 0.10865
+  },
+  "limit": "Only the first 49 entries were read. Scores alone do not reveal the methods used. Our exact rank was not determined."
+}

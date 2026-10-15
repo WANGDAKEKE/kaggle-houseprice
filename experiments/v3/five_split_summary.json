@@ -5,5 +5,5 @@
   "all_five_splits_improved": true,
   "first_three_role": "selection",
   "last_two_role": "checks after freezing selection",
-  "online_score_v3": null
+  "online_score_v3": 0.1177
 }
