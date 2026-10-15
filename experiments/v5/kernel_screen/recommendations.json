@@ -1,0 +1,169 @@
+{
+  "status": "screening_only_not_fresh_validation",
+  "suggested_candidates": [
+    "svr_compact_scaledcats",
+    "svr_compact_g001_C5"
+  ],
+  "fixed_graft_weight_for_comparison": 0.25,
+  "builder": "src.house_prices_v5_kernel.build_model",
+  "caveat": "Ordinary/Normal sale improvements coexist with primary all-row degradation; confirm jointly with tree candidates and do not remove validation rows. Bootstrap is retrospective on reused development houses.",
+  "candidates": {
+    "svr_compact_scaledcats": {
+      "specification": {
+        "kind": "svr",
+        "params": {
+          "C": 10.0,
+          "gamma": 0.0003,
+          "epsilon": 0.01
+        },
+        "category_scale": 0.25
+      },
+      "diagnostics": {
+        "all": {
+          "rows": 1168,
+          "reference_log_rmse": 0.1172893058949784,
+          "quarter_graft_log_rmse": 0.11866483319985688,
+          "fraction_improved": 0.5847602739726028,
+          "mean_mse_gain": -0.00032456136102404124,
+          "paired_house_bootstrap95_mean_mse_gain": [
+            -0.0015459685473863535,
+            0.0004173464015182862
+          ],
+          "net_gain_after_excluding_top5_positive_gains": -0.5013850153787088
+        },
+        "ordinary_diagnostic": {
+          "rows": 1166,
+          "reference_log_rmse": 0.11132347319652236,
+          "quarter_graft_log_rmse": 0.10989467973808494,
+          "fraction_improved": 0.5857632933104632,
+          "mean_mse_gain": 0.00031607504980057477,
+          "paired_house_bootstrap95_mean_mse_gain": [
+            0.00012444906563924393,
+            0.0005129467120038793
+          ],
+          "net_gain_after_excluding_top5_positive_gains": 0.2462461623648415
+        },
+        "normal_sales": {
+          "rows": 962,
+          "reference_log_rmse": 0.09271713264914473,
+          "quarter_graft_log_rmse": 0.09088478589802654,
+          "fraction_improved": 0.5883575883575883,
+          "mean_mse_gain": 0.00033642237894897654,
+          "paired_house_bootstrap95_mean_mse_gain": [
+            0.00016258986799210905,
+            0.0005252553671086005
+          ],
+          "net_gain_after_excluding_top5_positive_gains": 0.21206540777864766
+        }
+      },
+      "two_extreme_mse_gains": {
+        "524": -0.22344233619604154,
+        "1299": -0.5241888415475087
+      }
+    },
+    "svr_compact_g001_C5": {
+      "specification": {
+        "kind": "svr",
+        "params": {
+          "C": 5.0,
+          "gamma": 0.001,
+          "epsilon": 0.01
+        }
+      },
+      "diagnostics": {
+        "all": {
+          "rows": 1168,
+          "reference_log_rmse": 0.1172893058949784,
+          "quarter_graft_log_rmse": 0.11834810691243997,
+          "fraction_improved": 0.5933219178082192,
+          "mean_mse_gain": -0.0002494931324325071,
+          "paired_house_bootstrap95_mean_mse_gain": [
+            -0.0011329095585953467,
+            0.0003904770953339937
+          ],
+          "net_gain_after_excluding_top5_positive_gains": -0.4149646829853091
+        },
+        "ordinary_diagnostic": {
+          "rows": 1166,
+          "reference_log_rmse": 0.11132347319652236,
+          "quarter_graft_log_rmse": 0.1102834841958625,
+          "fraction_improved": 0.5943396226415094,
+          "mean_mse_gain": 0.00023046879815778073,
+          "paired_house_bootstrap95_mean_mse_gain": [
+            -0.00021187911711500245,
+            0.0005582301256139874
+          ],
+          "net_gain_after_excluding_top5_positive_gains": 0.14516991434783155
+        },
+        "normal_sales": {
+          "rows": 962,
+          "reference_log_rmse": 0.09271713264914473,
+          "quarter_graft_log_rmse": 0.09058710526912281,
+          "fraction_improved": 0.5914760914760915,
+          "mean_mse_gain": 0.0003904430456399629,
+          "paired_house_bootstrap95_mean_mse_gain": [
+            0.0001785345417587658,
+            0.0005870503157097818
+          ],
+          "net_gain_after_excluding_top5_positive_gains": 0.26910972196214605
+        }
+      },
+      "two_extreme_mse_gains": {
+        "524": -0.21965972091702607,
+        "1299": -0.3404748764161145
+      }
+    },
+    "svr_compact_g0003_C10": {
+      "specification": {
+        "kind": "svr",
+        "params": {
+          "C": 10.0,
+          "gamma": 0.0003,
+          "epsilon": 0.01
+        }
+      },
+      "diagnostics": {
+        "all": {
+          "rows": 1168,
+          "reference_log_rmse": 0.1172893058949784,
+          "quarter_graft_log_rmse": 0.11919549992106435,
+          "fraction_improved": 0.5787671232876712,
+          "mean_mse_gain": -0.00045078592410663934,
+          "paired_house_bootstrap95_mean_mse_gain": [
+            -0.001646535720914996,
+            0.0003460169753970332
+          ],
+          "net_gain_after_excluding_top5_positive_gains": -0.6631448761045234
+        },
+        "ordinary_diagnostic": {
+          "rows": 1166,
+          "reference_log_rmse": 0.11132347319652236,
+          "quarter_graft_log_rmse": 0.11030376370985347,
+          "fraction_improved": 0.5797598627787307,
+          "mean_mse_gain": 0.00022599539597764604,
+          "paired_house_bootstrap95_mean_mse_gain": [
+            -2.831067720753814e-05,
+            0.0004689812831348239
+          ],
+          "net_gain_after_excluding_top5_positive_gains": 0.12688371496196657
+        },
+        "normal_sales": {
+          "rows": 962,
+          "reference_log_rmse": 0.09271713264914473,
+          "quarter_graft_log_rmse": 0.09121974265025973,
+          "fraction_improved": 0.5841995841995842,
+          "mean_mse_gain": 0.00027542523749948626,
+          "paired_house_bootstrap95_mean_mse_gain": [
+            4.707080320020479e-05,
+            0.0004713739909895234
+          ],
+          "net_gain_after_excluding_top5_positive_gains": 0.17029291696199927
+        }
+      },
+      "two_extreme_mse_gains": {
+        "524": -0.22826622970511218,
+        "1299": -0.5617623613613778
+      }
+    }
+  }
+}

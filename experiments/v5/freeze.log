@@ -1,0 +1,231 @@
+{
+  "pool": {
+    "ref_v2_linear": {
+      "family": "baseline",
+      "spec": {
+        "reference": "en_rich_a0.0007_l0.8",
+        "reference_spec": {
+          "kind": "elasticnet",
+          "params": {
+            "alpha": 0.0007,
+            "l1_ratio": 0.8
+          },
+          "rich": true
+        },
+        "kind": "elasticnet"
+      }
+    },
+    "ref_v2_cat": {
+      "family": "baseline",
+      "spec": {
+        "reference": "v1_catboost",
+        "reference_spec": {
+          "kind": "catboost",
+          "engineered": true,
+          "log_numeric": false,
+          "params": {
+            "iterations": 2200,
+            "learning_rate": 0.035,
+            "depth": 5,
+            "l2_leaf_reg": 5
+          },
+          "schema_path": "/Users/xueqiyao/kaggle/data/raw/train.csv",
+          "features": "v1"
+        },
+        "kind": "catboost"
+      }
+    },
+    "en_inter_size_scaled": {
+      "family": "baseline",
+      "spec": {
+        "kind": "elasticnet",
+        "params": {
+          "alpha": 0.0007,
+          "l1_ratio": 0.8
+        },
+        "interactions": "size",
+        "category_scale": 0.25
+      }
+    },
+    "cat_d5_onehot": {
+      "family": "baseline",
+      "spec": {
+        "kind": "catboost",
+        "features": "v1",
+        "params": {
+          "depth": 5,
+          "iterations": 2500,
+          "learning_rate": 0.03,
+          "l2_leaf_reg": 5,
+          "one_hot_max_size": 20
+        }
+      }
+    },
+    "svr_compact_scaledcats": {
+      "family": "kernel",
+      "spec": {
+        "kind": "svr",
+        "params": {
+          "C": 10.0,
+          "gamma": 0.0003,
+          "epsilon": 0.01
+        },
+        "category_scale": 0.25
+      }
+    },
+    "svr_compact_g001_C5": {
+      "family": "kernel",
+      "spec": {
+        "kind": "svr",
+        "params": {
+          "C": 5.0,
+          "gamma": 0.001,
+          "epsilon": 0.01
+        }
+      }
+    },
+    "crossfit_en_residual_cat": {
+      "family": "tree",
+      "spec": {
+        "kind": "crossfit_en_residual_cat",
+        "params": {
+          "loss_function": "Huber:delta=0.15",
+          "iterations": 1000,
+          "learning_rate": 0.03,
+          "depth": 3,
+          "l2_leaf_reg": 10,
+          "one_hot_max_size": 20
+        }
+      }
+    }
+  },
+  "baseline_names": [
+    "ref_v2_linear",
+    "ref_v2_cat",
+    "en_inter_size_scaled",
+    "cat_d5_onehot"
+  ],
+  "new_names": [
+    "svr_compact_scaledcats",
+    "svr_compact_g001_C5",
+    "crossfit_en_residual_cat"
+  ],
+  "recipes": {
+    "v4": {
+      "new_names": [],
+      "new_weight": 0.0,
+      "support_gate": false
+    },
+    "svr_compact_scaledcats_w0.15_uniform": {
+      "new_names": [
+        "svr_compact_scaledcats"
+      ],
+      "new_weight": 0.15,
+      "support_gate": false
+    },
+    "svr_compact_scaledcats_w0.15_support": {
+      "new_names": [
+        "svr_compact_scaledcats"
+      ],
+      "new_weight": 0.15,
+      "support_gate": true
+    },
+    "svr_compact_scaledcats_w0.3_uniform": {
+      "new_names": [
+        "svr_compact_scaledcats"
+      ],
+      "new_weight": 0.3,
+      "support_gate": false
+    },
+    "svr_compact_scaledcats_w0.3_support": {
+      "new_names": [
+        "svr_compact_scaledcats"
+      ],
+      "new_weight": 0.3,
+      "support_gate": true
+    },
+    "svr_compact_g001_C5_w0.15_uniform": {
+      "new_names": [
+        "svr_compact_g001_C5"
+      ],
+      "new_weight": 0.15,
+      "support_gate": false
+    },
+    "svr_compact_g001_C5_w0.15_support": {
+      "new_names": [
+        "svr_compact_g001_C5"
+      ],
+      "new_weight": 0.15,
+      "support_gate": true
+    },
+    "svr_compact_g001_C5_w0.3_uniform": {
+      "new_names": [
+        "svr_compact_g001_C5"
+      ],
+      "new_weight": 0.3,
+      "support_gate": false
+    },
+    "svr_compact_g001_C5_w0.3_support": {
+      "new_names": [
+        "svr_compact_g001_C5"
+      ],
+      "new_weight": 0.3,
+      "support_gate": true
+    },
+    "crossfit_en_residual_cat_w0.15_uniform": {
+      "new_names": [
+        "crossfit_en_residual_cat"
+      ],
+      "new_weight": 0.15,
+      "support_gate": false
+    },
+    "crossfit_en_residual_cat_w0.3_uniform": {
+      "new_names": [
+        "crossfit_en_residual_cat"
+      ],
+      "new_weight": 0.3,
+      "support_gate": false
+    },
+    "new_equal_w0.15_uniform": {
+      "new_names": [
+        "svr_compact_scaledcats",
+        "svr_compact_g001_C5",
+        "crossfit_en_residual_cat"
+      ],
+      "new_weight": 0.15,
+      "support_gate": false
+    },
+    "new_equal_w0.15_support": {
+      "new_names": [
+        "svr_compact_scaledcats",
+        "svr_compact_g001_C5",
+        "crossfit_en_residual_cat"
+      ],
+      "new_weight": 0.15,
+      "support_gate": true
+    },
+    "new_equal_w0.3_uniform": {
+      "new_names": [
+        "svr_compact_scaledcats",
+        "svr_compact_g001_C5",
+        "crossfit_en_residual_cat"
+      ],
+      "new_weight": 0.3,
+      "support_gate": false
+    },
+    "new_equal_w0.3_support": {
+      "new_names": [
+        "svr_compact_scaledcats",
+        "svr_compact_g001_C5",
+        "crossfit_en_residual_cat"
+      ],
+      "new_weight": 0.3,
+      "support_gate": true
+    }
+  },
+  "source_hash": "58dd6272f2461f8bcd40be11a674e2dbdc1d97ade0be48fb1af06d8845036d4c",
+  "protocol_sha256": "0be564ff7526c3c229fb07bead3f83637341c0807f0ece3014eeafe84dc41516",
+  "support_gate_revision": "After historical screening, before any new outer results: compare uniform graft with a fixed feature-only q95-to-q99 area taper. Quantiles fitted on each actual fit subset; no target/Id branch.",
+  "baseline_bagging": "Each baseline CatBoost fit averages seeds42/2026/137, matching v4 bagging; linear fits once. Two CPU threads do not change the configured model.",
+  "outer_used_for_shortlisting": false
+}

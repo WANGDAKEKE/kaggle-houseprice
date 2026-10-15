@@ -1,0 +1,11 @@
+{
+  "split_seed": 42,
+  "n_splits": 5,
+  "development_rows": 1168,
+  "validation_rows_removed": 0,
+  "threads_per_fit": 2,
+  "role": "exploratory screen on repeatedly reused houses; not independent confirmation",
+  "gate": "ordinary-house diagnostic and Normal sale diagnostic, alongside every validation row",
+  "robust_loss_initialization": "each training fold target centered by its own mean",
+  "residual_candidate": "three-fold OOF residuals generated inside each outer training fold; no in-sample residuals"
+}

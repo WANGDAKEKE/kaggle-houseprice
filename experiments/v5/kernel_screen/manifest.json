@@ -1,0 +1,10 @@
+{
+  "seed": 42,
+  "folds": 5,
+  "development_rows": 1168,
+  "primary_validation_rows_removed": 0,
+  "role": "screening on reused development houses; not fresh validation",
+  "threads": 2,
+  "reference": "fixed equal log-space blend of frozen v2/v3 four components",
+  "source_sha256": "c9616ef45d6224036b98f167ef73ce535375b8d8652fb063f94505dda949399c"
+}

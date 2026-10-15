@@ -1,0 +1,129 @@
+{
+  "cat_center_huber015": {
+    "kind": "catboost",
+    "features": "v1",
+    "params": {
+      "iterations": 2200,
+      "learning_rate": 0.035,
+      "depth": 4,
+      "l2_leaf_reg": 5,
+      "one_hot_max_size": 20,
+      "loss_function": "Huber:delta=0.15"
+    }
+  },
+  "cat_center_huber030": {
+    "kind": "catboost",
+    "features": "v1",
+    "params": {
+      "iterations": 2200,
+      "learning_rate": 0.035,
+      "depth": 5,
+      "l2_leaf_reg": 5,
+      "one_hot_max_size": 20,
+      "loss_function": "Huber:delta=0.30"
+    }
+  },
+  "cat_center_mae": {
+    "kind": "catboost",
+    "features": "v1",
+    "params": {
+      "iterations": 2200,
+      "learning_rate": 0.035,
+      "depth": 5,
+      "l2_leaf_reg": 5,
+      "one_hot_max_size": 20,
+      "loss_function": "MAE"
+    }
+  },
+  "cat_simple_rmse_d4": {
+    "kind": "catboost",
+    "params": {
+      "iterations": 2200,
+      "learning_rate": 0.035,
+      "depth": 4,
+      "l2_leaf_reg": 8,
+      "one_hot_max_size": 20,
+      "loss_function": "RMSE"
+    }
+  },
+  "lgb_huber_leaves8": {
+    "kind": "lightgbm",
+    "params": {
+      "n_estimators": 1800,
+      "learning_rate": 0.025,
+      "num_leaves": 8,
+      "min_child_samples": 18,
+      "colsample_bytree": 0.85,
+      "reg_lambda": 3,
+      "reg_alpha": 0.02,
+      "objective": "huber",
+      "alpha": 0.9
+    }
+  },
+  "lgb_mae_leaves8": {
+    "kind": "lightgbm",
+    "params": {
+      "n_estimators": 1800,
+      "learning_rate": 0.025,
+      "num_leaves": 8,
+      "min_child_samples": 18,
+      "colsample_bytree": 0.85,
+      "reg_lambda": 3,
+      "reg_alpha": 0.02,
+      "objective": "regression_l1"
+    }
+  },
+  "xgb_pseudohuber015": {
+    "kind": "xgboost",
+    "params": {
+      "n_estimators": 1800,
+      "learning_rate": 0.025,
+      "max_depth": 3,
+      "min_child_weight": 5,
+      "subsample": 0.85,
+      "colsample_bytree": 0.85,
+      "reg_lambda": 5,
+      "reg_alpha": 0.02,
+      "objective": "reg:pseudohubererror",
+      "huber_slope": 0.15
+    }
+  },
+  "xgb_square_d2_regular": {
+    "kind": "xgboost",
+    "params": {
+      "n_estimators": 1800,
+      "learning_rate": 0.025,
+      "max_depth": 2,
+      "min_child_weight": 5,
+      "subsample": 0.85,
+      "colsample_bytree": 0.85,
+      "reg_lambda": 5,
+      "reg_alpha": 0.02,
+      "objective": "reg:squarederror"
+    }
+  },
+  "gbr_huber_depth2": {
+    "kind": "gbr",
+    "log_numeric": true,
+    "params": {
+      "loss": "huber",
+      "alpha": 0.9,
+      "n_estimators": 1500,
+      "learning_rate": 0.03,
+      "max_depth": 2,
+      "min_samples_leaf": 8,
+      "max_features": 0.8
+    }
+  },
+  "crossfit_en_residual_cat": {
+    "kind": "crossfit_en_residual_cat",
+    "params": {
+      "loss_function": "Huber:delta=0.15",
+      "iterations": 1000,
+      "learning_rate": 0.03,
+      "depth": 3,
+      "l2_leaf_reg": 10,
+      "one_hot_max_size": 20
+    }
+  }
+}

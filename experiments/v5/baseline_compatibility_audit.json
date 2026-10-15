@@ -1,0 +1,8 @@
+{
+  "max_prediction_difference_vs_frozen_builders": {
+    "ref_v2_cat": 0.0,
+    "cat_d5_onehot": 0.0
+  },
+  "assertion_tolerance": 1e-10,
+  "role": "two-thread wrapper semantic compatibility smoke; not CV result"
+}

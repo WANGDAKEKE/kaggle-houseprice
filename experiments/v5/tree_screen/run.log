@@ -1,0 +1,120 @@
+cat_center_huber015 fold=1 RMSE=0.136727
+cat_center_huber015 fold=2 RMSE=0.124971
+cat_center_huber015 fold=3 RMSE=0.135428
+cat_center_huber015 fold=4 RMSE=0.112896
+cat_center_huber015 fold=5 RMSE=0.112076
+               name      method                  group  rows  log_rmse  v4_log_rmse  mse_gain  fraction_rows_improved  seconds
+cat_center_huber015  standalone                    all  1168  0.124888     0.117289 -0.001840                0.464897  7.78245
+cat_center_huber015  standalone without_two_diagnostic  1166  0.118904     0.111323 -0.001745                0.464837  7.78245
+cat_center_huber015  standalone           normal_sales   962  0.099727     0.092717 -0.001349                0.456341  7.78245
+cat_center_huber015 graft025_v4                    all  1168  0.117920     0.117289 -0.000148                0.505993  7.78245
+cat_center_huber015 graft025_v4 without_two_diagnostic  1166  0.111918     0.111323 -0.000133                0.506003  7.78245
+cat_center_huber015 graft025_v4           normal_sales   962  0.093120     0.092717 -0.000075                0.496881  7.78245
+cat_center_huber030 fold=1 RMSE=0.139993
+cat_center_huber030 fold=2 RMSE=0.117421
+cat_center_huber030 fold=3 RMSE=0.132654
+cat_center_huber030 fold=4 RMSE=0.115597
+cat_center_huber030 fold=5 RMSE=0.116007
+               name      method                  group  rows  log_rmse  v4_log_rmse  mse_gain  fraction_rows_improved   seconds
+cat_center_huber030  standalone                    all  1168  0.124757     0.117289 -0.001808                0.422945 11.368182
+cat_center_huber030  standalone without_two_diagnostic  1166  0.119078     0.111323 -0.001787                0.422813 11.368182
+cat_center_huber030  standalone           normal_sales   962  0.101180     0.092717 -0.001641                0.419958 11.368182
+cat_center_huber030 graft025_v4                    all  1168  0.118045     0.117289 -0.000178                0.469178 11.368182
+cat_center_huber030 graft025_v4 without_two_diagnostic  1166  0.112132     0.111323 -0.000181                0.469125 11.368182
+cat_center_huber030 graft025_v4           normal_sales   962  0.093714     0.092717 -0.000186                0.460499 11.368182
+cat_center_mae fold=1 RMSE=0.132825
+cat_center_mae fold=2 RMSE=0.124544
+cat_center_mae fold=3 RMSE=0.131196
+cat_center_mae fold=4 RMSE=0.117267
+cat_center_mae fold=5 RMSE=0.114429
+          name      method                  group  rows  log_rmse  v4_log_rmse  mse_gain  fraction_rows_improved  seconds
+cat_center_mae  standalone                    all  1168  0.124281     0.117289 -0.001689                0.447774 12.19339
+cat_center_mae  standalone without_two_diagnostic  1166  0.121832     0.111323 -0.002450                0.446827 12.19339
+cat_center_mae  standalone           normal_sales   962  0.103543     0.092717 -0.002125                0.431393 12.19339
+cat_center_mae graft025_v4                    all  1168  0.117070     0.117289  0.000052                0.503425 12.19339
+cat_center_mae graft025_v4 without_two_diagnostic  1166  0.112166     0.111323 -0.000188                0.502573 12.19339
+cat_center_mae graft025_v4           normal_sales   962  0.093706     0.092717 -0.000184                0.484407 12.19339
+cat_simple_rmse_d4 fold=1 RMSE=0.140386
+cat_simple_rmse_d4 fold=2 RMSE=0.119223
+cat_simple_rmse_d4 fold=3 RMSE=0.140839
+cat_simple_rmse_d4 fold=4 RMSE=0.113708
+cat_simple_rmse_d4 fold=5 RMSE=0.112188
+              name      method                  group  rows  log_rmse  v4_log_rmse  mse_gain  fraction_rows_improved  seconds
+cat_simple_rmse_d4  standalone                    all  1168  0.125937     0.117289 -0.002103                0.430651 8.138748
+cat_simple_rmse_d4  standalone without_two_diagnostic  1166  0.118334     0.111323 -0.001610                0.430532 8.138748
+cat_simple_rmse_d4  standalone           normal_sales   962  0.099672     0.092717 -0.001338                0.424116 8.138748
+cat_simple_rmse_d4 graft025_v4                    all  1168  0.118413     0.117289 -0.000265                0.477740 8.138748
+cat_simple_rmse_d4 graft025_v4 without_two_diagnostic  1166  0.112067     0.111323 -0.000166                0.477702 8.138748
+cat_simple_rmse_d4 graft025_v4           normal_sales   962  0.093460     0.092717 -0.000138                0.475052 8.138748
+lgb_huber_leaves8 fold=1 RMSE=0.140134
+lgb_huber_leaves8 fold=2 RMSE=0.123568
+lgb_huber_leaves8 fold=3 RMSE=0.136217
+lgb_huber_leaves8 fold=4 RMSE=0.117844
+lgb_huber_leaves8 fold=5 RMSE=0.123633
+             name      method                  group  rows  log_rmse  v4_log_rmse  mse_gain  fraction_rows_improved  seconds
+lgb_huber_leaves8  standalone                    all  1168  0.128570     0.117289 -0.002773                0.428938 3.549772
+lgb_huber_leaves8  standalone without_two_diagnostic  1166  0.124781     0.111323 -0.003177                0.428816 3.549772
+lgb_huber_leaves8  standalone           normal_sales   962  0.109252     0.092717 -0.003340                0.418919 3.549772
+lgb_huber_leaves8 graft025_v4                    all  1168  0.117651     0.117289 -0.000085                0.494007 3.549772
+lgb_huber_leaves8 graft025_v4 without_two_diagnostic  1166  0.112249     0.111323 -0.000207                0.493997 3.549772
+lgb_huber_leaves8 graft025_v4           normal_sales   962  0.094255     0.092717 -0.000287                0.487526 3.549772
+lgb_mae_leaves8 fold=1 RMSE=0.152079
+lgb_mae_leaves8 fold=2 RMSE=0.126728
+lgb_mae_leaves8 fold=3 RMSE=0.143233
+lgb_mae_leaves8 fold=4 RMSE=0.117642
+lgb_mae_leaves8 fold=5 RMSE=0.118333
+           name      method                  group  rows  log_rmse  v4_log_rmse  mse_gain  fraction_rows_improved  seconds
+lgb_mae_leaves8  standalone                    all  1168  0.132346     0.117289 -0.003759                0.428082 3.802189
+lgb_mae_leaves8  standalone without_two_diagnostic  1166  0.125980     0.111323 -0.003478                0.427959 3.802189
+lgb_mae_leaves8  standalone           normal_sales   962  0.107926     0.092717 -0.003052                0.422037 3.802189
+lgb_mae_leaves8 graft025_v4                    all  1168  0.118566     0.117289 -0.000301                0.497432 3.802189
+lgb_mae_leaves8 graft025_v4 without_two_diagnostic  1166  0.112395     0.111323 -0.000240                0.497427 3.802189
+lgb_mae_leaves8 graft025_v4           normal_sales   962  0.094097     0.092717 -0.000258                0.495842 3.802189
+xgb_pseudohuber015 fold=1 RMSE=0.147254
+xgb_pseudohuber015 fold=2 RMSE=0.122683
+xgb_pseudohuber015 fold=3 RMSE=0.137786
+xgb_pseudohuber015 fold=4 RMSE=0.119525
+xgb_pseudohuber015 fold=5 RMSE=0.117166
+              name      method                  group  rows  log_rmse  v4_log_rmse  mse_gain  fraction_rows_improved  seconds
+xgb_pseudohuber015  standalone                    all  1168  0.129428     0.117289 -0.002995                0.440925 3.742201
+xgb_pseudohuber015  standalone without_two_diagnostic  1166  0.122869     0.111323 -0.002704                0.440823 3.742201
+xgb_pseudohuber015  standalone           normal_sales   962  0.105783     0.092717 -0.002593                0.433472 3.742201
+xgb_pseudohuber015 graft025_v4                    all  1168  0.118262     0.117289 -0.000229                0.496575 3.742201
+xgb_pseudohuber015 graft025_v4 without_two_diagnostic  1166  0.112075     0.111323 -0.000168                0.496569 3.742201
+xgb_pseudohuber015 graft025_v4           normal_sales   962  0.093759     0.092717 -0.000194                0.488565 3.742201
+xgb_square_d2_regular fold=1 RMSE=0.144285
+xgb_square_d2_regular fold=2 RMSE=0.123917
+xgb_square_d2_regular fold=3 RMSE=0.138944
+xgb_square_d2_regular fold=4 RMSE=0.115911
+xgb_square_d2_regular fold=5 RMSE=0.121086
+                 name      method                  group  rows  log_rmse  v4_log_rmse  mse_gain  fraction_rows_improved  seconds
+xgb_square_d2_regular  standalone                    all  1168  0.129305     0.117289 -0.002963                0.410103 2.537559
+xgb_square_d2_regular  standalone without_two_diagnostic  1166  0.122667     0.111323 -0.002654                0.409949 2.537559
+xgb_square_d2_regular  standalone           normal_sales   962  0.106179     0.092717 -0.002677                0.402287 2.537559
+xgb_square_d2_regular graft025_v4                    all  1168  0.118567     0.117289 -0.000301                0.470034 2.537559
+xgb_square_d2_regular graft025_v4 without_two_diagnostic  1166  0.112411     0.111323 -0.000243                0.469983 2.537559
+xgb_square_d2_regular graft025_v4           normal_sales   962  0.094211     0.092717 -0.000279                0.461538 2.537559
+gbr_huber_depth2 fold=1 RMSE=0.156093
+gbr_huber_depth2 fold=2 RMSE=0.122393
+gbr_huber_depth2 fold=3 RMSE=0.143132
+gbr_huber_depth2 fold=4 RMSE=0.118668
+gbr_huber_depth2 fold=5 RMSE=0.111964
+            name      method                  group  rows  log_rmse  v4_log_rmse  mse_gain  fraction_rows_improved   seconds
+gbr_huber_depth2  standalone                    all  1168  0.131517     0.117289 -0.003540                0.415240 16.804616
+gbr_huber_depth2  standalone without_two_diagnostic  1166  0.121823     0.111323 -0.002448                0.415952 16.804616
+gbr_huber_depth2  standalone           normal_sales   962  0.104293     0.092717 -0.002280                0.404366 16.804616
+gbr_huber_depth2 graft025_v4                    all  1168  0.118786     0.117289 -0.000353                0.477740 16.804616
+gbr_huber_depth2 graft025_v4 without_two_diagnostic  1166  0.111843     0.111323 -0.000116                0.478559 16.804616
+gbr_huber_depth2 graft025_v4           normal_sales   962  0.093476     0.092717 -0.000141                0.467775 16.804616
+crossfit_en_residual_cat fold=1 RMSE=0.155935
+crossfit_en_residual_cat fold=2 RMSE=0.112364
+crossfit_en_residual_cat fold=3 RMSE=0.132948
+crossfit_en_residual_cat fold=4 RMSE=0.112547
+crossfit_en_residual_cat fold=5 RMSE=0.109980
+                    name      method                  group  rows  log_rmse  v4_log_rmse  mse_gain  fraction_rows_improved  seconds
+crossfit_en_residual_cat  standalone                    all  1168  0.126023     0.117289 -0.002125                0.461473  8.20149
+crossfit_en_residual_cat  standalone without_two_diagnostic  1166  0.115565     0.111323 -0.000962                0.462264  8.20149
+crossfit_en_residual_cat  standalone           normal_sales   962  0.094934     0.092717 -0.000416                0.463617  8.20149
+crossfit_en_residual_cat graft025_v4                    all  1168  0.118237     0.117289 -0.000223                0.502568  8.20149
+crossfit_en_residual_cat graft025_v4 without_two_diagnostic  1166  0.111178     0.111323  0.000032                0.503431  8.20149
+crossfit_en_residual_cat graft025_v4           normal_sales   962  0.091895     0.092717  0.000152                0.509356  8.20149

@@ -1,0 +1,38 @@
+/Users/xueqiyao/kaggle/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:342: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+te_hist_7 1
+/Users/xueqiyao/kaggle/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:342: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+te_hist_7 2
+/Users/xueqiyao/kaggle/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:342: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+te_hist_7 3
+/Users/xueqiyao/kaggle/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:342: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+te_hist_7 4
+/Users/xueqiyao/kaggle/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:342: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+te_hist_7 5
+/Users/xueqiyao/kaggle/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:342: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+te_hist_15 1
+/Users/xueqiyao/kaggle/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:342: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+te_hist_15 2
+/Users/xueqiyao/kaggle/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:342: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+te_hist_15 3
+/Users/xueqiyao/kaggle/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:342: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+te_hist_15 4
+/Users/xueqiyao/kaggle/.venv/lib/python3.12/site-packages/sklearn/preprocessing/_target_encoder.py:342: FutureWarning: `TargetEncoder.shuffle` and `TargetEncoder.random_state` are deprecated in version 1.9 and will be removed in version 1.11. Pass a cross-validation generator as `cv` argument to specify the shuffling behaviour instead.
+  warnings.warn(
+te_hist_15 5
+     model  new_weight   seconds      all  ordinary   normal
+ te_hist_7        1.00  6.739600 0.131182  0.127601 0.109964
+ te_hist_7        0.15  6.739641 0.117699  0.112094 0.093538
+ te_hist_7        0.30  6.739658 0.118736  0.113500 0.095044
+te_hist_15        1.00 10.770457 0.131307  0.128067 0.112401
+te_hist_15        0.15 10.770491 0.117480  0.111940 0.093689
+te_hist_15        0.30 10.770508 0.118386  0.113277 0.095438
+        v4        0.00       NaN 0.117289  0.111323 0.092717

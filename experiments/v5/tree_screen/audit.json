@@ -1,0 +1,161 @@
+{
+  "all_caches_current_and_finite": true,
+  "source_sha256": "4d8e888c3c3e1535b818a1116415feb877552c7b350c726cc14fb520a4cb8924",
+  "cached_outer_cv_model_fits": 50,
+  "residual_inner_linear_fits": 15,
+  "residual_full_fold_linear_fits": 5,
+  "unique_cached_component_fits": 70,
+  "initial_nine_model_recompute_overhead_component_fits": 45,
+  "validation_rows_removed_for_primary_metric": 0,
+  "caches": [
+    {
+      "candidate": "cat_center_huber015",
+      "rows": 1168,
+      "fold_counts": [
+        234,
+        234,
+        234,
+        233,
+        233
+      ],
+      "current_signature_verified": true
+    },
+    {
+      "candidate": "cat_center_huber030",
+      "rows": 1168,
+      "fold_counts": [
+        234,
+        234,
+        234,
+        233,
+        233
+      ],
+      "current_signature_verified": true
+    },
+    {
+      "candidate": "cat_center_mae",
+      "rows": 1168,
+      "fold_counts": [
+        234,
+        234,
+        234,
+        233,
+        233
+      ],
+      "current_signature_verified": true
+    },
+    {
+      "candidate": "cat_simple_rmse_d4",
+      "rows": 1168,
+      "fold_counts": [
+        234,
+        234,
+        234,
+        233,
+        233
+      ],
+      "current_signature_verified": true
+    },
+    {
+      "candidate": "lgb_huber_leaves8",
+      "rows": 1168,
+      "fold_counts": [
+        234,
+        234,
+        234,
+        233,
+        233
+      ],
+      "current_signature_verified": true
+    },
+    {
+      "candidate": "lgb_mae_leaves8",
+      "rows": 1168,
+      "fold_counts": [
+        234,
+        234,
+        234,
+        233,
+        233
+      ],
+      "current_signature_verified": true
+    },
+    {
+      "candidate": "xgb_pseudohuber015",
+      "rows": 1168,
+      "fold_counts": [
+        234,
+        234,
+        234,
+        233,
+        233
+      ],
+      "current_signature_verified": true
+    },
+    {
+      "candidate": "xgb_square_d2_regular",
+      "rows": 1168,
+      "fold_counts": [
+        234,
+        234,
+        234,
+        233,
+        233
+      ],
+      "current_signature_verified": true
+    },
+    {
+      "candidate": "gbr_huber_depth2",
+      "rows": 1168,
+      "fold_counts": [
+        234,
+        234,
+        234,
+        233,
+        233
+      ],
+      "current_signature_verified": true
+    },
+    {
+      "candidate": "crossfit_en_residual_cat",
+      "rows": 1168,
+      "fold_counts": [
+        234,
+        234,
+        234,
+        233,
+        233
+      ],
+      "current_signature_verified": true
+    }
+  ],
+  "residual_graft_two_extreme_total_squared_error_gain": -0.29837825780173116,
+  "residual_graft_all_houses_total_squared_error_gain": -0.2606663955403694,
+  "residual_graft_bootstrap": {
+    "all": {
+      "n_houses": 1168,
+      "mean_mse_gain": -0.000223173283853056,
+      "paired_house_bootstrap95": [
+        -0.000744877169146873,
+        0.00013531209444277072
+      ]
+    },
+    "without_two_diagnostic": {
+      "n_houses": 1166,
+      "mean_mse_gain": 3.23429350440495e-05,
+      "paired_house_bootstrap95": [
+        -0.00014607375547964703,
+        0.00020497699089775949
+      ]
+    },
+    "normal_sales": {
+      "n_houses": 962,
+      "mean_mse_gain": 0.00015182388377340302,
+      "paired_house_bootstrap95": [
+        6.605161828375037e-06,
+        0.0003169250837417961
+      ]
+    }
+  },
+  "bootstrap_role": "Exploratory paired resampling on reused houses, no new independent data; cannot correct prior model selection."
+}

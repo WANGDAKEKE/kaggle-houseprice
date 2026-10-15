@@ -1,0 +1,14 @@
+{
+  "svr_compact_scaledcats": {
+    "rows": 1459,
+    "all_finite": true,
+    "min_log_price": 10.73979335073315,
+    "max_log_price": 13.719742725669061
+  },
+  "svr_compact_g001_C5": {
+    "rows": 1459,
+    "all_finite": true,
+    "min_log_price": 10.836314501344486,
+    "max_log_price": 13.744872969847679
+  }
+}

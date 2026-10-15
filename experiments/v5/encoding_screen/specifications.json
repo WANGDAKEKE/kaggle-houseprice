@@ -1,0 +1,10 @@
+{
+  "te_hist_7": {
+    "smooth": 20.0,
+    "leaves": 7
+  },
+  "te_hist_15": {
+    "smooth": 20.0,
+    "leaves": 15
+  }
+}

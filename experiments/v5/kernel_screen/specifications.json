@@ -1,0 +1,100 @@
+{
+  "svr_compact_g0001_C30": {
+    "kind": "svr",
+    "params": {
+      "C": 30.0,
+      "gamma": 0.0001,
+      "epsilon": 0.01
+    }
+  },
+  "svr_compact_g0003_C10": {
+    "kind": "svr",
+    "params": {
+      "C": 10.0,
+      "gamma": 0.0003,
+      "epsilon": 0.01
+    }
+  },
+  "svr_compact_g001_C5": {
+    "kind": "svr",
+    "params": {
+      "C": 5.0,
+      "gamma": 0.001,
+      "epsilon": 0.01
+    }
+  },
+  "svr_compact_robust": {
+    "kind": "svr",
+    "params": {
+      "C": 20.0,
+      "gamma": 0.0003,
+      "epsilon": 0.01
+    },
+    "scale": "robust"
+  },
+  "svr_compact_scaledcats": {
+    "kind": "svr",
+    "params": {
+      "C": 10.0,
+      "gamma": 0.0003,
+      "epsilon": 0.01
+    },
+    "category_scale": 0.25
+  },
+  "krr_compact_rbf": {
+    "kind": "kernelridge",
+    "params": {
+      "alpha": 0.005,
+      "kernel": "rbf",
+      "gamma": 0.0005
+    }
+  },
+  "krr_compact_laplacian": {
+    "kind": "kernelridge",
+    "params": {
+      "alpha": 0.01,
+      "kernel": "laplacian",
+      "gamma": 0.003
+    }
+  },
+  "krr_compact_poly": {
+    "kind": "kernelridge",
+    "params": {
+      "alpha": 0.05,
+      "kernel": "polynomial",
+      "degree": 2,
+      "gamma": 0.001,
+      "coef0": 1.0
+    }
+  },
+  "en_compact": {
+    "kind": "elasticnet",
+    "params": {
+      "alpha": 0.0006,
+      "l1_ratio": 0.8
+    }
+  },
+  "en_compact_scaledcats": {
+    "kind": "elasticnet",
+    "params": {
+      "alpha": 0.0007,
+      "l1_ratio": 0.8
+    },
+    "category_scale": 0.25
+  },
+  "en_compact_robust": {
+    "kind": "elasticnet",
+    "params": {
+      "alpha": 0.0007,
+      "l1_ratio": 0.8
+    },
+    "scale": "robust"
+  },
+  "ridge_compact_scaledcats": {
+    "kind": "ridge",
+    "params": {
+      "alpha": 20.0
+    },
+    "category_scale": 0.25
+  }
+}
