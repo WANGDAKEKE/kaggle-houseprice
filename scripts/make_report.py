@@ -25,6 +25,7 @@ validation = json.loads((ART / "submission_validation.json").read_text())
 manifest = json.loads((ROOT / "data/manifest.json").read_text())
 score_file = ART / "kaggle_results.json"
 online_results = json.loads(score_file.read_text()).get("submissions", []) if score_file.exists() else []
+online_results = [r for r in online_results if r.get("version", "v1") == "v1"]
 online_html = ""
 status_text = "本地实验已完成，尚未提交"
 next_step_text = "本轮没有登录、上传、提交或读取榜单。下一轮提交推荐 CSV，记录线上 log-RMSE 后再决定后续实验。"

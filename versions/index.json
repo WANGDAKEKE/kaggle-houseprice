@@ -16,8 +16,8 @@
     {
       "version": "v2",
       "git_tag": "v2.0.0",
-      "status": "ready_for_user_submission",
-      "public_log_rmse": null,
+      "status": "submitted_by_user",
+      "public_log_rmse": 0.11741,
       "development_cv_log_rmse": 0.11972887896771194,
       "cv_protocol": "mean of three 5-fold splits, seeds 42/2026/137, original 1168 development rows",
       "v1_comparable_repeated_cv": 0.12219778430709899,
@@ -31,7 +31,9 @@
         "v1_catboost": 0.5
       },
       "experiment_directory": "experiments/v2",
-      "date": "2026-10-15"
+      "date": "2026-10-15",
+      "score_source": "user_report",
+      "score_reported_date": "2026-10-15"
     }
   ]
 }

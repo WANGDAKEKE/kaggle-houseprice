@@ -4,7 +4,7 @@
 
 ## 输出
 
-- `submission_v2.csv`：新版本推荐提交文件；尚未提交 Kaggle。
+- `submission_v2.csv`：v2 提交文件；用户反馈线上分数 **0.11741**。
 - `experiments/v2/report.html`：v2 的 44 个配置、重复验证比较与提交审计。
 - `submission.csv`：首版最终方案，对话中关联的线上分数为 0.11969。
 - `submission_baseline.csv`：Ridge 基线预测，供对照。
@@ -66,7 +66,7 @@ artifacts/                   实验、模型、验证和图表
 
 私有仓库：[WANGDAKEKE/kaggle-houseprice](https://github.com/WANGDAKEKE/kaggle-houseprice)。版本、标签和线上结果见 [VERSIONS.md](VERSIONS.md) 与 `versions/index.json`。首版冻结为 `v1.0.0`，完整快照保存在 `versions/v1/`；后续提交文件使用独立版本名。
 
-v2 冻结为 `v2.0.0`。在与首版相同的三个 5 折拆分上，平均开发集 log-RMSE 从 0.12220 降至 0.11973。最终采用 50% 新特征 ElasticNet + 50% CatBoost（3 个训练种子平均）。提交 `submission_v2.csv`，由 Kaggle 线上分数确认实际变化。
+v2 冻结为 `v2.0.0`。在与首版相同的三个 5 折拆分上，平均开发集 log-RMSE 从 0.12220 降至 0.11973。最终采用 50% 新特征 ElasticNet + 50% CatBoost（3 个训练种子平均）。用户反馈 `submission_v2.csv` 的线上分数为 **0.11741**，较 v1 的 0.11969 降低约 1.90%。
 
 ```sh
 sh scripts/run.sh scripts/predict_v2.py

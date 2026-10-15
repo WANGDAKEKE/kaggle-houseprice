@@ -1,0 +1,18 @@
+{
+  "version": "v2",
+  "date": "2026-10-15",
+  "timezone": "Asia/Shanghai",
+  "competition": "house-prices-advanced-regression-techniques",
+  "submission_file": "submission_v2.csv",
+  "submission_sha256": "66c2d66ab1b9fe43cfd0bc68229a9881c1181fb87115e5fad6350d363972eb6a",
+  "model": "linear_tree_0.5",
+  "weights": {
+    "en_rich_a0.0007_l0.8": 0.5,
+    "v1_catboost": 0.5
+  },
+  "public_log_rmse": 0.11741,
+  "source": "user-reported Kaggle score; not independently read from submission history",
+  "v1_public_log_rmse": 0.11969,
+  "improvement": 0.0022800000000000042,
+  "relative_improvement_pct": 1.9049210460355954
+}
