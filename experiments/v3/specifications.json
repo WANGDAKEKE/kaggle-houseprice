@@ -1,0 +1,339 @@
+{
+  "ref_v2_linear": {
+    "reference": "en_rich_a0.0007_l0.8",
+    "reference_spec": {
+      "kind": "elasticnet",
+      "params": {
+        "alpha": 0.0007,
+        "l1_ratio": 0.8
+      },
+      "rich": true
+    },
+    "kind": "elasticnet"
+  },
+  "ref_v2_cat": {
+    "reference": "v1_catboost",
+    "reference_spec": {
+      "kind": "catboost",
+      "engineered": true,
+      "log_numeric": false,
+      "params": {
+        "iterations": 2200,
+        "learning_rate": 0.035,
+        "depth": 5,
+        "l2_leaf_reg": 5
+      },
+      "schema_path": "/Users/xueqiyao/kaggle/data/raw/train.csv",
+      "features": "v1"
+    },
+    "kind": "catboost"
+  },
+  "en_catscale_0.15": {
+    "kind": "elasticnet",
+    "params": {
+      "alpha": 0.0007,
+      "l1_ratio": 0.8
+    },
+    "category_scale": 0.15
+  },
+  "en_catscale_0.25": {
+    "kind": "elasticnet",
+    "params": {
+      "alpha": 0.0007,
+      "l1_ratio": 0.8
+    },
+    "category_scale": 0.25
+  },
+  "en_catscale_0.5": {
+    "kind": "elasticnet",
+    "params": {
+      "alpha": 0.0007,
+      "l1_ratio": 0.8
+    },
+    "category_scale": 0.5
+  },
+  "en_boxcox_0.15_catscale_0": {
+    "kind": "elasticnet",
+    "params": {
+      "alpha": 0.0007,
+      "l1_ratio": 0.8
+    },
+    "power": "boxcox",
+    "power_lambda": 0.15,
+    "category_scale": 0
+  },
+  "en_boxcox_0.3_catscale_0": {
+    "kind": "elasticnet",
+    "params": {
+      "alpha": 0.0007,
+      "l1_ratio": 0.8
+    },
+    "power": "boxcox",
+    "power_lambda": 0.3,
+    "category_scale": 0
+  },
+  "en_boxcox_0.15_catscale_0.25": {
+    "kind": "elasticnet",
+    "params": {
+      "alpha": 0.0007,
+      "l1_ratio": 0.8
+    },
+    "power": "boxcox",
+    "power_lambda": 0.15,
+    "category_scale": 0.25
+  },
+  "en_boxcox_0.3_catscale_0.25": {
+    "kind": "elasticnet",
+    "params": {
+      "alpha": 0.0007,
+      "l1_ratio": 0.8
+    },
+    "power": "boxcox",
+    "power_lambda": 0.3,
+    "category_scale": 0.25
+  },
+  "en_inter_sale": {
+    "kind": "elasticnet",
+    "params": {
+      "alpha": 0.0007,
+      "l1_ratio": 0.8
+    },
+    "interactions": "sale"
+  },
+  "en_inter_sale_scaled": {
+    "kind": "elasticnet",
+    "params": {
+      "alpha": 0.0007,
+      "l1_ratio": 0.8
+    },
+    "interactions": "sale",
+    "category_scale": 0.25
+  },
+  "en_inter_size": {
+    "kind": "elasticnet",
+    "params": {
+      "alpha": 0.0007,
+      "l1_ratio": 0.8
+    },
+    "interactions": "size"
+  },
+  "en_inter_size_scaled": {
+    "kind": "elasticnet",
+    "params": {
+      "alpha": 0.0007,
+      "l1_ratio": 0.8
+    },
+    "interactions": "size",
+    "category_scale": 0.25
+  },
+  "en_inter_both": {
+    "kind": "elasticnet",
+    "params": {
+      "alpha": 0.0007,
+      "l1_ratio": 0.8
+    },
+    "interactions": "both"
+  },
+  "en_inter_both_scaled": {
+    "kind": "elasticnet",
+    "params": {
+      "alpha": 0.0007,
+      "l1_ratio": 0.8
+    },
+    "interactions": "both",
+    "category_scale": 0.25
+  },
+  "en_quality_categories": {
+    "kind": "elasticnet",
+    "params": {
+      "alpha": 0.0007,
+      "l1_ratio": 0.8
+    },
+    "quality_categories": true
+  },
+  "en_quality_categories_scaled": {
+    "kind": "elasticnet",
+    "params": {
+      "alpha": 0.0007,
+      "l1_ratio": 0.8
+    },
+    "quality_categories": true,
+    "category_scale": 0.25
+  },
+  "en_splines_3": {
+    "kind": "elasticnet",
+    "params": {
+      "alpha": 0.0007,
+      "l1_ratio": 0.8
+    },
+    "splines": true,
+    "n_knots": 3
+  },
+  "en_splines_3_scaled": {
+    "kind": "elasticnet",
+    "params": {
+      "alpha": 0.0007,
+      "l1_ratio": 0.8
+    },
+    "splines": true,
+    "n_knots": 3,
+    "category_scale": 0.25
+  },
+  "en_splines_5": {
+    "kind": "elasticnet",
+    "params": {
+      "alpha": 0.0007,
+      "l1_ratio": 0.8
+    },
+    "splines": true,
+    "n_knots": 5
+  },
+  "en_splines_5_scaled": {
+    "kind": "elasticnet",
+    "params": {
+      "alpha": 0.0007,
+      "l1_ratio": 0.8
+    },
+    "splines": true,
+    "n_knots": 5,
+    "category_scale": 0.25
+  },
+  "en_spline_alpha_0.0003": {
+    "kind": "elasticnet",
+    "splines": true,
+    "n_knots": 4,
+    "params": {
+      "alpha": 0.0003,
+      "l1_ratio": 0.8
+    }
+  },
+  "en_spline_alpha_0.0012": {
+    "kind": "elasticnet",
+    "splines": true,
+    "n_knots": 4,
+    "params": {
+      "alpha": 0.0012,
+      "l1_ratio": 0.8
+    }
+  },
+  "histgb_leaf7_l5": {
+    "kind": "histgb",
+    "features": "v1",
+    "params": {
+      "max_iter": 1000,
+      "learning_rate": 0.025,
+      "max_leaf_nodes": 7,
+      "min_samples_leaf": 15,
+      "l2_regularization": 5
+    }
+  },
+  "histgb_leaf15_l5": {
+    "kind": "histgb",
+    "features": "v1",
+    "params": {
+      "max_iter": 1000,
+      "learning_rate": 0.025,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 15,
+      "l2_regularization": 5
+    }
+  },
+  "histgb_leaf15_l15": {
+    "kind": "histgb",
+    "features": "v1",
+    "params": {
+      "max_iter": 1000,
+      "learning_rate": 0.025,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 15,
+      "l2_regularization": 15
+    }
+  },
+  "cat_d4_long": {
+    "kind": "catboost",
+    "features": "v1",
+    "params": {
+      "depth": 4,
+      "iterations": 3500,
+      "learning_rate": 0.03,
+      "l2_leaf_reg": 5
+    }
+  },
+  "cat_d5_regularized": {
+    "kind": "catboost",
+    "features": "v1",
+    "params": {
+      "depth": 5,
+      "iterations": 3000,
+      "learning_rate": 0.025,
+      "l2_leaf_reg": 10
+    }
+  },
+  "cat_d5_ctr2": {
+    "kind": "catboost",
+    "features": "v1",
+    "params": {
+      "depth": 5,
+      "iterations": 2200,
+      "learning_rate": 0.035,
+      "l2_leaf_reg": 5,
+      "max_ctr_complexity": 2
+    }
+  },
+  "cat_d5_onehot": {
+    "kind": "catboost",
+    "features": "v1",
+    "params": {
+      "depth": 5,
+      "iterations": 2500,
+      "learning_rate": 0.03,
+      "l2_leaf_reg": 5,
+      "one_hot_max_size": 20
+    }
+  },
+  "cat_d4_huber": {
+    "kind": "catboost",
+    "features": "v1",
+    "params": {
+      "depth": 4,
+      "iterations": 2600,
+      "learning_rate": 0.03,
+      "l2_leaf_reg": 5,
+      "loss_function": "Huber:delta=0.12"
+    }
+  },
+  "cat_d5_huber": {
+    "kind": "catboost",
+    "features": "v1",
+    "params": {
+      "depth": 5,
+      "iterations": 2600,
+      "learning_rate": 0.03,
+      "l2_leaf_reg": 5,
+      "loss_function": "Huber:delta=0.15"
+    }
+  },
+  "cat_d4_ordered": {
+    "kind": "catboost",
+    "features": "v1",
+    "params": {
+      "depth": 4,
+      "iterations": 1800,
+      "learning_rate": 0.04,
+      "l2_leaf_reg": 5,
+      "boosting_type": "Ordered"
+    }
+  },
+  "cat_d5_lowrandom": {
+    "kind": "catboost",
+    "features": "v1",
+    "params": {
+      "depth": 5,
+      "iterations": 2600,
+      "learning_rate": 0.03,
+      "l2_leaf_reg": 5,
+      "random_strength": 0.2,
+      "bagging_temperature": 0.3
+    }
+  }
+}

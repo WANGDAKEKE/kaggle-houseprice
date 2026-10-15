@@ -147,6 +147,14 @@ def confirm():
         candidates[name] = weights
     for weight in [.25, .5, .75]:
         add(f"best_linear_tree_{weight}", [(linear,weight),(tree,1-weight)])
+    # A stronger individual predictor need not be the best blend component.
+    # Compare the shortlisted linear/tree pairs on the same small fixed grid.
+    linears = [n for n in shortlist if config[n]["kind"] == "elasticnet"]
+    trees = [n for n in shortlist if config[n]["kind"] in ["catboost", "histgb"]]
+    for linear_name in linears:
+        for tree_name in trees:
+            for weight in [.25, .5, .75]:
+                add(f"pair_{linear_name}_{tree_name}_{weight}", [(linear_name,weight),(tree_name,1-weight)])
     # New model grafts are fixed weights, never selected using holdout or public scores.
     for name in shortlist:
         if name.startswith("ref_"):
