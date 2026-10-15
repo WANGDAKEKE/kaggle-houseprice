@@ -1,0 +1,26 @@
+[
+  {
+    "name": "en_inter_size_scaled",
+    "seed": 42,
+    "weight": 0.5,
+    "path": "experiments/v3/models/en_inter_size_scaled_seed42.joblib"
+  },
+  {
+    "name": "cat_d5_onehot",
+    "seed": 42,
+    "weight": 0.16666666666666666,
+    "path": "experiments/v3/models/cat_d5_onehot_seed42.joblib"
+  },
+  {
+    "name": "cat_d5_onehot",
+    "seed": 2026,
+    "weight": 0.16666666666666666,
+    "path": "experiments/v3/models/cat_d5_onehot_seed2026.joblib"
+  },
+  {
+    "name": "cat_d5_onehot",
+    "seed": 137,
+    "weight": 0.16666666666666666,
+    "path": "experiments/v3/models/cat_d5_onehot_seed137.joblib"
+  }
+]

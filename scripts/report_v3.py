@@ -16,6 +16,13 @@ from src.house_prices import log_rmse
 ART=ROOT/"experiments/v3";FIG=ART/"figures";FIG.mkdir(exist_ok=True)
 selection=json.loads((ART/"selection.json").read_text())
 checks=json.loads((ART/"additional_split_check.json").read_text())
+five_new=list(selection["selected_seed_scores"].values())+[r["v3_log_rmse"] for r in checks["scores"]]
+five_old=list(selection["v2_seed_scores"].values())+[r["v2_log_rmse"] for r in checks["scores"]]
+five={"v3_five_split_mean":float(np.mean(five_new)),"v2_five_split_mean":float(np.mean(five_old)),
+      "relative_improvement_pct":float(100*(1-np.mean(five_new)/np.mean(five_old))),
+      "all_five_splits_improved":bool(all(a<b for a,b in zip(five_new,five_old))),
+      "first_three_role":"selection","last_two_role":"checks after freezing selection","online_score_v3":None}
+(ART/"five_split_summary.json").write_text(json.dumps(five,indent=2)+"\n")
 audit=json.loads((ART/"submission_audit.json").read_text())
 online_file=ART/"online_result.json"
 online=json.loads(online_file.read_text()) if online_file.exists() else None
@@ -88,6 +95,7 @@ table{{border-collapse:collapse;width:100%;font-size:12px}}td,th{{padding:7px;bo
 <h2>本轮变化</h2><p>适度缩放稀有类别的独热特征，改变其正则化强度；比较街区与面积区间、房屋年代、建筑类型的组合特征；同时尝试 Box–Cox 变换、样条基函数、原生类别直方图提升树，以及不同类别处理、深度和稳健损失的 CatBoost。没有使用外部测试标签，没有按 Id 覆盖预测。</p>
 <h2>验证与可信边界</h2><p>仍使用相同的 1,168 条开发数据，以及 42、2026、137 三个 5 折拆分。v3 相对 v2 的平均误差降低 {gain:.2f}%。融合组件按其组合后的误差比较，固定权重网格为 25%、50%、75%；距最低误差 0.00015 内优先较少的组件。</p>
 <p>选定配置后，冻结参数并在 2701、901 两个新拆分上检查，未根据检查结果改权重：v2 均值 {checks['mean_v2']:.5f}，v3 均值 {checks['mean_v3']:.5f}。这些仍是同一批开发房屋，不能视为全新的独立数据。所有拆分的验证样本均保留，包括少数极大面积低价房屋。预处理、类别频率、幂变换列和样条结点只从各折训练样本拟合。</p>
+<p>五个相同拆分统一比较，v2 的均值为 <b>{five['v2_five_split_mean']:.5f}</b>，v3 为 <b>{five['v3_five_split_mean']:.5f}</b>，五个拆分均改善，平均降低 {five['relative_improvement_pct']:.2f}%。其中 seed=901 把两条极大面积低价样本放在同一验证折，双方误差都升高；仍保留这个更难的拆分，不只报告较好的拆分。</p>
 <p>旧的 292 条预留数据已在前两版评价过，本轮只作诊断，log-RMSE 为 {audit['old_holdout_log_rmse_diagnostic_only']:.5f}，不用于选择参数。{online_boundary}</p>
 <img src="figures/split_checks.png" alt="选择拆分与新增拆分对比"><img src="figures/confirmation.png" alt="固定融合候选对比">
 <h2>全部融合比较</h2>{table(confirmed)}<h2>全部初筛配置</h2>{table(screen)}

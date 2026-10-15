@@ -1,0 +1,10 @@
+{
+  "base_configurations": 34,
+  "saved_cv_runs": 58,
+  "saved_fold_predictions": 290,
+  "reused_v2_cv_runs": 6,
+  "new_saved_cv_fold_fits": 260,
+  "all_validation_rows_retained": true,
+  "holdout_not_used_for_selection": true,
+  "additional_check_used_for_retuning": false
+}

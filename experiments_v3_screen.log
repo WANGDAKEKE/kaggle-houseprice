@@ -1,0 +1,196 @@
+dev en_catscale_0.15 seed=42 fold=1: 0.14701
+dev en_catscale_0.15 seed=42 fold=2: 0.11248
+dev en_catscale_0.15 seed=42 fold=3: 0.12707
+dev en_catscale_0.15 seed=42 fold=4: 0.10545
+dev en_catscale_0.15 seed=42 fold=5: 0.11155
+dev en_catscale_0.25 seed=42 fold=1: 0.14957
+dev en_catscale_0.25 seed=42 fold=2: 0.11462
+dev en_catscale_0.25 seed=42 fold=3: 0.12852
+dev en_catscale_0.25 seed=42 fold=4: 0.10569
+dev en_catscale_0.25 seed=42 fold=5: 0.11187
+dev en_catscale_0.5 seed=42 fold=1: 0.16222
+dev en_catscale_0.5 seed=42 fold=2: 0.12208
+dev en_catscale_0.5 seed=42 fold=3: 0.13197
+dev en_catscale_0.5 seed=42 fold=4: 0.10864
+dev en_catscale_0.5 seed=42 fold=5: 0.11599
+dev en_boxcox_0.15_catscale_0 seed=42 fold=1: 0.15394
+dev en_boxcox_0.15_catscale_0 seed=42 fold=2: 0.10932
+dev en_boxcox_0.15_catscale_0 seed=42 fold=3: 0.13252
+dev en_boxcox_0.15_catscale_0 seed=42 fold=4: 0.10742
+dev en_boxcox_0.15_catscale_0 seed=42 fold=5: 0.11150
+dev en_boxcox_0.3_catscale_0 seed=42 fold=1: 0.15661
+dev en_boxcox_0.3_catscale_0 seed=42 fold=2: 0.10906
+dev en_boxcox_0.3_catscale_0 seed=42 fold=3: 0.13280
+dev en_boxcox_0.3_catscale_0 seed=42 fold=4: 0.10634
+dev en_boxcox_0.3_catscale_0 seed=42 fold=5: 0.11088
+dev en_boxcox_0.15_catscale_0.25 seed=42 fold=1: 0.14991
+dev en_boxcox_0.15_catscale_0.25 seed=42 fold=2: 0.11378
+dev en_boxcox_0.15_catscale_0.25 seed=42 fold=3: 0.12740
+dev en_boxcox_0.15_catscale_0.25 seed=42 fold=4: 0.10487
+dev en_boxcox_0.15_catscale_0.25 seed=42 fold=5: 0.11117
+dev en_boxcox_0.3_catscale_0.25 seed=42 fold=1: 0.15259
+dev en_boxcox_0.3_catscale_0.25 seed=42 fold=2: 0.11315
+dev en_boxcox_0.3_catscale_0.25 seed=42 fold=3: 0.12644
+dev en_boxcox_0.3_catscale_0.25 seed=42 fold=4: 0.10416
+dev en_boxcox_0.3_catscale_0.25 seed=42 fold=5: 0.11057
+dev en_inter_sale seed=42 fold=1: 0.15279
+dev en_inter_sale seed=42 fold=2: 0.11069
+dev en_inter_sale seed=42 fold=3: 0.13202
+dev en_inter_sale seed=42 fold=4: 0.10974
+dev en_inter_sale seed=42 fold=5: 0.11246
+dev en_inter_sale_scaled seed=42 fold=1: 0.15104
+dev en_inter_sale_scaled seed=42 fold=2: 0.12067
+dev en_inter_sale_scaled seed=42 fold=3: 0.13033
+dev en_inter_sale_scaled seed=42 fold=4: 0.10863
+dev en_inter_sale_scaled seed=42 fold=5: 0.13164
+dev en_inter_size seed=42 fold=1: 0.14591
+dev en_inter_size seed=42 fold=2: 0.11032
+dev en_inter_size seed=42 fold=3: 0.13044
+dev en_inter_size seed=42 fold=4: 0.10814
+dev en_inter_size seed=42 fold=5: 0.11203
+dev en_inter_size_scaled seed=42 fold=1: 0.13783
+dev en_inter_size_scaled seed=42 fold=2: 0.11602
+dev en_inter_size_scaled seed=42 fold=3: 0.12566
+dev en_inter_size_scaled seed=42 fold=4: 0.10993
+dev en_inter_size_scaled seed=42 fold=5: 0.10927
+dev en_inter_both seed=42 fold=1: 0.14702
+dev en_inter_both seed=42 fold=2: 0.11056
+dev en_inter_both seed=42 fold=3: 0.13016
+dev en_inter_both seed=42 fold=4: 0.10915
+dev en_inter_both seed=42 fold=5: 0.11203
+dev en_inter_both_scaled seed=42 fold=1: 0.13926
+dev en_inter_both_scaled seed=42 fold=2: 0.12246
+dev en_inter_both_scaled seed=42 fold=3: 0.12731
+dev en_inter_both_scaled seed=42 fold=4: 0.11447
+dev en_inter_both_scaled seed=42 fold=5: 0.13088
+dev en_quality_categories seed=42 fold=1: 0.15245
+dev en_quality_categories seed=42 fold=2: 0.10971
+dev en_quality_categories seed=42 fold=3: 0.13299
+dev en_quality_categories seed=42 fold=4: 0.10836
+dev en_quality_categories seed=42 fold=5: 0.11236
+dev en_quality_categories_scaled seed=42 fold=1: 0.15175
+dev en_quality_categories_scaled seed=42 fold=2: 0.11470
+dev en_quality_categories_scaled seed=42 fold=3: 0.12885
+dev en_quality_categories_scaled seed=42 fold=4: 0.10589
+dev en_quality_categories_scaled seed=42 fold=5: 0.11374
+dev en_splines_3 seed=42 fold=1: 0.15330
+dev en_splines_3 seed=42 fold=2: 0.11070
+dev en_splines_3 seed=42 fold=3: 0.13368
+dev en_splines_3 seed=42 fold=4: 0.11144
+dev en_splines_3 seed=42 fold=5: 0.11869
+dev en_splines_3_scaled seed=42 fold=1: 0.14928
+dev en_splines_3_scaled seed=42 fold=2: 0.11446
+dev en_splines_3_scaled seed=42 fold=3: 0.12820
+dev en_splines_3_scaled seed=42 fold=4: 0.10645
+dev en_splines_3_scaled seed=42 fold=5: 0.11538
+dev en_splines_5 seed=42 fold=1: 0.14214
+dev en_splines_5 seed=42 fold=2: 0.11021
+dev en_splines_5 seed=42 fold=3: 0.13474
+dev en_splines_5 seed=42 fold=4: 0.11532
+dev en_splines_5 seed=42 fold=5: 0.11829
+dev en_splines_5_scaled seed=42 fold=1: 0.14724
+dev en_splines_5_scaled seed=42 fold=2: 0.11516
+dev en_splines_5_scaled seed=42 fold=3: 0.12853
+dev en_splines_5_scaled seed=42 fold=4: 0.10879
+dev en_splines_5_scaled seed=42 fold=5: 0.11604
+dev en_spline_alpha_0.0003 seed=42 fold=1: 0.14677
+dev en_spline_alpha_0.0003 seed=42 fold=2: 0.11374
+dev en_spline_alpha_0.0003 seed=42 fold=3: 0.13001
+dev en_spline_alpha_0.0003 seed=42 fold=4: 0.11056
+dev en_spline_alpha_0.0003 seed=42 fold=5: 0.11654
+dev en_spline_alpha_0.0012 seed=42 fold=1: 0.15000
+dev en_spline_alpha_0.0012 seed=42 fold=2: 0.11068
+dev en_spline_alpha_0.0012 seed=42 fold=3: 0.13718
+dev en_spline_alpha_0.0012 seed=42 fold=4: 0.11943
+dev en_spline_alpha_0.0012 seed=42 fold=5: 0.12002
+dev histgb_leaf7_l5 seed=42 fold=1: 0.14093
+dev histgb_leaf7_l5 seed=42 fold=2: 0.12739
+dev histgb_leaf7_l5 seed=42 fold=3: 0.13644
+dev histgb_leaf7_l5 seed=42 fold=4: 0.11873
+dev histgb_leaf7_l5 seed=42 fold=5: 0.12356
+dev histgb_leaf15_l5 seed=42 fold=1: 0.14262
+dev histgb_leaf15_l5 seed=42 fold=2: 0.12736
+dev histgb_leaf15_l5 seed=42 fold=3: 0.13148
+dev histgb_leaf15_l5 seed=42 fold=4: 0.12124
+dev histgb_leaf15_l5 seed=42 fold=5: 0.12351
+dev histgb_leaf15_l15 seed=42 fold=1: 0.14560
+dev histgb_leaf15_l15 seed=42 fold=2: 0.12874
+dev histgb_leaf15_l15 seed=42 fold=3: 0.13002
+dev histgb_leaf15_l15 seed=42 fold=4: 0.12135
+dev histgb_leaf15_l15 seed=42 fold=5: 0.12733
+dev cat_d4_long seed=42 fold=1: 0.14342
+dev cat_d4_long seed=42 fold=2: 0.11978
+dev cat_d4_long seed=42 fold=3: 0.13725
+dev cat_d4_long seed=42 fold=4: 0.11112
+dev cat_d4_long seed=42 fold=5: 0.11528
+dev cat_d5_regularized seed=42 fold=1: 0.14037
+dev cat_d5_regularized seed=42 fold=2: 0.11979
+dev cat_d5_regularized seed=42 fold=3: 0.13828
+dev cat_d5_regularized seed=42 fold=4: 0.11785
+dev cat_d5_regularized seed=42 fold=5: 0.11310
+dev cat_d5_ctr2 seed=42 fold=1: 0.14163
+dev cat_d5_ctr2 seed=42 fold=2: 0.11916
+dev cat_d5_ctr2 seed=42 fold=3: 0.13669
+dev cat_d5_ctr2 seed=42 fold=4: 0.11194
+dev cat_d5_ctr2 seed=42 fold=5: 0.11111
+dev cat_d5_onehot seed=42 fold=1: 0.13906
+dev cat_d5_onehot seed=42 fold=2: 0.11844
+dev cat_d5_onehot seed=42 fold=3: 0.13090
+dev cat_d5_onehot seed=42 fold=4: 0.11139
+dev cat_d5_onehot seed=42 fold=5: 0.11249
+dev cat_d4_huber seed=42 fold=1: 0.38047
+dev cat_d4_huber seed=42 fold=2: 0.41036
+dev cat_d4_huber seed=42 fold=3: 0.30808
+dev cat_d4_huber seed=42 fold=4: 0.39213
+dev cat_d4_huber seed=42 fold=5: 0.46147
+dev cat_d5_huber seed=42 fold=1: 0.46093
+dev cat_d5_huber seed=42 fold=2: 0.41349
+dev cat_d5_huber seed=42 fold=3: 0.45300
+dev cat_d5_huber seed=42 fold=4: 0.46917
+dev cat_d5_huber seed=42 fold=5: 0.37010
+dev cat_d4_ordered seed=42 fold=1: 0.14260
+dev cat_d4_ordered seed=42 fold=2: 0.11952
+dev cat_d4_ordered seed=42 fold=3: 0.13632
+dev cat_d4_ordered seed=42 fold=4: 0.12631
+dev cat_d4_ordered seed=42 fold=5: 0.11709
+dev cat_d5_lowrandom seed=42 fold=1: 0.13717
+dev cat_d5_lowrandom seed=42 fold=2: 0.12155
+dev cat_d5_lowrandom seed=42 fold=3: 0.12930
+dev cat_d5_lowrandom seed=42 fold=4: 0.11413
+dev cat_d5_lowrandom seed=42 fold=5: 0.11975
+Screen:                        model  log_rmse   seconds
+        en_inter_size_scaled  0.120245  2.550373
+            en_catscale_0.15  0.121656  1.880980
+               en_inter_size  0.122265  1.245919
+en_boxcox_0.15_catscale_0.25  0.122500  1.713143
+ en_boxcox_0.3_catscale_0.25  0.122623  1.564285
+               en_inter_both  0.122693  1.191505
+               cat_d5_onehot  0.122951 10.495565
+            en_catscale_0.25  0.123077  2.057579
+         en_splines_3_scaled  0.123686  1.817535
+         en_splines_5_scaled  0.123925  2.538384
+en_quality_categories_scaled  0.124069  2.294935
+               ref_v2_linear  0.124076  0.000000
+      en_spline_alpha_0.0003  0.124266  7.214797
+   en_boxcox_0.15_catscale_0  0.124267  2.011780
+                  ref_v2_cat  0.124273  0.000000
+       en_quality_categories  0.124386  1.453680
+            cat_d5_lowrandom  0.124650 59.512836
+    en_boxcox_0.3_catscale_0  0.124653  2.058596
+               en_inter_sale  0.124697  1.356625
+                en_splines_5  0.124749  2.861297
+                 cat_d5_ctr2  0.124777 39.697471
+                 cat_d4_long  0.126029 46.156268
+          cat_d5_regularized  0.126395 57.404536
+                en_splines_3  0.126613  4.557159
+        en_inter_both_scaled  0.127155  2.608770
+      en_spline_alpha_0.0012  0.128261  1.730565
+              cat_d4_ordered  0.128750 55.683400
+        en_inter_sale_scaled  0.129235  1.749959
+            histgb_leaf15_l5  0.129476 14.706322
+             en_catscale_0.5  0.129558  3.971807
+             histgb_leaf7_l5  0.129680  7.213393
+           histgb_leaf15_l15  0.130867 15.245077
+                cat_d4_huber  0.393585 37.307887
+                cat_d5_huber  0.434931 61.851347
+Shortlist: ['en_inter_size_scaled', 'en_catscale_0.15', 'en_inter_size', 'en_boxcox_0.15_catscale_0.25', 'histgb_leaf15_l5', 'cat_d5_onehot', 'ref_v2_linear', 'ref_v2_cat']

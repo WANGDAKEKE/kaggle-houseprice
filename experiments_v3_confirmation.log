@@ -1,0 +1,103 @@
+dev histgb_leaf15_l5 seed=42 fold=1: 0.14262
+dev histgb_leaf15_l5 seed=42 fold=2: 0.12736
+dev histgb_leaf15_l5 seed=42 fold=3: 0.13148
+dev histgb_leaf15_l5 seed=42 fold=4: 0.12124
+dev histgb_leaf15_l5 seed=42 fold=5: 0.12351
+dev histgb_leaf15_l5 seed=2026 fold=1: 0.14056
+dev histgb_leaf15_l5 seed=2026 fold=2: 0.12935
+dev histgb_leaf15_l5 seed=2026 fold=3: 0.12212
+dev histgb_leaf15_l5 seed=2026 fold=4: 0.13493
+dev histgb_leaf15_l5 seed=2026 fold=5: 0.13304
+dev histgb_leaf15_l5 seed=137 fold=1: 0.12351
+dev histgb_leaf15_l5 seed=137 fold=2: 0.13130
+dev histgb_leaf15_l5 seed=137 fold=3: 0.12977
+dev histgb_leaf15_l5 seed=137 fold=4: 0.11404
+dev histgb_leaf15_l5 seed=137 fold=5: 0.15081
+dev cat_d5_onehot seed=42 fold=1: 0.13906
+dev cat_d5_onehot seed=42 fold=2: 0.11844
+dev cat_d5_onehot seed=42 fold=3: 0.13090
+dev cat_d5_onehot seed=42 fold=4: 0.11139
+dev cat_d5_onehot seed=42 fold=5: 0.11249
+dev cat_d5_onehot seed=2026 fold=1: 0.12412
+dev cat_d5_onehot seed=2026 fold=2: 0.12199
+dev cat_d5_onehot seed=2026 fold=3: 0.11152
+dev cat_d5_onehot seed=2026 fold=4: 0.12374
+dev cat_d5_onehot seed=2026 fold=5: 0.13138
+dev cat_d5_onehot seed=137 fold=1: 0.11497
+dev cat_d5_onehot seed=137 fold=2: 0.12331
+dev cat_d5_onehot seed=137 fold=3: 0.12065
+dev cat_d5_onehot seed=137 fold=4: 0.11338
+dev cat_d5_onehot seed=137 fold=5: 0.14324
+                                                  model  mean_log_rmse  components  seed_42  seed_2026  seed_137
+            pair_en_inter_size_scaled_cat_d5_onehot_0.5       0.116795           2 0.116572   0.116706  0.117108
+               pair_en_inter_size_scaled_ref_v2_cat_0.5       0.117065           2 0.116795   0.116616  0.117784
+                                   best_linear_tree_0.5       0.117158           2 0.117767   0.116382  0.117324
+                pair_en_catscale_0.15_cat_d5_onehot_0.5       0.117158           2 0.117767   0.116382  0.117324
+                       v2_plus_en_inter_size_scaled_0.5       0.117171           3 0.117278   0.116414  0.117821
+    pair_en_boxcox_0.15_catscale_0.25_cat_d5_onehot_0.5       0.117180           2 0.117640   0.116653  0.117247
+       pair_en_boxcox_0.15_catscale_0.25_ref_v2_cat_0.5       0.117296           2 0.117587   0.116623  0.117677
+                  pair_en_catscale_0.15_ref_v2_cat_0.75       0.117437           2 0.118513   0.116354  0.117444
+                                 new_linear_oldcat_half       0.117463           2 0.117903   0.116580  0.117906
+                   pair_en_catscale_0.15_ref_v2_cat_0.5       0.117463           2 0.117903   0.116580  0.117906
+                                  best_linear_tree_0.75       0.117470           2 0.118584   0.116438  0.117388
+               pair_en_catscale_0.15_cat_d5_onehot_0.75       0.117470           2 0.118584   0.116438  0.117388
+              pair_en_inter_size_scaled_ref_v2_cat_0.75       0.117538           2 0.117143   0.117357  0.118115
+           pair_en_inter_size_scaled_cat_d5_onehot_0.75       0.117598           2 0.117151   0.117653  0.117990
+                      v2_plus_en_inter_size_scaled_0.25       0.117651           3 0.117902   0.116585  0.118466
+               v2_plus_en_boxcox_0.15_catscale_0.25_0.5       0.117695           3 0.118527   0.116637  0.117920
+            pair_en_catscale_0.15_histgb_leaf15_l5_0.75       0.117741           2 0.118558   0.117262  0.117404
+      pair_en_boxcox_0.15_catscale_0.25_ref_v2_cat_0.75       0.117800           2 0.118604   0.116975  0.117820
+                           v2_plus_en_catscale_0.15_0.5       0.117961           3 0.118926   0.116721  0.118237
+   pair_en_boxcox_0.15_catscale_0.25_cat_d5_onehot_0.75       0.117974           2 0.118815   0.117229  0.117879
+              v2_plus_en_boxcox_0.15_catscale_0.25_0.25       0.118013           3 0.118547   0.116881  0.118611
+        pair_en_inter_size_scaled_histgb_leaf15_l5_0.75       0.118210           2 0.117497   0.118588  0.118545
+pair_en_boxcox_0.15_catscale_0.25_histgb_leaf15_l5_0.75       0.118236           2 0.118763   0.117988  0.117957
+                          v2_plus_en_catscale_0.15_0.25       0.118374           3 0.118954   0.117139  0.119029
+                   pair_en_inter_size_cat_d5_onehot_0.5       0.118381           2 0.118595   0.117553  0.118994
+           pair_en_inter_size_scaled_cat_d5_onehot_0.25       0.118661           2 0.118547   0.118428  0.119008
+             pair_en_catscale_0.15_histgb_leaf15_l5_0.5       0.118882           2 0.118892   0.119174  0.118580
+ pair_en_boxcox_0.15_catscale_0.25_histgb_leaf15_l5_0.5       0.118893           2 0.118731   0.119361  0.118587
+   pair_en_boxcox_0.15_catscale_0.25_cat_d5_onehot_0.25       0.118916           2 0.119048   0.118516  0.119183
+         pair_en_inter_size_scaled_histgb_leaf15_l5_0.5       0.118977           2 0.118203   0.119647  0.119082
+                   pair_ref_v2_linear_cat_d5_onehot_0.5       0.118982           2 0.119393   0.117920  0.119633
+                                 oldlinear_newtree_half       0.118982           2 0.119393   0.117920  0.119633
+                  pair_en_inter_size_cat_d5_onehot_0.75       0.119036           2 0.119435   0.117961  0.119712
+               pair_en_catscale_0.15_cat_d5_onehot_0.25       0.119060           2 0.119250   0.118510  0.119419
+                                  best_linear_tree_0.25       0.119060           2 0.119250   0.118510  0.119419
+                      pair_en_inter_size_ref_v2_cat_0.5       0.119135           2 0.119181   0.118101  0.120125
+                             v2_plus_cat_d5_onehot_0.25       0.119335           3 0.119465   0.118363  0.120175
+                     pair_en_inter_size_ref_v2_cat_0.75       0.119342           2 0.119701   0.118142  0.120183
+                             v2_plus_en_inter_size_0.25       0.119373           3 0.119701   0.118086  0.120332
+               pair_en_inter_size_histgb_leaf15_l5_0.75       0.119414           2 0.119572   0.118866  0.119804
+                              v2_plus_en_inter_size_0.5       0.119583           3 0.120025   0.118271  0.120454
+                          v2_plus_histgb_leaf15_l5_0.25       0.119613           3 0.119453   0.119142  0.120243
+              pair_en_inter_size_scaled_ref_v2_cat_0.25       0.119632           2 0.119226   0.119043  0.120628
+                      pair_ref_v2_linear_ref_v2_cat_0.5       0.119729           2 0.119917   0.118483  0.120787
+                                              v2_frozen       0.119729           2 0.119917   0.118483  0.120787
+                  pair_en_inter_size_cat_d5_onehot_0.25       0.119749           2 0.119787   0.119161  0.120300
+                              v2_plus_cat_d5_onehot_0.5       0.119769           3 0.119828   0.119039  0.120441
+      pair_en_boxcox_0.15_catscale_0.25_ref_v2_cat_0.25       0.119772           2 0.119523   0.119174  0.120620
+                                       en_catscale_0.15       0.119979           1 0.121656   0.118672  0.119609
+                  pair_ref_v2_linear_cat_d5_onehot_0.75       0.120007           2 0.120724   0.118581  0.120714
+                  pair_ref_v2_linear_cat_d5_onehot_0.25       0.120022           2 0.120148   0.119318  0.120599
+                  pair_en_catscale_0.15_ref_v2_cat_0.25       0.120054           2 0.119863   0.119335  0.120965
+                pair_en_inter_size_histgb_leaf15_l5_0.5       0.120233           2 0.119928   0.120437  0.120334
+               pair_ref_v2_linear_histgb_leaf15_l5_0.75       0.120287           2 0.120735   0.119438  0.120687
+                     pair_ref_v2_linear_ref_v2_cat_0.75       0.120308           2 0.120945   0.118774  0.121204
+                pair_ref_v2_linear_histgb_leaf15_l5_0.5       0.120699           2 0.120551   0.120739  0.120807
+                                   en_inter_size_scaled       0.121016           1 0.120245   0.121207  0.121595
+                     pair_en_inter_size_ref_v2_cat_0.25       0.121072           2 0.120731   0.120241  0.122244
+                           en_boxcox_0.15_catscale_0.25       0.121248           1 0.122500   0.120207  0.121037
+                     pair_ref_v2_linear_ref_v2_cat_0.25       0.121339           2 0.121046   0.120410  0.122561
+                           v2_plus_histgb_leaf15_l5_0.5       0.121471           3 0.120952   0.121727  0.121732
+                                          en_inter_size       0.121682           1 0.122265   0.120365  0.122417
+                                          ref_v2_linear       0.123045           1 0.124076   0.121268  0.123789
+                                          cat_d5_onehot       0.123074           1 0.122951   0.122706  0.123564
+pair_en_boxcox_0.15_catscale_0.25_histgb_leaf15_l5_0.25       0.123160           2 0.122407   0.124205  0.122868
+        pair_en_inter_size_scaled_histgb_leaf15_l5_0.25       0.123250           2 0.122303   0.124290  0.123158
+            pair_en_catscale_0.15_histgb_leaf15_l5_0.25       0.123307           2 0.122629   0.124255  0.123037
+               pair_en_inter_size_histgb_leaf15_l5_0.25       0.124079           2 0.123309   0.124963  0.123966
+               pair_ref_v2_linear_histgb_leaf15_l5_0.25       0.124250           2 0.123538   0.125072  0.124141
+                                             ref_v2_cat       0.125053           1 0.124273   0.124452  0.126432
+                                       histgb_leaf15_l5       0.130686           1 0.129476   0.132140  0.130441
+Frozen selection: {"version": "v3", "name": "pair_en_inter_size_scaled_cat_d5_onehot_0.5", "weights": {"en_inter_size_scaled": 0.5, "cat_d5_onehot": 0.5}, "mean_repeated_cv_log_rmse": 0.11679530894520658, "v2_mean_repeated_cv_log_rmse": 0.11972887896771194, "seeds": [42, 2026, 137], "selected_seed_scores": {"42": 0.11657229315365736, "2026": 0.11670607957166809, "137": 0.11710755411029428}, "v2_seed_scores": {"42": 0.11991704694626529, "2026": 0.11848257871808286, "137": 0.12078701123878764}, "selection_rule": "three known development splits; within 0.00015 prefer fewer components; frozen before new split checks", "check_seeds": [2701, 901], "public_score": null, "v2_user_reported_public_score": 0.11741, "validation_rows_removed": 0, "holdout_used_for_selection": false, "source_hash": "898481702fbed9d480bee9981f0cb39956bc10ca14d46ec712d69f9bd7484001"}

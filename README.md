@@ -4,6 +4,8 @@
 
 ## 输出
 
+- `submission_v3.csv`：v3 新版候选提交文件；尚未向 Kaggle 提交。
+- `experiments/v3/report.html`：v3 类别正则化、非线性特征和新增拆分检查。
 - `submission_v2.csv`：v2 提交文件；用户反馈线上分数 **0.11741**。
 - `experiments/v2/report.html`：v2 的 44 个配置、重复验证比较与提交审计。
 - `submission.csv`：首版最终方案，对话中关联的线上分数为 0.11969。
@@ -70,4 +72,10 @@ v2 冻结为 `v2.0.0`。在与首版相同的三个 5 折拆分上，平均开�
 
 ```sh
 sh scripts/run.sh scripts/predict_v2.py
+```
+
+v3 冻结为 `v3.0.0`，采用 50% 新特征 ElasticNet + 50% 调整类别处理的 CatBoost（3 个训练种子平均）。相同的原三个拆分均值从 v2 的 0.11973 降至 0.11680；冻结方案后增加两个拆分检查，两个也都改善。五个拆分统一对比，v2 平均为 **0.12204**，v3 为 **0.11941**。线上效果待用户提交 `submission_v3.csv` 确认。
+
+```sh
+sh scripts/run.sh scripts/predict_v3.py
 ```

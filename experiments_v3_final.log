@@ -1,0 +1,5 @@
+Final fit: en_inter_size_scaled 42
+Final fit: cat_d5_onehot 42
+Final fit: cat_d5_onehot 2026
+Final fit: cat_d5_onehot 137
+v3 audit: {"rows": 1459, "positive_finite": true, "id_order_matches_test": true, "sha256": "f9787b96b898cb3ace1eea03bb79bffc56fb2967d34649155508b61d3f02b4de", "v2_preserved_sha256": "66c2d66ab1b9fe43cfd0bc68229a9881c1181fb87115e5fad6350d363972eb6a", "min_price": 39841.15354026868, "max_price": 532568.589753271, "price_ratio_to_v2_quantiles": {"0.01": 0.9243957766664302, "0.5": 1.000444450720578, "0.99": 1.0666959244144263}, "old_holdout_log_rmse_diagnostic_only": 0.09777728618525625, "submitted_to_kaggle": false}

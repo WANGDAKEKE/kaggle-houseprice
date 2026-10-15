@@ -1,0 +1,9 @@
+{
+  "v3_five_split_mean": 0.11941051888750076,
+  "v2_five_split_mean": 0.12204067234736797,
+  "relative_improvement_pct": 2.155145009674253,
+  "all_five_splits_improved": true,
+  "first_three_role": "selection",
+  "last_two_role": "checks after freezing selection",
+  "online_score_v3": null
+}

@@ -34,6 +34,29 @@
       "date": "2026-10-15",
       "score_source": "user_report",
       "score_reported_date": "2026-10-15"
+    },
+    {
+      "version": "v3",
+      "git_tag": "v3.0.0",
+      "status": "ready_for_user_submission",
+      "public_log_rmse": null,
+      "development_cv_log_rmse": 0.11679530894520658,
+      "cv_protocol": "three original 5-fold selection splits, followed by two additional fixed split checks on the same 1168 development houses",
+      "five_split_development_cv_log_rmse": 0.11941051888750076,
+      "v2_comparable_five_split_cv": 0.12204067234736797,
+      "additional_check_mean": 0.12333333380094202,
+      "all_five_splits_improved": true,
+      "diagnostic_holdout_log_rmse": 0.09777728618525625,
+      "holdout_role": "already evaluated in previous versions; diagnosis only",
+      "submission_file": "versions/v3/submission_v3.csv",
+      "sha256": "f9787b96b898cb3ace1eea03bb79bffc56fb2967d34649155508b61d3f02b4de",
+      "model": "pair_en_inter_size_scaled_cat_d5_onehot_0.5",
+      "weights": {
+        "en_inter_size_scaled": 0.5,
+        "cat_d5_onehot": 0.5
+      },
+      "experiment_directory": "experiments/v3",
+      "date": "2026-10-15"
     }
   ]
 }

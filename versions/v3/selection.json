@@ -1,0 +1,35 @@
+{
+  "version": "v3",
+  "name": "pair_en_inter_size_scaled_cat_d5_onehot_0.5",
+  "weights": {
+    "en_inter_size_scaled": 0.5,
+    "cat_d5_onehot": 0.5
+  },
+  "mean_repeated_cv_log_rmse": 0.11679530894520658,
+  "v2_mean_repeated_cv_log_rmse": 0.11972887896771194,
+  "seeds": [
+    42,
+    2026,
+    137
+  ],
+  "selected_seed_scores": {
+    "42": 0.11657229315365736,
+    "2026": 0.11670607957166809,
+    "137": 0.11710755411029428
+  },
+  "v2_seed_scores": {
+    "42": 0.11991704694626529,
+    "2026": 0.11848257871808286,
+    "137": 0.12078701123878764
+  },
+  "selection_rule": "three known development splits; within 0.00015 prefer fewer components; frozen before new split checks",
+  "check_seeds": [
+    2701,
+    901
+  ],
+  "public_score": null,
+  "v2_user_reported_public_score": 0.11741,
+  "validation_rows_removed": 0,
+  "holdout_used_for_selection": false,
+  "source_hash": "898481702fbed9d480bee9981f0cb39956bc10ca14d46ec712d69f9bd7484001"
+}
