@@ -5,3 +5,5 @@ __pycache__/
 .runtime/
 catboost_info/
 .DS_Store
+delivery/
+tmp/pdfs/

@@ -2,13 +2,23 @@
 
 **Built with PriorLabs-TabPFN** · TabPFN v2 预训练模型来源与许可见 `experiments/v6/pretrained/`。
 
+
+**最终采用 v6，用户反馈的 Kaggle 线上分数为 0.11212（2026-10-16）。** 较 v5 的 0.11595 降低 0.00383（约 3.303%），较首版 0.11969 降低 0.00757（约 6.325%）。用户确认使用这一版，后续不再优化。
+
+代码仓库：[WANGDAKEKE/kaggle-houseprice](https://github.com/WANGDAKEKE/kaggle-houseprice)。最新版完整报告：[experiments/v6/report.html](experiments/v6/report.html)。模型快照标签为 `v6.0.0`，成绩、报告和分享资料版本为 `v6.1.0`；模型、参数和提交文件保持一致。
+
+线上 **0.11212** 来自用户提交反馈；本地历史 5 折 OOF **0.11367346** 是另一套评估。两者单独记录，未把本地分数当作线上成绩。
+
 使用用户提供的官方 `house-prices-advanced-regression-techniques.zip`。本地完成模型实验及预测文件生成，用户随后在 Kaggle 提交首版并反馈 Public Score **0.11969**（2026-10-15）。指标为自然对数房价的 RMSE，越小越好。
 
 ## 输出
 
-- **`submission_v6.csv`：本轮建议先提交这个文件**。对数空间 v5、physical TabPFN/e16、quality 类别 TabPFN/e4 三路各 1/3，尚未提交，线上分数未知。
+- [最终报告 PDF（3 页）](output/pdf/house_prices_v6_final_report.pdf)：数据、方法、实验与线上 **0.11212**。
+- [单文件 HTML 报告](docs/house_prices_v6_final_report.html)：图片已内嵌，可单独转发。
+- [分享与复现指南](docs/SHARING_GUIDE.md)：私有 GitHub 访问、代码包与跨平台依赖说明。
+- **`submission_v6.csv`：用户最终采用的已提交文件，线上分数 0.11212**。对数空间 v5、physical TabPFN/e16、quality 类别 TabPFN/e4 三路各 1/3。
 - `experiments/v6/report.html`：新模型、结构特征、训练处理、完整候选权重与逐房屋收益诊断。
-- `submission_v5.csv`：保留 v4、加入 30% SVR，并用折内面积分位数降低大面积外推权重。用户反馈线上 **0.11595**，目前已提交最佳版本。
+- `submission_v5.csv`：保留 v4、加入 30% SVR，并用折内面积分位数降低大面积外推权重。用户反馈线上 **0.11595**，是 v6 提交前的最佳版本。
 - `experiments/v5/report.html`：24 个基础模型/特征配置、固定候选后的嵌套拟合比较、普通成交及年份/面积诊断。
 - `submission_v4.csv`：v2/v3 对数空间等权融合，用户反馈线上 **0.11679**，是 v5 提交前的最佳版本。提交前公式估算约 0.11680。
 - `experiments/v4/report.html`：v3 退步诊断、组件消融、分组对比及融合分数推算。
@@ -103,7 +113,7 @@ sh scripts/run.sh scripts/optimize_v4.py
 
 收益仍不稳定：seed5501 的全样本和普通房屋汇总退步；Abnorml 成交、大面积组及 2007 年组也退步。全样本和去两套异常诊断的描述性 bootstrap 区间包含零。去掉五笔最大正收益后，全体与普通房屋的净收益均转负，仍有收益集中；只有 Normal 组在这项检查后仍改善。两次拆分仍使用同一批房屋，且全局初筛看过其中 1,168 条，不能把这个结果称作整个模型搜索流程的无偏独立验证。外层分数评价自动选择流程，并非最终固定配方的独立 OOF 分数。
 
-最终在全量训练数据内部按同一规则选定 `svr_compact_g001_C5_w0.3_support`：普通面积范围内对数预测为 70% v4 + 30% 紧凑特征 SVR；训练面积 q95–q99 区间逐步降低新增权重，q99 以上沿用 v4。面积保护是初筛后、外层前冻结的启发式，阈值来自各次训练输入，所有验证行保留。全部 1,460 条训练行用于最终模型。新文件 `submission_v5.csv` 共 1,459 行，模型重载预测完全一致，v1–v4 文件保持原 SHA-256。用户随后反馈线上分数 **0.11595**，较此前最佳 v4 的 **0.11679** 降低 **0.00084（约 0.72%）**，目前是实际提交最佳成绩。分数另存 `experiments/v5/online_result.json`，冻结方案、CSV 和 `v5.0.0` 标签保持不变。
+最终在全量训练数据内部按同一规则选定 `svr_compact_g001_C5_w0.3_support`：普通面积范围内对数预测为 70% v4 + 30% 紧凑特征 SVR；训练面积 q95–q99 区间逐步降低新增权重，q99 以上沿用 v4。面积保护是初筛后、外层前冻结的启发式，阈值来自各次训练输入，所有验证行保留。全部 1,460 条训练行用于最终模型。新文件 `submission_v5.csv` 共 1,459 行，模型重载预测完全一致，v1–v4 文件保持原 SHA-256。用户随后反馈线上分数 **0.11595**，较此前最佳 v4 的 **0.11679** 降低 **0.00084（约 0.72%）**，当时是实际提交最佳成绩。分数另存 `experiments/v5/online_result.json`，冻结方案、CSV 和 `v5.0.0` 标签保持不变。
 
 ```sh
 # 从已保存模型与冻结 v4 文件复现提交文件，并检查旧版本未改动。
@@ -119,12 +129,12 @@ sh scripts/run.sh scripts/report_v5.py
 
 公开方案的来源与取舍见 `experiments/v5/research_notes.md`。本轮未使用外部 Ames 真实售价、公开答案提交或按 Id 查表覆盖。代码、全部实验、模型和预测由 `v5.0.0` 标签冻结。
 
-用户提供的同学提交历史截图显示：旧的 Lasso + SVR + CatBoost + XGBoost 等权融合为 **0.11963**，后续描述为“50% TabPFN + 50% 原集成”的文件为 **0.11390**。当前 v5 与其差 **0.00205**。截图提供了可继续研究的模型方向，但未提供代码、TabPFN 版本或控制其他条件的消融，不能据此把全部收益归因于 TabPFN。来源说明与截图文字保存在 v5 线上结果记录中。
+用户提供的同学提交历史截图显示：旧的 Lasso + SVR + CatBoost + XGBoost 等权融合为 **0.11963**，后续描述为“50% TabPFN + 50% 原集成”的文件为 **0.11390**。v5 当时与其差 **0.00205**。截图提供了可继续研究的模型方向，但未提供代码、TabPFN 版本或控制其他条件的消融，不能据此把全部收益归因于 TabPFN。来源说明与截图文字保存在 v5 线上结果记录中。
 
 
 ## v6：TabPFN、两种表示与训练处理
 
-2026-10-16 生成 `submission_v6.csv`，版本号 `v6.0.0`。**用户本轮先提交这一份即可**；当前已提交最佳仍是 v5 的 **0.11595**，v6 线上分数留空。
+2026-10-16，用户提交 `submission_v6.csv` 后反馈线上 **0.11212**，并明确最终采用这一版，停止后续优化。该文件及训练产物由 `v6.0.0` 保存；成绩与报告资料使用 `v6.1.0`，未改变预测。
 
 新增官方公开 TabPFN v2 回归模型（Python 包 9.2.0；Built with PriorLabs-TabPFN），比较 raw/e4、physical/e4、physical/e16、raw 训练部分剔除两套极端房屋、raw 将质量字段改为类别，共 5 个基础配置，各做相同 seed5509 的 5 折。v5 参考从核验过的历史缓存重建，旧模型新增拟合为 **0 次**。最终采用全部训练样本的 physical/e16 和质量类别 raw/e4 两种表示，合计 20 个内部成员；训练部分剔除样本的方案只作未采用的探索。主方案保留所有训练行和所有验证行。
 
@@ -142,7 +152,7 @@ sh scripts/run.sh scripts/report_v5.py
 
 `submission_v6.csv` 含 1,459 行，SHA-256 为 `cf1c335f3a580accd45457e8bc4247185bd97b9aef656a6adf5ecc8cb288b63f`。先独立重载两套模型并重建全部 1,459 行预测方向，再核对相同组件上下文，将重建方向换权为最终三路等权并核验，最大绝对对数差 **1.586735e-8**；换权没有新增 GPU 推理。方法和原半权重载审计见 `experiments/v6/reproduction_audit.json` 及 `half_candidate/`。公开权重及许可、训练上下文、组件预测、缓存和 physical/半权备份均保存在 `experiments/v6/`。
 
-另用已反馈线上分数计算旧预测融合，备用 `submission_v6_lb_blend.csv` 估算只降低约 **0.0000125**，所以不优先提交；该值依赖全量相同测试评分及分数舍入前提。主 v6 加入新预测方向，线上结果需用户提交确认。公开研究与排名路径见 `experiments/v6/ranking_routes_research.md`，完整候选见 `experiments/v6/candidate_comparison.csv`。
+另用已反馈线上分数计算旧预测融合，备用 `submission_v6_lb_blend.csv` 估算只降低约 **0.0000125**，所以不优先提交；该值依赖全量相同测试评分及分数舍入前提。用户随后确认主 v6 线上 **0.11212** 并最终采用；备用融合未成为最终方案。公开研究与排名路径见 `experiments/v6/ranking_routes_research.md`，完整候选见 `experiments/v6/candidate_comparison.csv`。
 
 v6 使用独立 `.venv-tabpfn` 和 `requirements-tabpfn.lock.txt`（本机 macOS ARM64/MPS 环境），旧环境锁文件不变。已有环境下，以下命令会重新加载两个组件模型、生成全部测试预测并按保存的最终权重核验：
 

@@ -1,0 +1,510 @@
+{
+  "audit_timestamp_utc": "2026-10-16T02:33:10.207229+00:00",
+  "reviewed_commit": "fbd880e16efa5d3a924a5bf9ca3326d93d831ad7",
+  "target_release_tag": "v6.1.0",
+  "role": "Pre-release read-only audit of current Git snapshot plus sharing guide/portable dependency reference. Final release owner must recheck the newly committed tag and actual archive.",
+  "archive_strategy": "git archive --format=zip --prefix=kaggle-houseprice-v6.1.0/ v6.1.0; archive includes tracked project files only, no .git history or ignored environments",
+  "code_zip_output": "delivery/kaggle-houseprice-v6.1.0.zip",
+  "release_assets": [
+    "kaggle-houseprice-v6.1.0.zip",
+    "house_prices_v6_final_report.pdf",
+    "house_prices_v6_final_report.html"
+  ],
+  "archive_file_count_at_review": 874,
+  "archive_uncompressed_bytes_at_review": 76627566,
+  "latest_score": {
+    "version": "v6",
+    "public_log_rmse": 0.11212,
+    "source": "Human user report in this conversation; not fetched from authenticated Kaggle API"
+  },
+  "latest_method": {
+    "target": "natural log SalePrice",
+    "weights": {
+      "v5": 0.3333333333333333,
+      "physical_e16": 0.3333333333333333,
+      "quality_e4": 0.3333333333333333
+    },
+    "train_rows": 1460,
+    "test_rows": 1459,
+    "input_features_excluding_Id_and_target": 79
+  },
+  "required_inputs_all_tracked_at_review": true,
+  "required_inputs": [
+    {
+      "path": "submission.csv",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "a1dad7a14d105d97eb83f89a02b206c389176a1d",
+      "bytes_at_commit": 34452,
+      "worktree_sha256_at_review": "210223272bc07d8c7d483aadc47a9831faa248ca9c5c633699d12ebea9b3e3db"
+    },
+    {
+      "path": "submission_v2.csv",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "dac6673c356f2e9bd76ac6d011f55ec7a40585ba",
+      "bytes_at_commit": 34452,
+      "worktree_sha256_at_review": "66c2d66ab1b9fe43cfd0bc68229a9881c1181fb87115e5fad6350d363972eb6a"
+    },
+    {
+      "path": "submission_v3.csv",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "7cb83d19c293d150fb0b0270fc9376e08baa2b81",
+      "bytes_at_commit": 34439,
+      "worktree_sha256_at_review": "f9787b96b898cb3ace1eea03bb79bffc56fb2967d34649155508b61d3f02b4de"
+    },
+    {
+      "path": "submission_v4.csv",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "5ddf3c11aeda27a5077e70222111e15b1450d5a9",
+      "bytes_at_commit": 34458,
+      "worktree_sha256_at_review": "6767f59cd9feaaa1b7521341be9fa18c8587b64cd8a0f4e80ee2ec54c4a7a8ad"
+    },
+    {
+      "path": "submission_v5.csv",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "0ab85d08bb591809dae6db720cebbb1c77170589",
+      "bytes_at_commit": 34465,
+      "worktree_sha256_at_review": "a48b84f57802f0adf5b7344a3b8ba7cdbf31a18bf7e8ff1c670be48bb4fb05db"
+    },
+    {
+      "path": "submission_v6.csv",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "9cf6796f4e907d10a304aa90b906a63083b308ac",
+      "bytes_at_commit": 34408,
+      "worktree_sha256_at_review": "cf1c335f3a580accd45457e8bc4247185bd97b9aef656a6adf5ecc8cb288b63f"
+    },
+    {
+      "path": "data/raw/train.csv",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "d68e0d76ce5c7d0e20e7883a48893a9696d3a041",
+      "bytes_at_commit": 460676,
+      "worktree_sha256_at_review": "1e18addf81e5e4d347cc17ee6075bbe4a42b7fa26b9e5b063e8f692a5f929d41"
+    },
+    {
+      "path": "data/raw/test.csv",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "a19c5c7b69afd0814b0dd06ca2ff363dec3fffc5",
+      "bytes_at_commit": 451405,
+      "worktree_sha256_at_review": "8fdd3d829d4d986b58f845c9553b225e67dd8383624d90fb6ca1d4bed5798c1e"
+    },
+    {
+      "path": "data/raw/data_description.txt",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "cba0710286136ba64d273612bda60742f00f1501",
+      "bytes_at_commit": 13370,
+      "worktree_sha256_at_review": "356a4670aa688afa8ba44b1365b633fbbac2dae535fe4638532630607d64070d"
+    },
+    {
+      "path": "data/raw/sample_submission.csv",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "a5547c96f7a17e0afb4e99d4aac7479d121ea441",
+      "bytes_at_commit": 31939,
+      "worktree_sha256_at_review": "f19e99699b925aa3085c8d2ae43c62f15fbcd35e4a953b98025f8392c3ffa807"
+    },
+    {
+      "path": "data/manifest.json",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "373a9ddb659b2901ccc4227e4de3e4bb4572246f",
+      "bytes_at_commit": 1015,
+      "worktree_sha256_at_review": "7de64a0b42cfbd490b72f9fe8b0535c1c8a2dc518039d862191050213e9c6fc9"
+    },
+    {
+      "path": "house-prices-advanced-regression-techniques.zip",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "5fcfae9a20419869cb9c0676500f1351a045f4d6",
+      "bytes_at_commit": 203809,
+      "worktree_sha256_at_review": "65f769a9157a2581671957ed08da8a8162d53e67b4e9970ee856b634deb11d9f"
+    },
+    {
+      "path": "src/__init__.py",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes_at_commit": 0,
+      "worktree_sha256_at_review": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/house_prices_v6.py",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "d35fe0e7cb8834131360173fd9b5d2703a2fecb2",
+      "bytes_at_commit": 2823,
+      "worktree_sha256_at_review": "5c850b5376c4a93c6f5f1cf17c84c752f286e322cd2b0fb3e7f9a0aa96989682"
+    },
+    {
+      "path": "src/house_prices.py",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "983ad0329d1aeba2f690df293cd85d86efc5d94e",
+      "bytes_at_commit": 7005,
+      "worktree_sha256_at_review": "e82895b47a9112e095c7e8a4646694e5fbf0f6298fde03b86ec29f30f96214f1"
+    },
+    {
+      "path": "scripts/predict_v6.py",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "1e78b4662ae4bd51cde3b765fc950ff20e3416dd",
+      "bytes_at_commit": 3728,
+      "worktree_sha256_at_review": "60dd907a16329f1c4926bb08398cb47ec89d22827183a6e9b98bb6eae8b5463e"
+    },
+    {
+      "path": "scripts/optimize_v6.py",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "6d6264db35e93c9ec0482ada027fc5f0e3e99c01",
+      "bytes_at_commit": 10312,
+      "worktree_sha256_at_review": "026f6e62e6b1fa9f73743ed08d893a6e9f9f534d2775a743f2b23b8b78d1c2c3"
+    },
+    {
+      "path": "scripts/run_experiments.py",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "0947b61be8dbacfa2a0f9574ab47b39f3c793be0",
+      "bytes_at_commit": 12973,
+      "worktree_sha256_at_review": "6bc8f87f2e6c0a47173f7c8acba6637846ce167ea5c2e6fb6aa6111ce52c9fa6"
+    },
+    {
+      "path": "scripts/tabpfn_variants_v6.py",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "6bbf6553449a0f47c18d6b23909e613df81b8b98",
+      "bytes_at_commit": 12122,
+      "worktree_sha256_at_review": "3c79bcff0ca0491dbcb68cac21b5904ac2c04989ecc574b5fe532287f9c35522"
+    },
+    {
+      "path": "scripts/run_tabpfn.sh",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "b0e208bc46d55bad3705c2f749f7ee3923f65ba6",
+      "bytes_at_commit": 593,
+      "worktree_sha256_at_review": "a6cbc1924e344c0731399a2be2562d20170eaec078e71ab7e47d84589e77bbc6"
+    },
+    {
+      "path": "scripts/setup_openmp.py",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "9f88f55dffe0ad7490db14b6f876d1604a4e3487",
+      "bytes_at_commit": 1122,
+      "worktree_sha256_at_review": "8d429d1a9484a190527ea11efd8507efbd2b76c58f5852a106d588c5803686a1"
+    },
+    {
+      "path": "requirements-tabpfn.lock.txt",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "80a04b43d287bcfb251db7ff692bdcb31a3f8c07",
+      "bytes_at_commit": 971,
+      "worktree_sha256_at_review": "bf700d1a9c142db27bda81acbda891b80c133d33c2c0f08a134bf7d1ea91f307"
+    },
+    {
+      "path": "requirements.lock.txt",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "c26e2546824cfa53cb37134c1965665d34a576c8",
+      "bytes_at_commit": 552,
+      "worktree_sha256_at_review": "34170c43cbd9cdef3ae353985810b2151195761b901c327d3ab7bd06816ac395"
+    },
+    {
+      "path": "experiments/v6/fit_context.joblib",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "e53421b3dbd274a7dc476a7cfd30ee24ea68b779",
+      "bytes_at_commit": 1290850,
+      "worktree_sha256_at_review": "92f4003a251a129d4fb3dd068842a52e37c4039e0c7123a08c561dcef7e63a6a"
+    },
+    {
+      "path": "experiments/v6/selection.json",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "bd2ba99a2841fe813a2017578b0ad7c8809f218b",
+      "bytes_at_commit": 3532,
+      "worktree_sha256_at_review": "abe83a2be5f5826eb5c178f16d7a99a7133cdd3df30d24ac6e6344328109844b"
+    },
+    {
+      "path": "experiments/v6/submission_audit.json",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "30888971ac4425d848de080bb36fd3cb38eed8d9",
+      "bytes_at_commit": 1752,
+      "worktree_sha256_at_review": "511c8d20fbd7611ad2b3fe1940ed1fe18b532e2d5fd1d6445fca26e5f557ae35"
+    },
+    {
+      "path": "experiments/v6/pretrained/tabpfn-v2-regressor.ckpt",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "06fec0a0e02b7c8a3f4cfb5afb55f05d0e25a31e",
+      "bytes_at_commit": 44390977,
+      "worktree_sha256_at_review": "2ab5a07d5c41dfe6db9aa7ae106fc6de898326c2765be66505a07e2868c10736"
+    },
+    {
+      "path": "experiments/v6/pretrained/LICENSE.txt",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "de6111dabfb750fd53dd5421d5a1cbfde5516768",
+      "bytes_at_commit": 11483,
+      "worktree_sha256_at_review": "08b1851b4b6136b5fb0cb124d3258e0d91e3e1623f1be5904b77e4d270d112d8"
+    },
+    {
+      "path": "experiments/v6/pretrained/manifest.json",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "530d31991f19dea691a7b8fc871e79daffad9455",
+      "bytes_at_commit": 524,
+      "worktree_sha256_at_review": "46cfff9247a44639165464800e93baddd303ab635061e4bcebb6549a47e0e0a3"
+    },
+    {
+      "path": "experiments/v6/report.html",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "6137c7474aa093d9062853784e4f636292f110e7",
+      "bytes_at_commit": 24395,
+      "worktree_sha256_at_review": "25f2c41daec35ccefe6698b69844f3702f28cab097f9e48ec98560253887e183"
+    },
+    {
+      "path": "experiments/v6/reproduction_audit.json",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "012f9d441edcfea8f6830c224af8dd6bb24f7ccb",
+      "bytes_at_commit": 1164,
+      "worktree_sha256_at_review": "d9b93db09501df8cdce87fedb917cbc2844c6237562408160f920ce8f0ad315b"
+    },
+    {
+      "path": "experiments/v6/reference/full1460_seed5509.csv",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "f90223b970e99f53029e12055ebbc4774c829fdb",
+      "bytes_at_commit": 125742,
+      "worktree_sha256_at_review": "0ed0fca3c3b891848cb721943d67561326f41987ca6ff47f91d4b4dbf1a9217f"
+    },
+    {
+      "path": "experiments/v6/reference/audit.json",
+      "tracked_at_reviewed_commit": true,
+      "git_object": "3f2b3eec0a097e2a49cb4ec5bae94dc19d84583b",
+      "bytes_at_commit": 22973,
+      "worktree_sha256_at_review": "95399581b0ce12f46d03070af91ca6f01e36ae8da2a8b9d44e11e5221d8600c8"
+    }
+  ],
+  "public_checkpoint_included": true,
+  "checkpoint_license_and_manifest_included": true,
+  "prior_model_references_checked": [
+    {
+      "manifest": "experiments/v2/model_manifest.json",
+      "reference": "experiments/v2/models/en_rich_a0.0007_l0.8_seed42.joblib",
+      "resolved_tracked_path": "experiments/v2/models/en_rich_a0.0007_l0.8_seed42.joblib"
+    },
+    {
+      "manifest": "experiments/v2/model_manifest.json",
+      "reference": "experiments/v2/models/v1_catboost_seed42.joblib",
+      "resolved_tracked_path": "experiments/v2/models/v1_catboost_seed42.joblib"
+    },
+    {
+      "manifest": "experiments/v2/model_manifest.json",
+      "reference": "experiments/v2/models/v1_catboost_seed2026.joblib",
+      "resolved_tracked_path": "experiments/v2/models/v1_catboost_seed2026.joblib"
+    },
+    {
+      "manifest": "experiments/v2/model_manifest.json",
+      "reference": "experiments/v2/models/v1_catboost_seed137.joblib",
+      "resolved_tracked_path": "experiments/v2/models/v1_catboost_seed137.joblib"
+    },
+    {
+      "manifest": "experiments/v3/model_manifest.json",
+      "reference": "experiments/v3/models/en_inter_size_scaled_seed42.joblib",
+      "resolved_tracked_path": "experiments/v3/models/en_inter_size_scaled_seed42.joblib"
+    },
+    {
+      "manifest": "experiments/v3/model_manifest.json",
+      "reference": "experiments/v3/models/cat_d5_onehot_seed42.joblib",
+      "resolved_tracked_path": "experiments/v3/models/cat_d5_onehot_seed42.joblib"
+    },
+    {
+      "manifest": "experiments/v3/model_manifest.json",
+      "reference": "experiments/v3/models/cat_d5_onehot_seed2026.joblib",
+      "resolved_tracked_path": "experiments/v3/models/cat_d5_onehot_seed2026.joblib"
+    },
+    {
+      "manifest": "experiments/v3/model_manifest.json",
+      "reference": "experiments/v3/models/cat_d5_onehot_seed137.joblib",
+      "resolved_tracked_path": "experiments/v3/models/cat_d5_onehot_seed137.joblib"
+    },
+    {
+      "manifest": "experiments/v5/model_manifest.json",
+      "reference": "experiments/v5/models/svr_compact_g001_C5_seed42.joblib",
+      "resolved_tracked_path": "experiments/v5/models/svr_compact_g001_C5_seed42.joblib"
+    },
+    {
+      "manifest": "experiments/v6/package_model_metadata.json",
+      "reference": "tabpfn-v2-regressor.ckpt",
+      "resolved_tracked_path": "experiments/v6/pretrained/tabpfn-v2-regressor.ckpt",
+      "reference_role": "Model repository siblings catalog captured during research; alternate checkpoints are not required by current runtime"
+    },
+    {
+      "manifest": "experiments/v6/physical_candidate/manifest.json",
+      "reference": "experiments/v6/fit_context.joblib",
+      "resolved_tracked_path": "experiments/v6/fit_context.joblib"
+    },
+    {
+      "manifest": "experiments/v6/pretrained/manifest.json",
+      "reference": "tabpfn-v2-regressor.ckpt",
+      "resolved_tracked_path": "experiments/v6/pretrained/tabpfn-v2-regressor.ckpt"
+    },
+    {
+      "manifest": "versions/v2/model_manifest.json",
+      "reference": "experiments/v2/models/en_rich_a0.0007_l0.8_seed42.joblib",
+      "resolved_tracked_path": "experiments/v2/models/en_rich_a0.0007_l0.8_seed42.joblib"
+    },
+    {
+      "manifest": "versions/v2/model_manifest.json",
+      "reference": "experiments/v2/models/v1_catboost_seed42.joblib",
+      "resolved_tracked_path": "experiments/v2/models/v1_catboost_seed42.joblib"
+    },
+    {
+      "manifest": "versions/v2/model_manifest.json",
+      "reference": "experiments/v2/models/v1_catboost_seed2026.joblib",
+      "resolved_tracked_path": "experiments/v2/models/v1_catboost_seed2026.joblib"
+    },
+    {
+      "manifest": "versions/v2/model_manifest.json",
+      "reference": "experiments/v2/models/v1_catboost_seed137.joblib",
+      "resolved_tracked_path": "experiments/v2/models/v1_catboost_seed137.joblib"
+    },
+    {
+      "manifest": "versions/v3/model_manifest.json",
+      "reference": "experiments/v3/models/en_inter_size_scaled_seed42.joblib",
+      "resolved_tracked_path": "experiments/v3/models/en_inter_size_scaled_seed42.joblib"
+    },
+    {
+      "manifest": "versions/v3/model_manifest.json",
+      "reference": "experiments/v3/models/cat_d5_onehot_seed42.joblib",
+      "resolved_tracked_path": "experiments/v3/models/cat_d5_onehot_seed42.joblib"
+    },
+    {
+      "manifest": "versions/v3/model_manifest.json",
+      "reference": "experiments/v3/models/cat_d5_onehot_seed2026.joblib",
+      "resolved_tracked_path": "experiments/v3/models/cat_d5_onehot_seed2026.joblib"
+    },
+    {
+      "manifest": "versions/v3/model_manifest.json",
+      "reference": "experiments/v3/models/cat_d5_onehot_seed137.joblib",
+      "resolved_tracked_path": "experiments/v3/models/cat_d5_onehot_seed137.joblib"
+    },
+    {
+      "manifest": "versions/v5/model_manifest.json",
+      "reference": "experiments/v5/models/svr_compact_g001_C5_seed42.joblib",
+      "resolved_tracked_path": "experiments/v5/models/svr_compact_g001_C5_seed42.joblib"
+    }
+  ],
+  "unresolved_relative_model_references": [],
+  "excluded_directory_names_checked": [
+    ".git",
+    ".venv",
+    ".venv-tabpfn",
+    ".runtime",
+    ".cache",
+    "__pycache__",
+    ".agents",
+    ".codex"
+  ],
+  "excluded_directory_tracked_hits": [],
+  "credential_pattern_scan": {
+    "scope": "Tracked UTF-8-like code/docs/CSV/log/HTML/JSON at reviewed commit; filenames and matches inspected without printing secret values. This is a bounded pattern scan, not a guarantee about every possible secret format.",
+    "files_scanned": 362,
+    "patterns": [
+      "github_classic_token",
+      "github_fine_grained_token",
+      "aws_access_key",
+      "private_key_header",
+      "huggingface_token"
+    ],
+    "matches": []
+  },
+  "new_release_materials": [
+    {
+      "path": "docs/SHARING_GUIDE.md",
+      "already_in_reviewed_commit": false,
+      "present_in_worktree_at_review": true
+    },
+    {
+      "path": "requirements-tabpfn-portable.txt",
+      "already_in_reviewed_commit": false,
+      "present_in_worktree_at_review": true
+    },
+    {
+      "path": "docs/sharing_package_audit.json",
+      "already_in_reviewed_commit": false,
+      "present_in_worktree_at_review": false
+    },
+    {
+      "path": "docs/house_prices_v6_final_report.html",
+      "already_in_reviewed_commit": false,
+      "present_in_worktree_at_review": false
+    },
+    {
+      "path": "output/pdf/house_prices_v6_final_report.pdf",
+      "already_in_reviewed_commit": false,
+      "present_in_worktree_at_review": false
+    }
+  ],
+  "portable_dependency_reference": {
+    "path": "requirements-tabpfn-portable.txt",
+    "sha256": "4091f7f64debc5be185e55a2fcf50ac5f30b0d23af843dbb3e70c0cb4c40b6f8",
+    "derived_from": "requirements-tabpfn.lock.txt",
+    "original_lock_sha256": "bf700d1a9c142db27bda81acbda891b80c133d33c2c0f08a134bf7d1ea91f307",
+    "removed_only": [
+      "mlx==0.32.4",
+      "mlx-metal==0.32.4"
+    ],
+    "cross_platform_install_verified": false
+  },
+  "platform_review": {
+    "validated_original_platform": "macOS Apple Silicon, Python3.12.14, MPS",
+    "local_api_cpu_supported": true,
+    "code_cpu_large_dataset_override": true,
+    "automatic_cuda_selection": false,
+    "linux_windows_full_rebuild_tested": false,
+    "original_lock_is_platform_freeze": true,
+    "evidence": [
+      "src/house_prices_v6.py explicitly accepts device and sets ignore_pretraining_limits for cpu",
+      "scripts/optimize_v6.py device_name chooses mps when available, otherwise cpu",
+      "Installed official tabpfn9.2.0 METADATA supports CPU and conditionally requires mlx only on Darwin/arm64",
+      "Installed official tabpfn9.2.0 utils.py parses cpu, mps and cuda devices"
+    ]
+  },
+  "final_archive_reverification_required": true,
+  "final_archive_reverification_steps": [
+    "Commit guide, portable dependencies, score updates and final reports before tagging v6.1.0",
+    "Verify tag points to intended final commit",
+    "Create ZIP from that tag, check required paths and absence of excluded environment directories",
+    "Record final archive entry count, byte size and SHA256 separately or append a final-release section to this audit",
+    "Verify private Release contains ZIP, PDF and standalone HTML; recipients need accepted repository invitation"
+  ],
+  "unbundled_model_catalog_alternatives": [
+    {
+      "manifest": "experiments/v6/package_model_metadata.json",
+      "reference": "tabpfn-v2-regressor-09gpqh39.ckpt",
+      "resolved_tracked_path": null,
+      "reference_role": "Model repository siblings catalog captured during research; alternate checkpoints are not required by current runtime"
+    },
+    {
+      "manifest": "experiments/v6/package_model_metadata.json",
+      "reference": "tabpfn-v2-regressor-2noar4o2.ckpt",
+      "resolved_tracked_path": null,
+      "reference_role": "Model repository siblings catalog captured during research; alternate checkpoints are not required by current runtime"
+    },
+    {
+      "manifest": "experiments/v6/package_model_metadata.json",
+      "reference": "tabpfn-v2-regressor-5wof9ojf.ckpt",
+      "resolved_tracked_path": null,
+      "reference_role": "Model repository siblings catalog captured during research; alternate checkpoints are not required by current runtime"
+    },
+    {
+      "manifest": "experiments/v6/package_model_metadata.json",
+      "reference": "tabpfn-v2-regressor-v2_default.ckpt",
+      "resolved_tracked_path": null,
+      "reference_role": "Model repository siblings catalog captured during research; alternate checkpoints are not required by current runtime"
+    },
+    {
+      "manifest": "experiments/v6/package_model_metadata.json",
+      "reference": "tabpfn-v2-regressor-wyl4o83o.ckpt",
+      "resolved_tracked_path": null,
+      "reference_role": "Model repository siblings catalog captured during research; alternate checkpoints are not required by current runtime"
+    }
+  ],
+  "model_catalog_note": "package_model_metadata.json lists all upstream repository siblings for research provenance. Only the explicitly pinned tabpfn-v2-regressor.ckpt is used; alternate upstream checkpoint filenames are catalog records, not missing runtime inputs.",
+  "final_local_checks": {
+    "release_tag": "v6.1.0",
+    "model_snapshot_tag": "v6.0.0",
+    "critical_model_inputs_unchanged_vs_model_tag": true,
+    "critical_file_sha256": {
+      "submission_v6.csv": "cf1c335f3a580accd45457e8bc4247185bd97b9aef656a6adf5ecc8cb288b63f",
+      "experiments/v6/fit_context.joblib": "92f4003a251a129d4fb3dd068842a52e37c4039e0c7123a08c561dcef7e63a6a",
+      "src/house_prices_v6.py": "5c850b5376c4a93c6f5f1cf17c84c752f286e322cd2b0fb3e7f9a0aa96989682",
+      "src/house_prices.py": "e82895b47a9112e095c7e8a4646694e5fbf0f6298fde03b86ec29f30f96214f1",
+      "scripts/tabpfn_variants_v6.py": "3c79bcff0ca0491dbcb68cac21b5904ac2c04989ecc574b5fe532287f9c35522",
+      "requirements-tabpfn.lock.txt": "bf700d1a9c142db27bda81acbda891b80c133d33c2c0f08a134bf7d1ea91f307",
+      "experiments/v6/selection.json": "abe83a2be5f5826eb5c178f16d7a99a7133cdd3df30d24ac6e6344328109844b"
+    },
+    "pdf_pages": 3,
+    "pdf_visually_reviewed": true,
+    "standalone_html_images_embedded": true,
+    "actual_zip_and_final_commit_manifest": "delivery/share_manifest.json (generated after tagging and supplied as Release asset)"
+  }
+}

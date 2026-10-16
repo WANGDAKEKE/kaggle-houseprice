@@ -113,6 +113,42 @@
         "reported_previous_score": 0.11963,
         "interpretation_limit": "Screenshot records submitted descriptions and scores, not a controlled ablation. TabPFN version, model settings and exact original ensemble are unknown; no causal improvement is inferred."
       }
+    },
+    {
+      "version": "v6",
+      "date": "2026-10-16",
+      "timezone": "Asia/Shanghai",
+      "competition": "house-prices-advanced-regression-techniques",
+      "submission_file": "submission_v6.csv",
+      "submission_sha256": "cf1c335f3a580accd45457e8bc4247185bd97b9aef656a6adf5ecc8cb288b63f",
+      "model": "TabPFN-v2_diverse_physical16_quality4_v5_equal_thirds_log_blend",
+      "weights_in_log_space": {
+        "v5": 0.3333333333333333,
+        "physical_e16": 0.3333333333333333,
+        "quality_e4": 0.3333333333333333
+      },
+      "public_log_rmse": 0.11212,
+      "score_source": "user_report",
+      "source": "user-reported Kaggle score; not independently read from submission history",
+      "file_association": "associated with recommended submission_v6.csv from conversation context",
+      "previous_best_version": "v5",
+      "previous_best_public_log_rmse": 0.11595,
+      "improvement_vs_previous_best": 0.00383,
+      "relative_improvement_vs_previous_best_pct": 3.3031479085812854,
+      "first_version": "v1",
+      "first_version_public_log_rmse": 0.11969,
+      "improvement_vs_first_version": 0.007570000000000007,
+      "relative_improvement_vs_first_version_pct": 6.324672069512914,
+      "development_cv_log_rmse": 0.1136734618378843,
+      "local_metric_role": "Historical matched five-fold OOF; separate from observed user-reported Kaggle score",
+      "outcome": "best user-reported submitted version; explicitly adopted as final by user",
+      "user_final_decision": "Use this version; stop further optimization and prepare GitHub/code/report sharing",
+      "final_adopted_by_user": true,
+      "further_optimization_requested": false,
+      "model_snapshot_git_tag": "v6.0.0",
+      "score_documentation_git_tag": "v6.1.0",
+      "frozen_model_artifacts_unchanged": true,
+      "relative_improvement_pct": 3.3031479085812854
     }
   ]
 }

@@ -116,8 +116,8 @@
     {
       "version": "v6",
       "git_tag": "v6.0.0",
-      "status": "ready_for_user_submission",
-      "public_log_rmse": null,
+      "status": "submitted_by_user",
+      "public_log_rmse": 0.11212,
       "model": "TabPFN-v2_diverse_physical16_quality4_v5_equal_thirds_log_blend",
       "weights_in_log_space": {
         "v5": 0.3333333333333333,
@@ -163,9 +163,23 @@
       "reproduction_status": "full_component_models_reloaded_and_final_weights_algebraically_verified",
       "date": "2026-10-16",
       "reproduction_max_abs_log_prediction_difference": 1.5867353653220562e-08,
-      "reproduction_method": "Both models were independently reloaded and predicted all 1459 rows for the saved half-weight candidate. Identical component contexts were checked, then those rebuilt predictions were algebraically reweighted to final equal thirds. No new inference was needed for this weight-only update."
+      "reproduction_method": "Both models were independently reloaded and predicted all 1459 rows for the saved half-weight candidate. Identical component contexts were checked, then those rebuilt predictions were algebraically reweighted to final equal thirds. No new inference was needed for this weight-only update.",
+      "score_source": "user_report",
+      "score_reported_date": "2026-10-16",
+      "online_outcome": "new_best_and_final_adopted",
+      "final_adopted_by_user": true,
+      "further_optimization_requested": false,
+      "score_documentation_git_tag": "v6.1.0",
+      "online_result": "experiments/v6/online_result.json",
+      "improvement_vs_previous_best": 0.00383,
+      "relative_improvement_vs_previous_best_pct": 3.3031479085812854,
+      "improvement_vs_first_version": 0.007570000000000007,
+      "relative_improvement_vs_first_version_pct": 6.324672069512914
     }
   ],
-  "best_actually_submitted_version": "v5",
-  "best_user_reported_public_log_rmse": 0.11595
+  "best_actually_submitted_version": "v6",
+  "best_user_reported_public_log_rmse": 0.11212,
+  "final_adopted_version": "v6",
+  "further_optimization_requested": false,
+  "latest_score_documentation_tag": "v6.1.0"
 }

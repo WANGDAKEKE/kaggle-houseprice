@@ -6,8 +6,8 @@
 | v2 | `v2.0.0` | 0.11973（3 次 5 折均值） | 0.10038（旧预留集，仅诊断） | 0.11741 | 用户已提交 |
 | v3 | `v3.0.0` | 0.11680（原 3 个拆分）；0.11941（共 5 个拆分） | 0.09778（旧预留集，仅诊断） | 0.11770 | 用户已提交，较 v2 退步 |
 | v4 | `v4.0.0` | 0.11966（复用 5 个拆分，回顾分析） | 未新增评价 | 0.11679 | 用户已提交，v5 前最佳 |
-| v5 | `v5.0.0` | 0.11652（固定初筛名单后的嵌套选择流程，2 次 5 折） | 全部训练行用于外层比较 | **0.11595** | 用户已提交，目前最佳 |
-| v6 | `v6.0.0` | 0.11367346（历史全量 5 折，适应选择） | 未新增独立评价 | 待提交 | 两种 TabPFN 表示融合，建议先提交主文件 |
+| v5 | `v5.0.0` | 0.11652（固定初筛名单后的嵌套选择流程，2 次 5 折） | 全部训练行用于外层比较 | 0.11595 | 用户已提交，v6 前最佳 |
+| v6 | `v6.0.0`（模型）；`v6.1.0`（成绩文档） | 0.11367346（历史全量 5 折，适应选择） | 未新增独立评价 | **0.11212** | 用户已提交并最终采用，目前最佳 |
 
 首版方案为 75% CatBoost + 25% ElasticNet，融合在自然对数空间完成。线上分数由用户反馈，未通过 Kaggle 接口独立核验。
 
@@ -124,14 +124,14 @@ sh scripts/run.sh scripts/optimize_v4.py
 
 新文件 `submission_v5.csv`，SHA-256 `a48b84f57802f0adf5b7344a3b8ba7cdbf31a18bf7e8ff1c670be48bb4fb05db`。`versions/v5/` 保存关键快照，`experiments/v5/` 保存完整筛选、301组带指纹的训练/预测缓存、559次缓存估计器fit（残差树内另516次EN fit）、模型和报告；初筛、调试及源变更重跑不计入这559次。版本标签 `v5.0.0` 冻结全部内容。
 
-2026-10-15，用户反馈 v5 线上分数 **0.11595**，较此前最佳 v4 的 **0.11679** 降低 **0.00084（约 0.72%）**，成为目前实际提交最佳版本。成绩单独保存在 `experiments/v5/online_result.json`、`versions/v5/online_result.json` 和版本索引；原 `selection.json`、CSV、模型及 `v5.0.0` 标签保持冻结。
+2026-10-15，用户反馈 v5 线上分数 **0.11595**，较此前最佳 v4 的 **0.11679** 降低 **0.00084（约 0.72%）**，当时成为实际提交最佳版本。成绩单独保存在 `experiments/v5/online_result.json`、`versions/v5/online_result.json` 和版本索引；原 `selection.json`、CSV、模型及 `v5.0.0` 标签保持冻结。
 
 同次反馈附同学的提交历史截图：`submission_optimized.csv` 描述为 Lasso + SVR + CatBoost + XGBoost equal blend，分数 **0.11963**；后续 `submission_frontier.csv` 描述为“50% TabPFN + 50% 原集成”，分数 **0.11390**。v5 与该分数差 **0.00205**。这是用户截图证据，未独立核验身份、代码或数据；TabPFN 版本、参数及两次提交其他差异未知，不能当作控制条件的模型消融或因果证明。
 
 
 ## v6：新模型、结构特征和训练处理
 
-2026-10-16 生成候选版本 `v6.0.0`，主文件 **`submission_v6.csv`**，尚未提交；线上分数为空，实际提交最佳仍为 v5 的 **0.11595**。主文件 SHA-256 为 `cf1c335f3a580accd45457e8bc4247185bd97b9aef656a6adf5ecc8cb288b63f`。
+2026-10-16，用户提交主文件 **`submission_v6.csv`** 后反馈线上 **0.11212**，并明确最终采用，不再继续优化。`v6.0.0` 保留原训练与预测快照，`v6.1.0` 补充成绩、最新报告和分享资料。主文件 SHA-256 为 `cf1c335f3a580accd45457e8bc4247185bd97b9aef656a6adf5ecc8cb288b63f`。
 
 共完成 5 个 TabPFN v2 基础配置各 5 折：原始特征/e4、房屋结构特征/e4、房屋结构特征/e16、仅训练部分剔除两套极端房屋/e4、质量字段类别表示/e4。全部使用匹配的 seed5509 全量历史折，保留所有验证房屋；旧 v5 各组件直接复用核验过的缓存，新增旧模型拟合为 0 次。主模型保留全部 1,460 条训练数据，剔除训练样本的变体未被采用。
 
@@ -139,8 +139,11 @@ sh scripts/run.sh scripts/optimize_v4.py
 
 历史阶段依次是：初始半权协议、暂选 physical/e16、两表示半权融合、最终三路等权。75% TabPFN 的总体误差更低，但其对半权方案的调权增量有 96.9% 来自两套极端房屋；三路等权的普通和 Normal 指标比 50%/75% 更好，普通 3/5 折、Normal 4/5 折优于半权。三路等权调权增量本身也有 89.6% 来自两套极端房屋；相对原 v5，各组去最大 5 条收益后的净收益仍为正。完整比较及局限保留在 `weight_choice_diagnostic.json`。配方组合不增加拟合；表示和权重是在历史结果基础上适应选择，不是预先冻结的最终方案，也不是独立验证。`selection_rationale.json` 原有的 physical/pending 字段和半权决定均保留，最终决定单独追加。
 
-备用旧预测融合文件 `submission_v6_lb_blend.csv` 的线上反馈公式估算收益约 0.0000125，本轮不优先提交；用户先上传主 `submission_v6.csv`。研究来源、5 配置完整权重比较、异常与普通房屋收益贡献保存在 `experiments/v6/`。公开 TabPFN 权重、许可、训练上下文、模型组件预测及 physical/半权备份均保存。
+备用旧预测融合文件 `submission_v6_lb_blend.csv` 的线上反馈公式估算收益约 0.0000125，先前作为非优先备用；用户最终采用了主 `submission_v6.csv`。研究来源、5 配置完整权重比较、异常与普通房屋收益贡献保存在 `experiments/v6/`。公开 TabPFN 权重、许可、训练上下文、模型组件预测及 physical/半权备份均保存。
 
 先在半权阶段独立重载两模型并预测全部 1,459 行，再核对相同组件上下文，把已重建预测方向换成最终三路等权进行核验；最终最大绝对对数差 **1.586735e-8**，容差 5e-5。改权没有额外 GPU 推理。完整过程在 `experiments/v6/reproduction_audit.json`，原全量 GPU 重载审计和重建预测保存在 `half_candidate/`。
 
-`versions/v6/` 保存主 CSV、selection、protocol、submission_audit、主配置比较、selection_rationale、reproduction_audit 和 weight_choice_diagnostic。独立锁为 `requirements-tabpfn.lock.txt`，适配当前 macOS ARM64；旧锁及 v1–v5 产物保持不变。复现顺序见 README：先 raw/physical4/physical16 CV 和两个训练/表示变体，再生成 physical 主候选并执行 diverse finalizer，最后 `predict_v6.py` 重载。Git 发布由本轮最后步骤执行，此处不提前宣称已经推送。
+`versions/v6/` 保存主 CSV、selection、protocol、submission_audit、主配置比较、selection_rationale、reproduction_audit 和 weight_choice_diagnostic。独立锁为 `requirements-tabpfn.lock.txt`，适配当前 macOS ARM64；旧锁及 v1–v5 产物保持不变。复现顺序见 README：先 raw/physical4/physical16 CV 和两个训练/表示变体，再生成 physical 主候选并执行 diverse finalizer，最后 `predict_v6.py` 重载。线上成绩单独保存在 `experiments/v6/online_result.json`、`versions/v6/online_result.json`、成绩账本及版本索引；原 selection、模型、CSV、训练代码和 `v6.0.0` 标签不变。
+
+
+2026-10-16 的最终线上结果为 **0.11212**，较此前最佳 v5 的 **0.11595** 降低 **0.00383（约 3.303%）**，较 v1 的 **0.11969** 降低 **0.00757（约 6.325%）**。这是用户反馈的 Kaggle 实测成绩，未通过提交历史接口独立读取；本地历史 OOF **0.11367346** 继续保留为本地评价。最终实际最佳及用户采用版本均为 v6，不再安排新的优化实验。最新版报告见 [experiments/v6/report.html](experiments/v6/report.html)。

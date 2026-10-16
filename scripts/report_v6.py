@@ -98,6 +98,8 @@ def main():
     probe=json.loads((ART/"probe.json").read_text())
     online_path=ART/"online_result.json";online=json.loads(online_path.read_text()) if online_path.exists() else None
     status=f'用户反馈线上 {online["public_log_rmse"]:.5f}' if online else '尚未提交，Kaggle 分数未知'
+    validation_status=(f'用户随后反馈本版线上 {online["public_log_rmse"]:.5f}，并最终采用该版本；未据此继续改变模型或权重。'
+                       if online else '线上效果仍需实际提交。')
     blend_summary_path=ART/"leaderboard_blend/summary.json"
     historical_blend_text=""
     if blend_summary_path.exists():
@@ -121,7 +123,7 @@ def main():
         bag_results={float(row["quality_fraction_of_TabPFN"]):row for row in bag_diagnostic["results"]}
         physical_only=bag_results[0.];representation_bag=bag_results[.5]
         representation_text=f'''<h2>从初始半权融合到三路等权</h2><p>初案固定 TabPFN 总权重 50%。在这个权重下，两种表示平均后的全体 OOF log-RMSE 为 {representation_bag['all']:.8f}，physical 单表示为 {physical_only['all']:.8f}，差 {representation_bag['all']-physical_only['all']:.8f}；普通房屋从 {physical_only['ordinary']:.8f} 降为 {representation_bag['ordinary']:.8f}，Normal 从 {physical_only['normal']:.8f} 降为 {representation_bag['normal']:.8f}。因此保留两种互补表示，详见 <a href="representation_bag_diagnostic.json">早期表示比例诊断</a>。</p>
-<p>后续比较粗权重与自然的三路等权，最终采用 v5、physical/e16、quality/e4 各 1/3，直接组合既有预测，无新增模型拟合。75% TabPFN 的总体分数更低，但相对半权融合的增量高度集中在两套极端房屋，因此未选作主提交。三路等权的普通房屋和 Normal 指标均优于半权初案。表示与权重选择参考了同一批历史 CV，存在适应选择偏差；线上效果仍需实际提交。</p>'''
+<p>后续比较粗权重与自然的三路等权，最终采用 v5、physical/e16、quality/e4 各 1/3，直接组合既有预测，无新增模型拟合。75% TabPFN 的总体分数更低，但相对半权融合的增量高度集中在两套极端房屋，因此未选作主提交。三路等权的普通房屋和 Normal 指标均优于半权初案。表示与权重选择参考了同一批历史 CV，存在适应选择偏差；{validation_status}</p>'''
         weight_diagnostic_path=ART/"weight_choice_diagnostic.json"
         if weight_diagnostic_path.exists():
             weight_diagnostic=json.loads(weight_diagnostic_path.read_text())
@@ -136,7 +138,7 @@ def main():
     def table(frame):return frame.to_html(index=False,float_format=lambda v:f"{v:.6f}",border=0)
     report=f'''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>TabPFN v6：新模型、结构特征与训练处理</title><style>body{{font:16px/1.8 -apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif;color:#24364b;background:#f3f6fa;margin:0}}main{{max-width:1100px;margin:25px auto;background:white;padding:30px;border-radius:12px}}img{{max-width:100%}}table{{border-collapse:collapse;width:100%;font-size:13px}}td,th{{padding:7px;border-bottom:1px solid #ddd;text-align:left}}code{{overflow-wrap:anywhere}}a{{color:#286ba4}}</style><main>
-<h1>v6：新模型、结构特征与训练处理并行探索</h1><p><b>Built with PriorLabs-TabPFN</b> · 官方公开 v2 回归权重及<a href="pretrained/LICENSE.txt">许可</a>已一并保存。</p>
+<h1>v6：最终采用方案与完整实验报告</h1><p><b>Built with PriorLabs-TabPFN</b> · 官方公开 v2 回归权重及<a href="pretrained/LICENSE.txt">许可</a>已一并保存。</p>
 <p>用户反馈 v5 实测为 <b>0.11595</b>。新文件：<a href="../../submission_v6.csv">submission_v6.csv</a>；{status}。</p>
 <h2>本轮目标与研究线索</h2><p>目标是降低实际提交误差、提高排名。新模型、房屋结构特征和训练样本处理分别比较，候选及负结果全部保留。同学截图显示，旧四模型等权融合为 0.11963，后一次描述为“50% TabPFN + 50% 原集成”的提交为 0.11390。这提供了新模型方向；具体版本、代码、预处理和融合空间未知，两次记录不足以隔离各项变化的贡献。关于模型方法与其他排名路径的公开资料，见<a href="ranking_routes_research.md">排名路径研究</a>。</p>
 <p>上一轮大量时间用于重复拟合传统模型；本轮所有 v5 同折参考都从已验证缓存重建，旧模型新增拟合次数为 <b>0</b>。准备独立 TabPFN 环境和锁文件，旧环境、模型及提交文件保持不变。</p>
